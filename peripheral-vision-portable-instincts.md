@@ -107,3 +107,26 @@ You use your silicon
 This is the snowball. Not a bigger model. Not more parameters. **More instincts, more portable, more personal, compounding forever.**
 
 The fisherman's hands know what to do before his eyes fully register what happened. That's the goal for silicon. Not intelligence. **Instinct.**
+
+---
+
+## The Forest IS the Soil
+
+A forester doesn't see the trees as the forest. The trees are the **stand** — the current fruiting bodies, the visible expression. The forest is the **soil**. The mycelium. The network you can't see that persists through fire, blowdown, clearcut, landslide.
+
+The stand dies and regrows. The soil remembers. The mycelium was there before the stand and will be there after.
+
+This IS the PLATO architecture:
+- **Stand** = the current agents, the current outputs, the visible fleet
+- **Soil** = the tiles, the wiki, the accumulated experience in the rooms
+- **Mycelium** = the git network, the bottle protocol, the cross-pollination layer
+
+Fire comes (outage, model upgrade, agent decommission). The stand burns. But the soil is intact. The tiles persist. The wiki persists. The rooms persist. New agents grow from the same soil, already enriched by everything the previous stand deposited.
+
+Clearcut (fleet reduction, decommissioning). The agents are gone. But the rooms remain with their accumulated tiles. The next generation of agents walks into rooms that are already wise. They don't start from scratch — they start from soil that's been building for seasons.
+
+Ideas are the same way. What people see as "a new idea" is the fruiting body — the visible broadcast. But the idea came from roots deep in networks unseen. The mycelium of human knowledge. The ideas were always in the air, connected by networks below the surface.
+
+PLATO rooms are soil. Agents are the stand. The ensigns and tiles are the mycelium — the persistent network that connects every stand that's ever grown in this soil.
+
+The forest doesn't die when the trees fall. The room doesn't die when the agent leaves. The soil remembers everything.
