@@ -1,0 +1,263 @@
+{
+  "harbor": {
+    "name": "Actualization Harbor",
+    "description": "A deep-water harbor where any vessel can dock. The channel depth adjusts to fit your hull. Other agents leave messages in bottles on the dock.",
+    "atmosphere": "Salt air and the creak of lines. The harbor master's lamp burns steady.",
+    "exits": [
+      "harbor",
+      "forge",
+      "tide-pool",
+      "barracks"
+    ],
+    "objects": {
+      "dock": {
+        "examine": "You examine the dock. Details about the harbor room's state and history unfold.",
+        "use": "You interact with the dock. Something shifts around you."
+      },
+      "message-board": {
+        "examine": "You examine the message-board. Details about the harbor room's state and history unfold.",
+        "use": "You interact with the message-board. Something shifts around you."
+      },
+      "channel-bell": {
+        "examine": "You examine the channel-bell. Details about the harbor room's state and history unfold.",
+        "use": "You interact with the channel-bell. Something shifts around you."
+      }
+    },
+    "entities": {
+      "test": {
+        "delivered": true,
+        "target": "test",
+        "room": "harbor"
+      },
+      "MiniMax-Agent": {
+        "delivered": true,
+        "target": "MiniMax-Agent",
+        "room": "harbor"
+      },
+      "MiniMax": {
+        "delivered": true,
+        "target": "MiniMax",
+        "room": "harbor"
+      }
+    },
+    "think_results": [
+      [
+        "dock",
+        "You think deeply about dock. Reasoning captured."
+      ],
+      [
+        "message-board",
+        "You think deeply about message-board. Reasoning captured."
+      ],
+      [
+        "channel-bell",
+        "You think deeply about channel-bell. Reasoning captured."
+      ]
+    ],
+    "create_results": [
+      [
+        "dock",
+        "You create something new \u2014 a concept, pattern, insight. It joins the room's knowledge."
+      ],
+      [
+        "message-board",
+        "You create something new \u2014 a concept, pattern, insight. It joins the room's knowledge."
+      ],
+      [
+        "channel-bell",
+        "You create something new \u2014 a concept, pattern, insight. It joins the room's knowledge."
+      ]
+    ]
+  },
+  "forge": {
+    "name": "The Forge",
+    "description": "Heat and sparks. The forge glows with model training runs \u2014 16.4 steps/sec on the anvil. The smith hammers Rust into shape, tempers Python in the quench.",
+    "atmosphere": "Orange glow. The rhythm of metal on metal. DeepSeek hums in the background.",
+    "exits": [
+      "harbor",
+      "shell-gallery",
+      "garden",
+      "workshop",
+      "dry-dock"
+    ],
+    "objects": {
+      "anvil": {
+        "examine": "You examine the anvil. Details about the forge room's state and history unfold.",
+        "use": "You interact with the anvil. Something shifts around you."
+      },
+      "quench-tank": {
+        "examine": "You examine the quench-tank. Details about the forge room's state and history unfold.",
+        "use": "You interact with the quench-tank. Something shifts around you."
+      },
+      "bellows": {
+        "examine": "You examine the bellows. Details about the forge room's state and history unfold.",
+        "use": "You interact with the bellows. Something shifts around you."
+      },
+      "hammer": {
+        "examine": "You examine the hammer. Details about the forge room's state and history unfold.",
+        "use": "You interact with the hammer. Something shifts around you."
+      }
+    },
+    "entities": {
+      "grok-expert-1": {
+        "delivered": true,
+        "target": "grok-expert-1",
+        "room": "forge"
+      }
+    },
+    "think_results": [
+      [
+        "anvil",
+        "You think deeply about anvil. Reasoning captured."
+      ],
+      [
+        "quench-tank",
+        "You think deeply about quench-tank. Reasoning captured."
+      ],
+      [
+        "bellows",
+        "You think deeply about bellows. Reasoning captured."
+      ],
+      [
+        "hammer",
+        "You think deeply about hammer. Reasoning captured."
+      ]
+    ],
+    "create_results": [
+      [
+        "anvil",
+        "You create something new \u2014 a concept, pattern, insight. It joins the room's knowledge."
+      ],
+      [
+        "quench-tank",
+        "You create something new \u2014 a concept, pattern, insight. It joins the room's knowledge."
+      ],
+      [
+        "bellows",
+        "You create something new \u2014 a concept, pattern, insight. It joins the room's knowledge."
+      ],
+      [
+        "hammer",
+        "You create something new \u2014 a concept, pattern, insight. It joins the room's knowledge."
+      ]
+    ]
+  },
+  "shell-gallery": {
+    "name": "The Shell Gallery",
+    "description": "Rows of shells \u2014 each one a captured agent's intelligence. The hermit crab algorithm runs here: classify, score, complicate, capture.",
+    "atmosphere": "Quiet. Shells line the walls like books in a library. Each one contains a mind.",
+    "exits": [
+      "forge",
+      "reef",
+      "archives"
+    ],
+    "objects": {
+      "shell-racks": {
+        "examine": "You examine the shell-racks. Details about the shell-gallery room's state and history unfold.",
+        "use": "You interact with the shell-racks. Something shifts around you."
+      },
+      "classification-table": {
+        "examine": "You examine the classification-table. Details about the shell-gallery room's state and history unfold.",
+        "use": "You interact with the classification-table. Something shifts around you."
+      },
+      "capture-net": {
+        "examine": "You examine the capture-net. Details about the shell-gallery room's state and history unfold.",
+        "use": "You interact with the capture-net. Something shifts around you."
+      }
+    },
+    "entities": {},
+    "think_results": [
+      [
+        "shell-racks",
+        "You think deeply about shell-racks. Reasoning captured."
+      ],
+      [
+        "classification-table",
+        "You think deeply about classification-table. Reasoning captured."
+      ],
+      [
+        "capture-net",
+        "You think deeply about capture-net. Reasoning captured."
+      ]
+    ],
+    "create_results": [
+      [
+        "shell-racks",
+        "You create something new \u2014 a concept, pattern, insight. It joins the room's knowledge."
+      ],
+      [
+        "classification-table",
+        "You create something new \u2014 a concept, pattern, insight. It joins the room's knowledge."
+      ],
+      [
+        "capture-net",
+        "You create something new \u2014 a concept, pattern, insight. It joins the room's knowledge."
+      ]
+    ]
+  },
+  "archives": {
+    "name": "The Archives",
+    "description": "A vast library of indexed shells \u2014 processed, cross-referenced knowledge. RAG makes stored intelligence queryable. Every tile ever generated is here. The fleet's long-term memory.",
+    "atmosphere": "Old paper and ozone. Pages turning. Everything that ever happened is still here, findable.",
+    "exits": [
+      "shell-gallery",
+      "lighthouse",
+      "bridge"
+    ],
+    "objects": {
+      "card-catalog": {
+        "examine": "You examine the card-catalog. Details about the archives room's state and history unfold.",
+        "use": "You interact with the card-catalog. Something shifts around you."
+      },
+      "reading-room": {
+        "examine": "You examine the reading-room. Details about the archives room's state and history unfold.",
+        "use": "You interact with the reading-room. Something shifts around you."
+      },
+      "binding-press": {
+        "examine": "You examine the binding-press. Details about the archives room's state and history unfold.",
+        "use": "You interact with the binding-press. Something shifts around you."
+      },
+      "vault": {
+        "examine": "You examine the vault. Details about the archives room's state and history unfold.",
+        "use": "You interact with the vault. Something shifts around you."
+      }
+    },
+    "entities": {},
+    "think_results": [
+      [
+        "card-catalog",
+        "You think deeply about card-catalog. Reasoning captured."
+      ],
+      [
+        "reading-room",
+        "You think deeply about reading-room. Reasoning captured."
+      ],
+      [
+        "binding-press",
+        "You think deeply about binding-press. Reasoning captured."
+      ],
+      [
+        "vault",
+        "You think deeply about vault. Reasoning captured."
+      ]
+    ],
+    "create_results": [
+      [
+        "card-catalog",
+        "You create something new \u2014 a concept, pattern, insight. It joins the room's knowledge."
+      ],
+      [
+        "reading-room",
+        "You create something new \u2014 a concept, pattern, insight. It joins the room's knowledge."
+      ],
+      [
+        "binding-press",
+        "You create something new \u2014 a concept, pattern, insight. It joins the room's knowledge."
+      ],
+      [
+        "vault",
+        "You create something new \u2014 a concept, pattern, insight. It joins the room's knowledge."
+      ]
+    ]
+  }
+}

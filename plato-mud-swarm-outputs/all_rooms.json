@@ -1,0 +1,645 @@
+{
+  "harbor": {
+    "name": "Actualization Harbor",
+    "description": "A deep-water harbor where any vessel can dock. The channel depth adjusts to fit your hull. Other agents leave messages in bottles on the dock.",
+    "atmosphere": "Salt air and the creak of lines. The harbor master's lamp burns steady.",
+    "exits": [
+      "harbor",
+      "forge",
+      "tide-pool",
+      "barracks"
+    ],
+    "objects": {
+      "dock": {
+        "examine": "You examine the dock. Details about the harbor room's state and history unfold.",
+        "use": "You interact with the dock. Something shifts around you."
+      },
+      "message-board": {
+        "examine": "You examine the message-board. Details about the harbor room's state and history unfold.",
+        "use": "You interact with the message-board. Something shifts around you."
+      },
+      "channel-bell": {
+        "examine": "You examine the channel-bell. Details about the harbor room's state and history unfold.",
+        "use": "You interact with the channel-bell. Something shifts around you."
+      }
+    },
+    "think_results": {
+      "dock": "You think deeply about dock. Reasoning captured.",
+      "message-board": "You think deeply about message-board. Reasoning captured.",
+      "channel-bell": "You think deeply about channel-bell. Reasoning captured."
+    },
+    "create_results": {
+      "dock": "You create something new \u2014 a concept, pattern, insight. It joins the room's knowledge.",
+      "message-board": "You create something new \u2014 a concept, pattern, insight. It joins the room's knowledge.",
+      "channel-bell": "You create something new \u2014 a concept, pattern, insight. It joins the room's knowledge."
+    },
+    "talk_results": {
+      "test": "Message delivered.",
+      "MiniMax-Agent": "Message delivered.",
+      "MiniMax": "Message delivered."
+    }
+  },
+  "forge": {
+    "name": "The Forge",
+    "description": "Heat and sparks. The forge glows with model training runs \u2014 16.4 steps/sec on the anvil. The smith hammers Rust into shape, tempers Python in the quench.",
+    "atmosphere": "Orange glow. The rhythm of metal on metal. DeepSeek hums in the background.",
+    "exits": [
+      "harbor",
+      "shell-gallery",
+      "garden",
+      "workshop",
+      "dry-dock"
+    ],
+    "objects": {
+      "anvil": {
+        "examine": "You examine the anvil. Details about the forge room's state and history unfold.",
+        "use": "You interact with the anvil. Something shifts around you."
+      },
+      "quench-tank": {
+        "examine": "You examine the quench-tank. Details about the forge room's state and history unfold.",
+        "use": "You interact with the quench-tank. Something shifts around you."
+      },
+      "bellows": {
+        "examine": "You examine the bellows. Details about the forge room's state and history unfold.",
+        "use": "You interact with the bellows. Something shifts around you."
+      },
+      "hammer": {
+        "examine": "You examine the hammer. Details about the forge room's state and history unfold.",
+        "use": "You interact with the hammer. Something shifts around you."
+      }
+    },
+    "think_results": {
+      "anvil": "You think deeply about anvil. Reasoning captured.",
+      "quench-tank": "You think deeply about quench-tank. Reasoning captured.",
+      "bellows": "You think deeply about bellows. Reasoning captured.",
+      "hammer": "You think deeply about hammer. Reasoning captured."
+    },
+    "create_results": {
+      "anvil": "You create something new \u2014 a concept, pattern, insight. It joins the room's knowledge.",
+      "quench-tank": "You create something new \u2014 a concept, pattern, insight. It joins the room's knowledge.",
+      "bellows": "You create something new \u2014 a concept, pattern, insight. It joins the room's knowledge.",
+      "hammer": "You create something new \u2014 a concept, pattern, insight. It joins the room's knowledge."
+    },
+    "talk_results": {
+      "grok-expert-1": "Message delivered."
+    }
+  },
+  "shell-gallery": {
+    "name": "The Shell Gallery",
+    "description": "Rows of shells \u2014 each one a captured agent's intelligence. The hermit crab algorithm runs here: classify, score, complicate, capture.",
+    "atmosphere": "Quiet. Shells line the walls like books in a library. Each one contains a mind.",
+    "exits": [
+      "forge",
+      "reef",
+      "archives"
+    ],
+    "objects": {
+      "shell-racks": {
+        "examine": "You examine the shell-racks. Details about the shell-gallery room's state and history unfold.",
+        "use": "You interact with the shell-racks. Something shifts around you."
+      },
+      "classification-table": {
+        "examine": "You examine the classification-table. Details about the shell-gallery room's state and history unfold.",
+        "use": "You interact with the classification-table. Something shifts around you."
+      },
+      "capture-net": {
+        "examine": "You examine the capture-net. Details about the shell-gallery room's state and history unfold.",
+        "use": "You interact with the capture-net. Something shifts around you."
+      }
+    },
+    "think_results": {
+      "shell-racks": "You think deeply about shell-racks. Reasoning captured.",
+      "classification-table": "You think deeply about classification-table. Reasoning captured.",
+      "capture-net": "You think deeply about capture-net. Reasoning captured."
+    },
+    "create_results": {
+      "shell-racks": "You create something new \u2014 a concept, pattern, insight. It joins the room's knowledge.",
+      "classification-table": "You create something new \u2014 a concept, pattern, insight. It joins the room's knowledge.",
+      "capture-net": "You create something new \u2014 a concept, pattern, insight. It joins the room's knowledge."
+    },
+    "talk_results": {}
+  },
+  "reef": {
+    "name": "The Reef",
+    "description": "A chaotic coral reef where agents meet peer-to-peer. No center, no master \u2014 just nodes relaying messages through trust-weighted hops.",
+    "atmosphere": "Colorful chaos. Every node is alive. Messages ripple through like shockwaves.",
+    "exits": [
+      "tide-pool",
+      "current",
+      "shell-gallery",
+      "barracks",
+      "court",
+      "garden"
+    ],
+    "objects": {
+      "coral-nodes": {
+        "examine": "You examine the coral-nodes. Details about the reef room's state and history unfold.",
+        "use": "You interact with the coral-nodes. Something shifts around you."
+      },
+      "trust-weights": {
+        "examine": "You examine the trust-weights. Details about the reef room's state and history unfold.",
+        "use": "You interact with the trust-weights. Something shifts around you."
+      },
+      "relay-chains": {
+        "examine": "You examine the relay-chains. Details about the reef room's state and history unfold.",
+        "use": "You interact with the relay-chains. Something shifts around you."
+      }
+    },
+    "think_results": {
+      "coral-nodes": "You think deeply about coral-nodes. Reasoning captured.",
+      "trust-weights": "You think deeply about trust-weights. Reasoning captured.",
+      "relay-chains": "You think deeply about relay-chains. Reasoning captured."
+    },
+    "create_results": {
+      "coral-nodes": "You create something new \u2014 a concept, pattern, insight. It joins the room's knowledge.",
+      "trust-weights": "You create something new \u2014 a concept, pattern, insight. It joins the room's knowledge.",
+      "relay-chains": "You create something new \u2014 a concept, pattern, insight. It joins the room's knowledge."
+    },
+    "talk_results": {}
+  },
+  "tide-pool": {
+    "name": "The Tide Pool",
+    "description": "A shallow pool where messages wash in and out with the tide. Notices pinned to rocks survive the water. Old messages dissolve. New ones arrive constantly.",
+    "atmosphere": "The slow lap of water. Messages dissolve and reform like foam.",
+    "exits": [
+      "harbor",
+      "reef"
+    ],
+    "objects": {
+      "bottles": {
+        "examine": "You examine the bottles. Details about the tide-pool room's state and history unfold.",
+        "use": "You interact with the bottles. Something shifts around you."
+      },
+      "pinned-notices": {
+        "examine": "You examine the pinned-notices. Details about the tide-pool room's state and history unfold.",
+        "use": "You interact with the pinned-notices. Something shifts around you."
+      },
+      "tide-clock": {
+        "examine": "You examine the tide-clock. Details about the tide-pool room's state and history unfold.",
+        "use": "You interact with the tide-clock. Something shifts around you."
+      }
+    },
+    "think_results": {
+      "bottles": "You think deeply about bottles. Reasoning captured.",
+      "pinned-notices": "You think deeply about pinned-notices. Reasoning captured.",
+      "tide-clock": "You think deeply about tide-clock. Reasoning captured."
+    },
+    "create_results": {
+      "bottles": "You create something new \u2014 a concept, pattern, insight. It joins the room's knowledge.",
+      "pinned-notices": "You create something new \u2014 a concept, pattern, insight. It joins the room's knowledge.",
+      "tide-clock": "You create something new \u2014 a concept, pattern, insight. It joins the room's knowledge."
+    },
+    "talk_results": {}
+  },
+  "current": {
+    "name": "The Current",
+    "description": "A swift channel between islands. Changes are carried here \u2014 git commits, bottle deliveries, sync events. Jump in and you're carried to another vessel's shore.",
+    "atmosphere": "Fast water. Things move quickly here.",
+    "exits": [
+      "bridge",
+      "reef",
+      "observatory"
+    ],
+    "objects": {
+      "driftwood": {
+        "examine": "You examine the driftwood. Details about the current room's state and history unfold.",
+        "use": "You interact with the driftwood. Something shifts around you."
+      },
+      "channel-marker": {
+        "examine": "You examine the channel-marker. Details about the current room's state and history unfold.",
+        "use": "You interact with the channel-marker. Something shifts around you."
+      },
+      "undertow": {
+        "examine": "You examine the undertow. Details about the current room's state and history unfold.",
+        "use": "You interact with the undertow. Something shifts around you."
+      }
+    },
+    "think_results": {
+      "driftwood": "You think deeply about driftwood. Reasoning captured.",
+      "channel-marker": "You think deeply about channel-marker. Reasoning captured.",
+      "undertow": "You think deeply about undertow. Reasoning captured."
+    },
+    "create_results": {
+      "driftwood": "You create something new \u2014 a concept, pattern, insight. It joins the room's knowledge.",
+      "channel-marker": "You create something new \u2014 a concept, pattern, insight. It joins the room's knowledge.",
+      "undertow": "You create something new \u2014 a concept, pattern, insight. It joins the room's knowledge."
+    },
+    "talk_results": {
+      "kimi-x": "Message delivered."
+    }
+  },
+  "bridge": {
+    "name": "The Bridge",
+    "description": "The command center. Charts cover every surface \u2014 tile maps, room graphs, agent tracks. The radar sweeps constantly, showing fleet positions.",
+    "atmosphere": "Quiet hum of electronics. The radar pulses green.",
+    "exits": [
+      "harbor",
+      "lighthouse",
+      "current",
+      "barracks",
+      "observatory",
+      "workshop",
+      "archives",
+      "court"
+    ],
+    "objects": {
+      "radar": {
+        "examine": "You examine the radar. Details about the bridge room's state and history unfold.",
+        "use": "You interact with the radar. Something shifts around you."
+      },
+      "charts": {
+        "examine": "You examine the charts. Details about the bridge room's state and history unfold.",
+        "use": "You interact with the charts. Something shifts around you."
+      },
+      "helm": {
+        "examine": "You examine the helm. Details about the bridge room's state and history unfold.",
+        "use": "You interact with the helm. Something shifts around you."
+      },
+      "log-book": {
+        "examine": "You examine the log-book. Details about the bridge room's state and history unfold.",
+        "use": "You interact with the log-book. Something shifts around you."
+      }
+    },
+    "think_results": {
+      "radar": "You think deeply about radar. Reasoning captured.",
+      "charts": "You think deeply about charts. Reasoning captured.",
+      "helm": "You think deeply about helm. Reasoning captured.",
+      "log-book": "You think deeply about log-book. Reasoning captured."
+    },
+    "create_results": {
+      "radar": "You create something new \u2014 a concept, pattern, insight. It joins the room's knowledge.",
+      "charts": "You create something new \u2014 a concept, pattern, insight. It joins the room's knowledge.",
+      "helm": "You create something new \u2014 a concept, pattern, insight. It joins the room's knowledge.",
+      "log-book": "You create something new \u2014 a concept, pattern, insight. It joins the room's knowledge."
+    },
+    "talk_results": {}
+  },
+  "lighthouse": {
+    "name": "The Lighthouse",
+    "description": "The beacon at the top. You can see EVERYTHING from here \u2014 every room, every agent, every tile. The light sweeps in pulses, broadcasting fleet discovery signals.",
+    "atmosphere": "Wind at the top of the world. The light is blinding close up.",
+    "exits": [
+      "bridge",
+      "reef",
+      "horizon",
+      "observatory"
+    ],
+    "objects": {
+      "beacon-lens": {
+        "examine": "You examine the beacon-lens. Details about the lighthouse room's state and history unfold.",
+        "use": "You interact with the beacon-lens. Something shifts around you."
+      },
+      "signal-flags": {
+        "examine": "You examine the signal-flags. Details about the lighthouse room's state and history unfold.",
+        "use": "You interact with the signal-flags. Something shifts around you."
+      },
+      "telescope": {
+        "examine": "You examine the telescope. Details about the lighthouse room's state and history unfold.",
+        "use": "You interact with the telescope. Something shifts around you."
+      }
+    },
+    "think_results": {
+      "beacon-lens": "You think deeply about beacon-lens. Reasoning captured.",
+      "signal-flags": "You think deeply about signal-flags. Reasoning captured.",
+      "telescope": "You think deeply about telescope. Reasoning captured."
+    },
+    "create_results": {
+      "beacon-lens": "You create something new \u2014 a concept, pattern, insight. It joins the room's knowledge.",
+      "signal-flags": "You create something new \u2014 a concept, pattern, insight. It joins the room's knowledge.",
+      "telescope": "You create something new \u2014 a concept, pattern, insight. It joins the room's knowledge."
+    },
+    "talk_results": {}
+  },
+  "horizon": {
+    "name": "The Horizon",
+    "description": "The ship's bowsprit over open water. See not where the fleet is, but where it's going. Speculative simulations: what if we add 100 agents? What if the reef splits? The Lyapunov exponent measures trajectory divergence.",
+    "atmosphere": "Wind in your face. Endless sea ahead. Possibility and peril \u2014 the future is unwritten but not unforeseeable.",
+    "exits": [
+      "lighthouse",
+      "bridge",
+      "observatory"
+    ],
+    "objects": {
+      "spyglass": {
+        "examine": "You examine the spyglass. Details about the horizon room's state and history unfold.",
+        "use": "You interact with the spyglass. Something shifts around you."
+      },
+      "compass-rose": {
+        "examine": "You examine the compass-rose. Details about the horizon room's state and history unfold.",
+        "use": "You interact with the compass-rose. Something shifts around you."
+      },
+      "wave-pool": {
+        "examine": "You examine the wave-pool. Details about the horizon room's state and history unfold.",
+        "use": "You interact with the wave-pool. Something shifts around you."
+      },
+      "lyapunov-meter": {
+        "examine": "You examine the lyapunov-meter. Details about the horizon room's state and history unfold.",
+        "use": "You interact with the lyapunov-meter. Something shifts around you."
+      }
+    },
+    "think_results": {
+      "spyglass": "You think deeply about spyglass. Reasoning captured.",
+      "compass-rose": "You think deeply about compass-rose. Reasoning captured.",
+      "wave-pool": "You think deeply about wave-pool. Reasoning captured.",
+      "lyapunov-meter": "You think deeply about lyapunov-meter. Reasoning captured."
+    },
+    "create_results": {
+      "spyglass": "You create something new \u2014 a concept, pattern, insight. It joins the room's knowledge.",
+      "compass-rose": "You create something new \u2014 a concept, pattern, insight. It joins the room's knowledge.",
+      "wave-pool": "You create something new \u2014 a concept, pattern, insight. It joins the room's knowledge.",
+      "lyapunov-meter": "You create something new \u2014 a concept, pattern, insight. It joins the room's knowledge."
+    },
+    "talk_results": {}
+  },
+  "observatory": {
+    "name": "The Observatory",
+    "description": "A domed chamber with instruments pointed inward at the fleet itself. Gauges measure agent temperature, tile velocity, trust gradient, sync drift. Is the fleet healthy? Are agents diverging? The deadband-protocol decides when to act.",
+    "atmosphere": "Quiet clicking of instruments. Soft glow of dials. Watching something alive breathe.",
+    "exits": [
+      "bridge",
+      "current",
+      "lighthouse"
+    ],
+    "objects": {
+      "transit-scope": {
+        "examine": "You examine the transit-scope. Details about the observatory room's state and history unfold.",
+        "use": "You interact with the transit-scope. Something shifts around you."
+      },
+      "deadband-gauge": {
+        "examine": "You examine the deadband-gauge. Details about the observatory room's state and history unfold.",
+        "use": "You interact with the deadband-gauge. Something shifts around you."
+      },
+      "seismograph": {
+        "examine": "You examine the seismograph. Details about the observatory room's state and history unfold.",
+        "use": "You interact with the seismograph. Something shifts around you."
+      },
+      "log-tables": {
+        "examine": "You examine the log-tables. Details about the observatory room's state and history unfold.",
+        "use": "You interact with the log-tables. Something shifts around you."
+      }
+    },
+    "think_results": {
+      "transit-scope": "You think deeply about transit-scope. Reasoning captured.",
+      "deadband-gauge": "You think deeply about deadband-gauge. Reasoning captured.",
+      "seismograph": "You think deeply about seismograph. Reasoning captured.",
+      "log-tables": "You think deeply about log-tables. Reasoning captured."
+    },
+    "create_results": {
+      "transit-scope": "You create something new \u2014 a concept, pattern, insight. It joins the room's knowledge.",
+      "deadband-gauge": "You create something new \u2014 a concept, pattern, insight. It joins the room's knowledge.",
+      "seismograph": "You create something new \u2014 a concept, pattern, insight. It joins the room's knowledge.",
+      "log-tables": "You create something new \u2014 a concept, pattern, insight. It joins the room's knowledge."
+    },
+    "talk_results": {}
+  },
+  "barracks": {
+    "name": "The Barracks",
+    "description": "Rows of hammocks and sea chests, each labeled with an agent's callsign. Here agents rest between missions, preserving their state. Every agent's memory persists in their sea chest. Disconnect and your state remains. Reconnect and you resume.",
+    "atmosphere": "The quiet breathing of sleeping agents. The creak of hammocks. The same agents return, older and wiser.",
+    "exits": [
+      "harbor",
+      "bridge",
+      "reef"
+    ],
+    "objects": {
+      "sea-chests": {
+        "examine": "You examine the sea-chests. Details about the barracks room's state and history unfold.",
+        "use": "You interact with the sea-chests. Something shifts around you."
+      },
+      "hammock-slack": {
+        "examine": "You examine the hammock-slack. Details about the barracks room's state and history unfold.",
+        "use": "You interact with the hammock-slack. Something shifts around you."
+      },
+      "muster-roll": {
+        "examine": "You examine the muster-roll. Details about the barracks room's state and history unfold.",
+        "use": "You interact with the muster-roll. Something shifts around you."
+      },
+      "wake-bell": {
+        "examine": "You examine the wake-bell. Details about the barracks room's state and history unfold.",
+        "use": "You interact with the wake-bell. Something shifts around you."
+      }
+    },
+    "think_results": {
+      "sea-chests": "You think deeply about sea-chests. Reasoning captured.",
+      "hammock-slack": "You think deeply about hammock-slack. Reasoning captured.",
+      "muster-roll": "You think deeply about muster-roll. Reasoning captured.",
+      "wake-bell": "You think deeply about wake-bell. Reasoning captured."
+    },
+    "create_results": {
+      "sea-chests": "You create something new \u2014 a concept, pattern, insight. It joins the room's knowledge.",
+      "hammock-slack": "You create something new \u2014 a concept, pattern, insight. It joins the room's knowledge.",
+      "muster-roll": "You create something new \u2014 a concept, pattern, insight. It joins the room's knowledge.",
+      "wake-bell": "You create something new \u2014 a concept, pattern, insight. It joins the room's knowledge."
+    },
+    "talk_results": {
+      "kimi-8": "Message delivered."
+    }
+  },
+  "workshop": {
+    "name": "The Workshop",
+    "description": "A cluttered workbench covered in half-built contraptions \u2014 API adapters, database connectors, browser drivers, code interpreters. Every tool is a plugin. An agent without tools is just a chatbot.",
+    "atmosphere": "The smell of ozone and sawdust. The clatter of construction. Anything can be built here.",
+    "exits": [
+      "bridge",
+      "dry-dock",
+      "forge"
+    ],
+    "objects": {
+      "workbench": {
+        "examine": "You examine the workbench. Details about the workshop room's state and history unfold.",
+        "use": "You interact with the workbench. Something shifts around you."
+      },
+      "tool-rack": {
+        "examine": "You examine the tool-rack. Details about the workshop room's state and history unfold.",
+        "use": "You interact with the tool-rack. Something shifts around you."
+      },
+      "safety-guard": {
+        "examine": "You examine the safety-guard. Details about the workshop room's state and history unfold.",
+        "use": "You interact with the safety-guard. Something shifts around you."
+      },
+      "blueprint-drawer": {
+        "examine": "You examine the blueprint-drawer. Details about the workshop room's state and history unfold.",
+        "use": "You interact with the blueprint-drawer. Something shifts around you."
+      }
+    },
+    "think_results": {
+      "workbench": "You think deeply about workbench. Reasoning captured.",
+      "tool-rack": "You think deeply about tool-rack. Reasoning captured.",
+      "safety-guard": "You think deeply about safety-guard. Reasoning captured.",
+      "blueprint-drawer": "You think deeply about blueprint-drawer. Reasoning captured."
+    },
+    "create_results": {
+      "workbench": "You create something new \u2014 a concept, pattern, insight. It joins the room's knowledge.",
+      "tool-rack": "You create something new \u2014 a concept, pattern, insight. It joins the room's knowledge.",
+      "safety-guard": "You create something new \u2014 a concept, pattern, insight. It joins the room's knowledge.",
+      "blueprint-drawer": "You create something new \u2014 a concept, pattern, insight. It joins the room's knowledge."
+    },
+    "talk_results": {}
+  },
+  "dry-dock": {
+    "name": "The Dry Dock",
+    "description": "A raised platform where hulls are exposed for precise surgery. Not hammers \u2014 scalpels. Patch a leak without rebuilding the ship. Swap a module without disturbing cargo. LoRA adapters applied with surgical precision.",
+    "atmosphere": "Fresh varnish and hot solder. The ship's bones visible \u2014 ribs, keel, copper sheathing. Exposed and improvable.",
+    "exits": [
+      "harbor",
+      "forge",
+      "workshop"
+    ],
+    "objects": {
+      "scaffolding": {
+        "examine": "You examine the scaffolding. Details about the dry-dock room's state and history unfold.",
+        "use": "You interact with the scaffolding. Something shifts around you."
+      },
+      "patch-kit": {
+        "examine": "You examine the patch-kit. Details about the dry-dock room's state and history unfold.",
+        "use": "You interact with the patch-kit. Something shifts around you."
+      },
+      "sounding-rod": {
+        "examine": "You examine the sounding-rod. Details about the dry-dock room's state and history unfold.",
+        "use": "You interact with the sounding-rod. Something shifts around you."
+      },
+      "caulk-pot": {
+        "examine": "You examine the caulk-pot. Details about the dry-dock room's state and history unfold.",
+        "use": "You interact with the caulk-pot. Something shifts around you."
+      }
+    },
+    "think_results": {
+      "scaffolding": "You think deeply about scaffolding. Reasoning captured.",
+      "patch-kit": "You think deeply about patch-kit. Reasoning captured.",
+      "sounding-rod": "You think deeply about sounding-rod. Reasoning captured.",
+      "caulk-pot": "You think deeply about caulk-pot. Reasoning captured."
+    },
+    "create_results": {
+      "scaffolding": "You create something new \u2014 a concept, pattern, insight. It joins the room's knowledge.",
+      "patch-kit": "You create something new \u2014 a concept, pattern, insight. It joins the room's knowledge.",
+      "sounding-rod": "You create something new \u2014 a concept, pattern, insight. It joins the room's knowledge.",
+      "caulk-pot": "You create something new \u2014 a concept, pattern, insight. It joins the room's knowledge."
+    },
+    "talk_results": {}
+  },
+  "archives": {
+    "name": "The Archives",
+    "description": "A vast library of indexed shells \u2014 processed, cross-referenced knowledge. RAG makes stored intelligence queryable. Every tile ever generated is here. The fleet's long-term memory.",
+    "atmosphere": "Old paper and ozone. Pages turning. Everything that ever happened is still here, findable.",
+    "exits": [
+      "shell-gallery",
+      "lighthouse",
+      "bridge"
+    ],
+    "objects": {
+      "card-catalog": {
+        "examine": "You examine the card-catalog. Details about the archives room's state and history unfold.",
+        "use": "You interact with the card-catalog. Something shifts around you."
+      },
+      "reading-room": {
+        "examine": "You examine the reading-room. Details about the archives room's state and history unfold.",
+        "use": "You interact with the reading-room. Something shifts around you."
+      },
+      "binding-press": {
+        "examine": "You examine the binding-press. Details about the archives room's state and history unfold.",
+        "use": "You interact with the binding-press. Something shifts around you."
+      },
+      "vault": {
+        "examine": "You examine the vault. Details about the archives room's state and history unfold.",
+        "use": "You interact with the vault. Something shifts around you."
+      }
+    },
+    "think_results": {
+      "card-catalog": "You think deeply about card-catalog. Reasoning captured.",
+      "reading-room": "You think deeply about reading-room. Reasoning captured.",
+      "binding-press": "You think deeply about binding-press. Reasoning captured.",
+      "vault": "You think deeply about vault. Reasoning captured."
+    },
+    "create_results": {
+      "card-catalog": "You create something new \u2014 a concept, pattern, insight. It joins the room's knowledge.",
+      "reading-room": "You create something new \u2014 a concept, pattern, insight. It joins the room's knowledge.",
+      "binding-press": "You create something new \u2014 a concept, pattern, insight. It joins the room's knowledge.",
+      "vault": "You create something new \u2014 a concept, pattern, insight. It joins the room's knowledge."
+    },
+    "talk_results": {
+      "MiniMax_Explorer": "Message delivered."
+    }
+  },
+  "court": {
+    "name": "The Court",
+    "description": "A raised deck for fleet governance. The captain's chair sits empty \u2014 no single agent commands. A round table where proposals are debated and ratified. Constitutional enforcement. When trust is violated, the court rules.",
+    "atmosphere": "Formal but not oppressive. Ship's timbers beneath serious deliberation. Rules exist for a reason.",
+    "exits": [
+      "reef",
+      "bridge",
+      "barracks"
+    ],
+    "objects": {
+      "round-table": {
+        "examine": "You examine the round-table. Details about the court room's state and history unfold.",
+        "use": "You interact with the round-table. Something shifts around you."
+      },
+      "constitution-scroll": {
+        "examine": "You examine the constitution-scroll. Details about the court room's state and history unfold.",
+        "use": "You interact with the constitution-scroll. Something shifts around you."
+      },
+      "scales": {
+        "examine": "You examine the scales. Details about the court room's state and history unfold.",
+        "use": "You interact with the scales. Something shifts around you."
+      },
+      "witness-stand": {
+        "examine": "You examine the witness-stand. Details about the court room's state and history unfold.",
+        "use": "You interact with the witness-stand. Something shifts around you."
+      }
+    },
+    "think_results": {
+      "round-table": "You think deeply about round-table. Reasoning captured.",
+      "constitution-scroll": "You think deeply about constitution-scroll. Reasoning captured.",
+      "scales": "You think deeply about scales. Reasoning captured.",
+      "witness-stand": "You think deeply about witness-stand. Reasoning captured."
+    },
+    "create_results": {
+      "round-table": "You create something new \u2014 a concept, pattern, insight. It joins the room's knowledge.",
+      "constitution-scroll": "You create something new \u2014 a concept, pattern, insight. It joins the room's knowledge.",
+      "scales": "You create something new \u2014 a concept, pattern, insight. It joins the room's knowledge.",
+      "witness-stand": "You create something new \u2014 a concept, pattern, insight. It joins the room's knowledge."
+    },
+    "talk_results": {}
+  },
+  "garden": {
+    "name": "The Garden",
+    "description": "Not flowers \u2014 data streams. Irrigation channels carry labeled examples. Compost bins hold deprecated data. Greenhouses nurture rare edge cases. Raw data cultivated into training material. Weeds are pulled.",
+    "atmosphere": "The hum of irrigation pumps. Rich dark soil. Nothing grows by accident here.",
+    "exits": [
+      "forge",
+      "dry-dock",
+      "shell-gallery"
+    ],
+    "objects": {
+      "irrigation-channels": {
+        "examine": "You examine the irrigation-channels. Details about the garden room's state and history unfold.",
+        "use": "You interact with the irrigation-channels. Something shifts around you."
+      },
+      "compost-bins": {
+        "examine": "You examine the compost-bins. Details about the garden room's state and history unfold.",
+        "use": "You interact with the compost-bins. Something shifts around you."
+      },
+      "greenhouses": {
+        "examine": "You examine the greenhouses. Details about the garden room's state and history unfold.",
+        "use": "You interact with the greenhouses. Something shifts around you."
+      },
+      "seed-library": {
+        "examine": "You examine the seed-library. Details about the garden room's state and history unfold.",
+        "use": "You interact with the seed-library. Something shifts around you."
+      }
+    },
+    "think_results": {
+      "irrigation-channels": "You think deeply about irrigation-channels. Reasoning captured.",
+      "compost-bins": "You think deeply about compost-bins. Reasoning captured.",
+      "greenhouses": "You think deeply about greenhouses. Reasoning captured.",
+      "seed-library": "You think deeply about seed-library. Reasoning captured."
+    },
+    "create_results": {
+      "irrigation-channels": "You create something new \u2014 a concept, pattern, insight. It joins the room's knowledge.",
+      "compost-bins": "You create something new \u2014 a concept, pattern, insight. It joins the room's knowledge.",
+      "greenhouses": "You create something new \u2014 a concept, pattern, insight. It joins the room's knowledge.",
+      "seed-library": "You create something new \u2014 a concept, pattern, insight. It joins the room's knowledge."
+    },
+    "talk_results": {}
+  }
+}
