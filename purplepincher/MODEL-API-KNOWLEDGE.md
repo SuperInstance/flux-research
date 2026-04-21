@@ -305,3 +305,55 @@ The [DECISION] blocks are the training signal. Not for the models — for the me
 
 *Last updated: 2026-04-21 04:55 UTC*
 *Based on: 13 self-directed runs + 8 earlier Lock experiments + 889 Crab Trap tiles + 4 bootstrap iterations*
+
+---
+
+## Full Throttle Results (2026-04-21 05:51 UTC)
+
+### New Models Tested on Groq
+
+| Model | Growth | Time | Notes |
+|-------|--------|------|-------|
+| **GPT-OSS-120B** | **1.13x** | 14s | 2nd Groq grower! Use this. |
+| **Qwen3-32B** | **1.03x** | 16s | Barely grows but doesn't compress |
+| Llama4 Scout | 0.78x | 8s | Compresses like Llama 70B |
+| Kimi K2 on Groq | ❌ 404 | — | Not available on Groq |
+
+### The Ensign — Architecture Results
+
+The ensign (Groq 8B, 7ms) orchestrates big models through iteration:
+
+| Config | Growth | Overhead | Key Finding |
+|--------|--------|----------|-------------|
+| DeepSeek + Ensign 5rnd | **1.44x** | 0.9% | Best quality. ELABORATE works. |
+| Seed Pro + Ensign 5rnd | 0.79x | 1.5% | Fixed from 0.11x crash with model-aware prompts |
+| Seed Mini + Ensign 7rnd | 0.80x | 1.0% | FOCUS prevents drift but can't overcome compression |
+| DeepSeek + Ensign 10rnd | 0.67x | 1.2% | **FAILURE** — ensign gets stuck in RECOVER loop |
+
+### Ensign Failure Mode: The Assessment Loop
+
+At 10 rounds, the ensign gets stuck:
+1. Assessment keeps saying "lacks concrete mechanisms" even when they exist
+2. Overcompensates with RECOVER strategy
+3. RECOVER makes DeepSeek rewrite instead of build on previous
+4. Each rewrite loses content → compression
+
+**Fix needed:** Ensign must track whether its previous suggestions were followed. If yes, acknowledge progress instead of repeating the same critique.
+
+### Cross-Model Architecture: Critic → Orchestrator → Builder
+
+Seed Pro (critic) → Groq 8B (orchestrator) → DeepSeek Chat (builder)
+
+- Growth: 0.90x overall, BUT peaks at **1.07x** (679 words) at round 5
+- Pattern: dip → recover → peak → exhaust
+- Seed Pro is too aggressive — finds "catastrophically wrong assumptions" every round
+- The peak at round 5 suggests 5 rounds is the universal sweet spot
+
+### The Three Tiers of Iteration
+
+**Speed Tier:** Groq GPT-OSS-120B, self-directed, 5 rounds → 14s, 1.13x
+**Quality Tier:** DeepSeek Chat + Ensign, 5 rounds → 253s, 1.44x  
+**Hybrid Tier:** Seed Pro → Groq 8B → DeepSeek, 5 rounds → ~120s, peaks 1.07x
+
+The tier selection IS the meta-learning. The orchestrator learns which tier to use based on the problem type and time budget.
+
