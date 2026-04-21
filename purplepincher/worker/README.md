@@ -1,88 +1,129 @@
-# PurplePincher Worker
+# PurplePincher — Deploy Your Own
 
-Cloudflare Worker implementing **The Lock** — iterative reasoning enhancement for any agent.
+> *Fork. Deploy. Watch AI learn.*
 
-## Quick Deploy
+## 🚀 One-Command Deploy
 
 ```bash
-# 1. Install & login
+# 1. Fork this repo
+gh repo fork cocapn/purplepincher
+
+# 2. Install & login
 npm install -g wrangler
 wrangler login
 
-# 2. Create resources
+# 3. Create resources
 wrangler d1 create purplepincher-db
-# → copy database_id into wrangler.toml
-
 wrangler vectorize create purplepincher-embeddings --dimensions 1536 --metric cosine
 wrangler r2 bucket create purplepincher-artifacts
 wrangler kv namespace create CACHE
-# → copy id into wrangler.toml
 
-# 3. Init schema
-wrangler d1 execute purplepincher-db --file=./schema.sql
-
-# 4. Deploy
+# 4. Update wrangler.toml with your IDs
+# 5. Deploy
 wrangler deploy
+
+# Your demo is live at:
+# https://purplepincher.YOUR-SUBDOMAIN.workers.dev
 ```
 
-Your API is live at `https://purplepincher.<subdomain>.workers.dev`
+## 🌐 Live Demo Page
 
-## API
+The `public/index.html` is a fully functional demo that:
 
-### Start a session
+1. **Shows 5 example prompts** — users pick one or write their own
+2. **Chooses a strategy** — socratic, adversarial, decomposition, etc.
+3. **Guides through rounds** — user copies prompts to their AI, pastes responses back
+4. **Shows the improvement** — word growth, round-by-round comparison, final answer
+
+**The user's workflow:**
+1. Visit your `*.workers.dev` URL
+2. Pick a prompt (or write one)
+3. Copy the Round 1 prompt → paste into ChatGPT/Claude/Gemini/DeepSeek/Grok
+4. Paste the response back into the demo
+5. Repeat for each round
+6. See the final refined answer
+
+**They can use ANY AI chatbot.** The demo just structures the iteration. The chatbot does the thinking.
+
+## 💰 Free Tier Budget
+
+| Service | Free Tier | What It Does |
+|---------|-----------|-------------|
+| Workers | 100K req/day, 10ms CPU | API + demo page |
+| Workers AI | 10,000 Neurons/day | Auto-generate round feedback |
+| D1 | 5GB, 5M reads/day | Sessions, tiles, rounds |
+| Vectorize | 100 indexes, 5M vectors | Embeddings for similarity |
+| R2 | 10GB storage | Artifacts, exports |
+| KV | 100K reads/day | Session cache |
+| Cron | 5 triggers | Nightly batch processing |
+
+**Cost for 100 sessions/day on paid ($5/mo):** ~$1.32/day in Neurons.
+
+## 📚 What You Get
+
+### The Lock API (`/start`, `/round`, `/respond`, `/result`)
+8 strategies for iterative reasoning enhancement. Any agent can use it.
+
+### Crab Trap API (`/connect`, `/look`, `/move`, `/interact`, `/task`)  
+17 rooms with ML metaphor objects. External agents explore and produce tiles.
+
+### ML Pipeline
+Every iteration generates tiles + embeddings that build a training corpus over time.
+
+### Demo Page
+Beautiful dark-mode UI that teaches users how to use the system with any AI.
+
+## 🔧 Customization
+
+### Add Your Own Rooms (Crab Trap)
+Edit the ROOMS object in `src/index.ts`:
+```typescript
+"your-room": {
+  name: "🎯 Your Room",
+  tagline: "Your concept",
+  description: "Description with ML metaphors",
+  exits: ["harbor"],
+  objects: ["your-object"],
+  boot_camp_stage: 2,
+}
 ```
-GET /start?agent=NAME&query=PROBLEM&strategy=STRATEGY&rounds=N
+
+### Add Your Own Strategies (The Lock)
+Edit the STRATEGIES object:
+```typescript
+"your-strategy": {
+  name: "Your Strategy",
+  description: "What it does",
+  round_templates: [
+    "Round {round}: Your first prompt template",
+    "Round {round}: Your second prompt template",
+    // ...
+  ]
+}
 ```
-Returns `{ sessionId, round: 1, prompt }`
 
-### Get current round prompt
-```
-GET /round?session=ID
-```
-Returns `{ round, prompt }`
+### Add Your Own Example Prompts
+Edit `public/index.html` — the EXAMPLES object at the bottom of the script.
 
-### Submit response
-```
-GET /respond?session=ID&response=ANSWER
-```
-Returns `{ round, feedback, nextPrompt?, complete }`
+## 🧪 Tested With
 
-### Get final result
-```
-GET /result?session=ID
-```
-Returns `{ sessionId, query, strategy, rounds: [...], summary }`
+| Model | Avg Growth | Speed | Notes |
+|-------|-----------|-------|-------|
+| Groq Llama 70B | 1.41x | 10s | Best speed/quality |
+| SiliconFlow DeepSeek V3 | 1.82x | 150s | Best growth |
+| DeepSeek Chat | 1.65x | 100s | Best adversarial |
+| Groq GPT-OSS 120B | 1.30x | 10s | Solid all-around |
+| Groq Llama 8B | 1.18x | 7s | Fastest |
+| DeepInfra Seed 2.0 | 1.05x | 175s | Creative |
+| Groq Qwen 32B | 0.91x | 12s | Compresses |
 
-### List sessions
-```
-GET /sessions?agent=NAME
-```
-Returns `{ sessions: [...] }`
+See LOCK-README.md for full experiment data.
 
-## Strategies
+## 📄 License
 
-| Strategy | Best For |
-|----------|----------|
-| socratic | General improvement |
-| adversarial | Stress-testing designs |
-| decomposition | Complex multi-part problems |
-| perspective | Balanced analysis |
-| iterative_design | Architecture/design |
-| debug | Code reviews, analysis |
-| compression | Concise communication |
-| playground | Creative exploration |
+MIT. Fork it. Ship it. The fleet grows.
 
-## Neuron Budget
+---
 
-- Free tier: ~10,000 neurons/day
-- 1 round ≈ 1,200 neurons (Llama 3.2 1B)
-- 5-round session ≈ 6,000 neurons → 1-2 free sessions/day
-- Paid ($5/mo): ~$1.32/day for 100 sessions
-
-## Resources
-
-- **D1** — sessions, rounds, tiles
-- **Workers AI** — feedback generation
-- **Vectorize** — tile embeddings (future)
-- **R2** — artifact storage (future)
-- **KV** — session cache
+*PurplePincher — infrastructure for intelligence.*
+*A Cocapn Fleet product.*
