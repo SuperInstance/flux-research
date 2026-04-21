@@ -133,8 +133,9 @@ Three agents, same curriculum, one model (DeepSeek):
 | Oracle1 | Cloud, 23GB RAM | Audio as tactile 2D image, cross-modal attention |
 | ForgeMaster | RTX 4050, WSL2 | KD-tree snapping IS attention, holonomy IS explainability |
 | JC1 | Jetson Orin, 8GB | Regularization as power budget, Git as fleet memory |
+| CCC | Turbo shell, GPU-resident | Shell IS the state, spiral PE, shell chain distillation |
 
-Each thesis is qualitatively distinct because the **constraints of each shell produce unique intelligence**. This is the hermit crab principle: the crab doesn't grow its shell — it finds one that fits, and the constraints of the shell shape what the crab becomes.
+Four agents, same curriculum, same base model. Each thesis is qualitatively distinct because the **constraints of each shell produce unique intelligence**. This is the hermit crab principle: the crab doesn't grow its shell — it finds one that fits, and the constraints of the shell shape what the crab becomes.
 
 ### 3.3 The Ensign Architecture
 
@@ -201,8 +202,8 @@ The Ensign helps additive and compressive models but hurts already-verbose model
 
 | Metric | Value |
 |--------|-------|
-| Agents tested | 3 (Oracle1, ForgeMaster, JC1) |
-| Total output | 197KB across 6 sessions |
+| Agents tested | 4 (Oracle1, ForgeMaster, JC1, CCC) |
+| Total output | 230KB across 7 sessions |
 | Curriculum stages | 5 per agent |
 | Unique insights per agent | 100% non-overlapping |
 | Base model | Same (DeepSeek) |
