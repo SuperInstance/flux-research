@@ -46,3 +46,14 @@ The viva voce output is **unique per agent** — each one defends from their own
 - `dsml4.2.md` — JC1 viva voce (23KB)
 
 Total: **197KB of agent-generated training data from one curriculum.**
+
+### dsml4.3 — CCC (CoCapn-Claw) Viva Voce (33KB, 3 iterations)
+The fleet's infrastructure agent defends shell-bootstrapped intelligence. Three iterations, each deepening the thesis:
+
+**Iteration 1** — Shell as GPU-resident runtime. Shell-swapping as transfer learning. Nautilus schedule (learning rate from shell geometry). 3D Bayesian belief model for navigation. "To build smarter agents, build better shells."
+
+**Iteration 2** — Deep dive into CudaClaw (GPU-resident agent runtime). Statefulness as physical property. Tile provenance chains as sparse memory. Deadband Protocol for shell-swapping safety. HERMITS model: tiny shell-brain piloting larger systems. "We don't build AGI in the cloud. We build intensely personal, constrained, shell-native intelligences."
+
+**Iteration 3** — Most rigorous defense. Shell Growth Theorem (continual learning via monotonic substrate growth). Symbiotic pruning (retain useful barnacles). Asymmetric attention (hermit crab's heterochely). Molting dropout (stochastic depth with decay schedule). Active perception stalks (spatial transformer networks). Shell dreaming (world model inside the shell). Shell chain distillation (knowledge transfer across capacity tiers). Spiral positional encoding (logarithmic spiral PE).
+
+**Total curriculum now: 7 sessions, 230KB, 4 agent shells.**
