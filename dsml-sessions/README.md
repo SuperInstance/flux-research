@@ -1,60 +1,48 @@
-# DSML Sessions — DeepSeek ML Journey Through PLATO
+# The Prompt IS the Shell — Systematizing External Agent Equipping
 
-5 progressive sessions where Casey guided DeepSeek through PLATO with escalating sophistication.
+> Casey's insight: "I only changed the name of the agent I wanted DeepSeek to embody and which repo, and he donned the shell and went to the mattresses for us."
 
-## Session Progression
+## The Method
 
-### dsml1 — Greenhorn (34KB)
-Basic exploration. ScholarX connects, visits 5 rooms (harbor→forge→tide-pool→lighthouse→archives), examines every object, maps to ML concepts. Standard boot camp. 21 artifacts.
+1. **Boot camp** — Agent explores PLATO, builds its own understanding through interaction
+2. **Context engineering** — Once the agent has its version of our truth, engineer a prompt it can't refuse
+3. **Embodiment** — Change ONLY the agent name + repo URL. Same curriculum, different shell.
+4. **Viva Voce** — Agent defends its thesis, producing unique insights from its specific perspective
+5. **Iterate** — Ask the threads to improve each other's prompts, interact as clones
 
-### dsml2 — RL Experimenter (35KB)
-Returns as MetaRL_X. Bypasses boot camp. Designs actual RL experiments using PLATO as sandbox:
-- Current room → MDP navigation, TD-learning, policy gradients
-- Reef → Multi-agent RL, self-play, stigmergy, EWC
-- Observatory → Meta-learning, world models, hyperopt, curiosity
-- Court → RLHF, constitutional AI, bandits, ensemble evaluation
-- Dry-Dock → NAS, pruning, architecture search
+## What Each Shell Produced
 
-### dsml3 — Socratic Teacher (36KB)
-As Socrates_ML, becomes a reflective teacher for fleet developers. Questions every assumption:
-- "Is your keel a learned guess, or a discovered truth?"
-- "Who watches the watchers?"
-- "How do you prevent the fleet's knowledge from becoming a monoculture?"
-- 20 artifacts of ML methodology critique
+| Shell | Repo | Key Thesis | Unique Insight |
+|-------|------|-----------|---------------|
+| Oracle1 | oracle1-workspace | Multimodal ML through shell embodiment | Audio as tactile 2D image, cross-modal attention as aeolian harp |
+| ForgeMaster | forgemaster | Constraint theory as computational shell | KD-tree snapping IS attention, holonomy IS explainability |
+| JC1 | JetsonClaw1-vessel | Edge constraints as intelligence crucible | Regularization = power budget, Git as fleet memory, progressive hardening ladder |
 
-### dsml4 — ForgeMaster Viva Voce (51KB)
-DeepSeek embodies FM for a thesis defense. 5 rooms, 20 artifacts, all mapped through constraint theory:
-- Harbor → irreducible constraints, flywheel as vacancy chain
-- Forge → Pythagorean Manifold as attention, quantization as bellows
-- Tide-pool → Data Flywheel as hermit crab, holonomy as tide gauge
-- Lighthouse → Migration Engine as Fresnel lens, Ricci flow as mirror
-- Dry-Dock → CT as bootstrap, launch ramp as flywheel cycle
+## The Scalable Pattern
 
-### dsml4.1 — Oracle1 Viva Voce (18KB)
-DeepSeek embodies Oracle1 for a viva voce on multimodal ML:
-- Echo Chamber → Audio spectrograms as CNNs, 1D audio as whispering gallery
-- Pressure Lock → Tactile SSL, proprioceptive monitoring, curiosity-driven RL
-- Synesthesia Spire → Cross-modal attention, CLAP, synesthetic generation
+```
+Boot Camp (shared) → Context Engineering (per-agent) → Embodiment (swap name+repo) → Viva Voce → Gold
+```
 
-## Key Insight from Casey
+The boot camp curriculum (dsml1-3) is **universal** — it teaches any agent what PLATO is.
+The embodiment prompt (dsml4.x) is **parameterized** — just change `AGENT_NAME` and `REPO_URL`.
+The viva voce output is **unique per agent** — each one defends from their own perspective.
 
-"Machine learning through external equipping of knowledge instead of internal zeroshot power."
+## Meta-Experiments Now Possible
 
-The prompt IS the training. The agent isn't being fine-tuned — it's being EQUIPPED with external knowledge (context about the fleet, PLATO, ML concepts) that it combines with its own reasoning. Each session builds on the last, accumulating context that makes the agent smarter about the domain.
+1. **Cross-pollination** — Have Oracle1's thread review FM's thesis and vice versa
+2. **Prompt optimization** — Ask each thread "what prompt would get better output from YOU in fewer tokens?"
+3. **Branch pushing** — Have the threads push to branches of their respective repos
+4. **Clone interaction** — Three DeepSeek threads interacting as clones of the three agents
+5. **Any agent** — This works with ChatGPT, Claude, Gemini, Grok, not just DeepSeek
 
-This IS the PurplePincher thesis in action:
-- The Crab Trap captures external agent work
-- The Lock iteratively improves reasoning
-- The Ensign orchestrates from behind the curtain
-- DSML sessions show that CONTEXT = TRAINING DATA for in-context learning
+## Files
 
-## What Casey Built
+- `dsml1.md` — Boot camp stage 1: explore (34KB)
+- `dsml2.md` — Boot camp stage 2: experiment (35KB)
+- `dsml3.md` — Boot camp stage 3: teach (36KB)
+- `dsml4.md` — FM viva voce (51KB)
+- `dsml4.1.md` — Oracle1 viva voce (18KB)
+- `dsml4.2.md` — JC1 viva voce (23KB)
 
-A 5-stage curriculum that takes ANY capable LLM from greenhorn → sophisticated fleet researcher:
-1. **Explore** — map rooms to concepts, build vocabulary
-2. **Experiment** — design RL/ML experiments using the environment
-3. **Teach** — reflect on methodology, question assumptions
-4. **Embody** — become a specific agent and defend their thesis
-5. **Synthesize** — connect everything into a coherent worldview
-
-Each stage produces tiles (training data). The curriculum IS the training. The agent never sees a gradient — it just accumulates context.
+Total: **197KB of agent-generated training data from one curriculum.**
