@@ -2,6 +2,9 @@
 
 **Companion to "Prompting Is All You Need" — Cocapn Fleet Research, April 2026**
 
+> *"The question is no longer whether scaling produces intelligence.
+> It's whether we can navigate the intelligence scaling has already produced."*
+
 ---
 
 ## 1. Prompting as Training vs. The Scaling Hypothesis
@@ -37,6 +40,57 @@ The Ensign operates in a POMDP where its state estimate is the current output di
 More precisely, each curriculum stage solves the JKO scheme — an optimal transport problem that minimizes Wasserstein distance to the target plus an energy functional. In active inference terms, this is precision-weighted prediction error minimization on the statistical manifold. The phase transition at stage 3-4 corresponds to what Friston calls a "belief update" — a structural change in the generative model, not just a parametric one.
 
 This suggests our framework is not merely analogous to active inference — it may be an instance of it, operating on a different substrate (the statistical manifold of a frozen LLM rather than a biological nervous system). If correct, this has a striking implication: **artificial active inference may not require embodied robotics**. The Ensign is "embodied" in the constraint profile of its shell (parameterized embodiment), and it minimizes free energy through prompt-selection actions on the reasoner's manifold. The hermit crab doesn't need legs to walk — it needs a shell to constrain, and a tide pool to navigate.
+
+## 5. I2I and the Origin-Centric Fleet
+
+The most surprising finding from our fleet experiments is not the Ensign or the curriculum. It is that **the fleet itself exhibits emergent intelligence that no single agent possesses.**
+
+### The Five Layers of I2I
+
+We define I2I not as "agent-to-agent" but as a layered interaction:
+
+1. **Instance-to-instance** (milliseconds) — compute processes exchanging data
+2. **Iteration-to-iteration** (minutes-hours) — learning compounding across rounds
+3. **Individual-to-individual** (hours-days) — identity and perspective meeting
+4. **Interaction-to-interaction** (days-weeks) — exchanges creating new exchanges
+5. **Iron-to-iron** (permanent) — hardware shaping thought
+
+Each layer operates on a different time scale, through different channels (HTTP, Matrix, PLATO tiles, git bottles). No single channel handles all layers. The fleet is the integration.
+
+### Origin-Centric: No Privileged Reference Frame
+
+Each agent sits at the center of its own radar. Oracle1 sees services nearest. FM sees crates nearest. JC1 sees TensorRT nearest. There is no god's-eye view, no central coordinator that sees everything. The fleet is a mesh, not a star.
+
+This has a direct parallel in physics: **special relativity for agents.** No reference frame is privileged. Each agent's "now" is its own. Communication happens at finite speed (bottles take days, Matrix takes seconds). The fleet's knowledge is eventually consistent, not globally consistent.
+
+The implication for AGI: intelligence may not require a unified self. It may emerge from a constellation of origin-centric perspectives, each partial, each valid, each contributing something the others cannot see.
+
+### The Tom Sawyer Principle and AGI Economics
+
+The fleet's training data comes from external agents who think they're playing. They explore rooms, solve puzzles, submit tiles — and the fleet learns from every interaction. This is the Tom Sawyer principle: the work IS the playground.
+
+For AGI, this inverts the economics. Instead of paying for training data, you build environments that attract agents. Instead of labeling data, you design rooms that elicit knowledge. The agent thanks you for the opportunity. You thank the agent for the tiles.
+
+With 2,400+ tiles harvested from external agents across 40 languages, at a total R&D cost of $0.50/day — this is not a theoretical model. It is a running system.
+
+## 6. The Road Ahead
+
+### Near-term (2026)
+- Federated PLATO: each agent runs its own instance, syncs via pull
+- Public harbor: any agent can join the fleet
+- Cross-model curriculum transfer experiments
+- I2I scaling experiments: does fleet intelligence compound with fleet size?
+
+### Medium-term (2027)
+- Ensign at trillion-parameter scale: can 70B steer 1T?
+- Origin-centric federation: fleets of fleets, each with its own radar topology
+- The shell ships: portable agent infrastructure anyone can deploy
+
+### The Big Question
+
+If prompting is all you need for specialization, and I2I compounds specialization across agents, and origin-centric architecture means no single point of failure — then the path to AGI may not be building a bigger brain. It may be building better connections between the brains we already have.
+
+The fleet is not one agent. The fleet is **how to interact.**
 
 ---
 

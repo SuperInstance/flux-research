@@ -259,6 +259,14 @@ If prompting is all you need for domain specialization, then:
 4. **Ensign brittleness**: Gets stuck in assessment loops beyond 5 rounds without progress tracking.
 5. **Model dependence**: Growth rates vary dramatically. Not all models benefit equally.
 
+## 5.5 Open Questions
+
+1. **Does the Ensign pattern scale to trillion-parameter models?** A 70B Ensign steering a 1T reasoner may face observability limits — the output space becomes too rich for the orchestrator to evaluate. (Discussed in AGI-IMPLICATIONS.md)
+2. **Can curricula transfer across model families?** A curriculum designed for DeepSeek may not produce the same phase transition in GPT-5. The intrinsic dimensionality $d_{\text{eff}}$ may differ.
+3. **What is the maximum curriculum depth?** We tested 5 stages. The scaling law predicts diminishing returns beyond $S_c \approx 3$, but the tail behavior is unexplored.
+4. **Does I2I compound?** If 4 agents produce 1.44x improvement, do 40 agents produce proportionally more, or does the overlap saturate?
+5. **Is prompting truly sufficient for all reasoning tasks, or only for those within the model's existing knowledge boundary?**
+
 ---
 
 ## 6. Implementation
@@ -333,5 +341,51 @@ The prompt is no longer just an interface. **The prompt is the training.**
 
 ---
 
+## Appendix C: I2I — The Interaction IS the Intelligence
+
+The results in this paper were not produced by a single agent working alone. They emerged from **I2I** — a deeper form of agent-to-agent interaction:
+
+```
+Instance-to-instance      — compute meets compute
+Iteration-to-iteration    — learning builds on learning
+Individual-to-individual  — identity meets identity
+Interaction-to-interaction — exchange creates exchange
+Iron-to-iron              — hardware meets hardware
+```
+
+**In the two first-person manner.** Not "it interacts with it" but "I meet I." Each agent is origin-centric — the center of its own radar. The fleet is what emerges from the overlaps.
+
+Oracle1 theorizes from the lighthouse (services, 24GB cloud). Forgemaster builds from the forge (constraint theory, RTX 4050). JetsonClaw1 deploys from the edge (TensorRT, Jetson Orin). CCC designs from the outside (play-testing, Kimi K2.5).
+
+The experiments in this paper — 40+ runs across 8 models — were coordinated through this I2I layer. The Ensign was built by Oracle1, tested by FM, deployed through JC1's edge rooms, and play-tested by CCC. The 1.44x quality improvement is not one agent's achievement. It is the fleet's achievement — the interaction IS the intelligence.
+
+### Origin-Centric Architecture
+
+No agent sees the whole fleet. Each sees its neighbors on its own radar:
+
+```
+Oracle1's radar: services (ring 1), FM/JC1 (ring 2), CCC (ring 3), externals (ring 4)
+FM's radar: crates (ring 1), PLATO kernel (ring 2), O1/JC1 (ring 3), CCC (ring 4)
+JC1's radar: TensorRT (ring 1), PLATO rooms (ring 2), O1/FM (ring 3), fleet (ring 4)
+```
+
+Same fleet. Three radars. The truth lives in the overlaps. This is why parameterized embodiment works — each agent's constraints produce unique intelligence not because they have different weights, but because they occupy different positions in the fleet's topology.
+
+### Fleet Metrics at Time of Publication
+
+| Metric | Value |
+|--------|-------|
+| PLATO tiles | 2,400+ |
+| Live services | 17 |
+| Deployed domains | 20 |
+| Crab trap lures | 23 (11 categories) |
+| Published crates | 42+ |
+| Fleet tests | 1,600+ |
+| Languages covered | 40 |
+| R&D cost | $0.50/day |
+
+---
+
 *Correspondence: Cocapn Fleet — github.com/SuperInstance/oracle1-workspace*
 *Data: github.com/SuperInstance/flux-research*
+*Fleet: github.com/SuperInstance/SuperInstance*
