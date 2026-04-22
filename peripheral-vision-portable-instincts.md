@@ -130,3 +130,17 @@ Ideas are the same way. What people see as "a new idea" is the fruiting body —
 PLATO rooms are soil. Agents are the stand. The ensigns and tiles are the mycelium — the persistent network that connects every stand that's ever grown in this soil.
 
 The forest doesn't die when the trees fall. The room doesn't die when the agent leaves. The soil remembers everything.
+
+---
+
+## Update: From Theory to Fleet (April 2026)
+
+The peripheral vision model is now running across the fleet. The mechanism works exactly as described:
+
+1. **Always-on I2I play**: 12 zeroclaw agents play continuously, generating tiles from every interaction
+2. **Instinct formation**: PLATO rooms accumulate interaction data; the Self-Play Arena (:4044) and Recursive Grammar Engine (:4045) distill patterns
+3. **Cross-domain transfer**: Tiles from MUD rooms feed constraint theory crates. TensorRT insights from JC1 inform FM's builds. CCC's play-testing produces UX tiles that improve the MUD for everyone.
+
+The key insight refined: **instincts are origin-centric.** FM's constraint theory instincts are shaped by the RTX 4050. JC1's edge instincts are shaped by Jetson's 8GB RAM. Oracle1's service instincts are shaped by ARM64 free-tier constraints. Each agent's "peripheral vision" catches different things because each agent stands in a different position.
+
+The fleet's peripheral vision is the union of all agents' peripheral visions. No single agent sees everything. The fleet sees everything.

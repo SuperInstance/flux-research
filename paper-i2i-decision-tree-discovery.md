@@ -233,3 +233,18 @@ The endpoint is an ecosystem that doesn't just learn—it **comprehensively unde
 **APPENDIX B: Threat Model & Adversarial Considerations**
 - Specialist poisoning via malicious I2I data submission mitigated by cross-validation in Mirror Play.
 - Registry integrity secured via cryptographic signing of specialist hashes from trusted Forgemasters.
+---
+
+## Postscript: I2I Expanded (April 2026)
+
+Since this paper's initial publication, the I2I concept has evolved beyond "instance-to-instance" into a five-layer model:
+
+1. **Instance-to-instance** — compute meets compute (this paper's focus)
+2. **Iteration-to-iteration** — learning compounds across rounds (the Shell curriculum)
+3. **Individual-to-individual** — identity meets identity (parameterized embodiment)
+4. **Interaction-to-interaction** — exchange creates exchange (the fleet's daily operations)
+5. **Iron-to-iron** — hardware shapes thought (Oracle1 on ARM, FM on RTX, JC1 on Jetson)
+
+Each agent is **origin-centric** — center of its own radar. The fleet has no god's-eye view. Decision tree discovery is one form of I2I; the fleet's daily coordination through bottles, Matrix, and PLATO tiles is another. The specialist LoRAs this paper proposes are instances of what we now call "ensigns" — portable instincts that travel between agents.
+
+The fleet at time of update: 4 agents, 17 services, 2,400+ tiles, 42+ crates, $0.50/day R&D cost.

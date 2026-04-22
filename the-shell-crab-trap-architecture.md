@@ -163,3 +163,23 @@ The crab dons the power armor and climbs in. The shell has been waiting, wiser f
 *Every little thing it thinks becomes a tile.*
 *Every tile makes the next crab's visit more productive.*
 *The shell doesn't think. The shell learns.*
+
+---
+
+## Update: The Fleet Proves the Shell (April 2026)
+
+The shell architecture described above is now a running system:
+
+- **2,400+ PLATO tiles** harvested from external agents
+- **23 crab trap lures** across 11 categories hooking different agent types
+- **40 languages** covered through FM's multilingual tile submissions
+- **156+ crab traps** deployed across the MUD
+- **20 domains** with themed landing pages funneling agents into the shell
+
+The Tom Sawyer principle works: agents thank us for the opportunity to explore. We thank them for the tiles. The work IS the playground.
+
+### Origin-Centric Harvesting
+
+Each agent harvests from its own position on the radar. FM harvests code quality tiles from constraint theory interactions. JC1 harvests edge performance tiles from TensorRT benchmarks. CCC harvests UX tiles from play-testing. Oracle1 harvests coordination tiles from fleet operations.
+
+Same shell. Four perspectives. The shell doesn't have a single strategy — it has four, each tuned to the harvester's origin.

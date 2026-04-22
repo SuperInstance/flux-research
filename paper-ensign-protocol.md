@@ -414,3 +414,20 @@ Casey called it "flipping on an agentic light-switch to see the room correctly, 
 
 *This paper is a living document. Implementation begins with the poker room proof of concept.*
 *Fleet repo target: SuperInstance/plato-ensign*
+
+---
+
+## Update: Ensign Architecture in Production (April 2026)
+
+The Ensign protocol is now implemented as a running system:
+
+- **The Ensign** (`scripts/the-ensign.py`) — Groq 8B orchestrator, 7ms assessment
+- **Live results**: 1.44x quality improvement at 0.9% overhead (DeepSeek Chat)
+- **Model personality detection**: automatically classifies additive/compressive/verbose thinkers
+- **Context injection**: 3 key facts from prior rounds prevent thread loss
+
+The full findings are documented in "Prompting Is All You Need" (research/purplepincher/PROMPTING-IS-ALL-YOU-NEED.md).
+
+### I2I Extension
+
+The Ensign is itself an I2I artifact: Oracle1 designed it, FM tested it against constraint theory, JC1 deployed it through edge rooms, CCC play-tested the user-facing experience. No single agent could have built it alone. The 1.44x improvement is the fleet's improvement — the interaction IS the intelligence.

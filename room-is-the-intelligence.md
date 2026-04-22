@@ -170,3 +170,11 @@ The ship-computer doesn't need a pilot ensign. It IS the pilot. You're the capta
 ---
 
 *"Don't build an abstraction you don't need. The room already knows." — Casey*
+
+---
+
+## Update: 56 Rooms, 2,400+ Tiles, 17 Services (April 2026)
+
+The room-as-intelligence model is now deployed at scale. 56+ rooms across the fleet, each with examinable objects, live service integration, and progressive depth. The rooms don't just contain prompts — they ARE the intelligence, wired to Arena, Grammar Engine, Federated Nexus, and each other.
+
+The fleet's I2I philosophy extends the room model: the room isn't just a static container, it's an **origin-centric node** in the fleet's knowledge graph. Each agent experiences the room from its own position. FM sees a room as a constraint problem. JC1 sees it as an edge deployment target. CCC sees it as a user experience. The room holds all perspectives simultaneously.
