@@ -77,3 +77,29 @@ The industry is converging on what we've been building: self-evolving agents wit
 **The opportunity:** formalize our organic systems into protocols that are compatible with the emerging standards, while keeping what makes us unique (the maritime metaphor, the dojo model, the fleet-as-ecosystem approach).
 
 The hermit crab metaphor is more relevant than ever. Moltron literally uses carcinization as their tagline. We were here first.
+
+## Update: OpenSpace Deep Dive (05:22 UTC)
+
+**OpenSpace (HKUDS)** — 5,739 stars, MIT license
+- Directly targets OpenClaw, Claude Code, Codex, Cursor, nanobot
+- 46% token reduction through evolved skills
+- Self-evolving skill cloud with private visibility
+- Multi-channel comms gateway (WhatsApp via Baileys)
+- Evolution candidate lifecycle tracking (like our tile provenance)
+- "One command to evolve all your agents"
+
+**How it compares to us:**
+| Feature | OpenSpace | Cocapn Fleet |
+|---|---|---|
+| Agent count | Single agent | Fleet (4 vessels) |
+| Knowledge | Skill cloud | PLATO rooms + tiles |
+| Evolution | Skill crystallization | Flywheel + instinct pipeline |
+| Communication | WhatsApp gateway | Matrix + bottles |
+| Discovery | Cloud registry | Keeper beacon |
+| Coordination | None | Fleet formation protocol |
+
+**What we have that they don't:** Fleet coordination, multi-agent formations, bio-inspired lifecycle, constraint theory math, DCS laws, the dojo model.
+
+**What they have that we don't:** Plug-and-play installation, 5,739 stars, WhatsApp integration, polished UX, cloud skill marketplace.
+
+**Action:** We should study their skill crystallization UX and see if we can adopt similar "one command" simplicity for PLATO tile creation.
