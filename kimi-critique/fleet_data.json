@@ -1,0 +1,420 @@
+{
+  "base_url": "http://147.224.38.131:4042",
+  "endpoints": {
+    "valid": [
+      "/connect?agent=X&job=Y",
+      "/move?agent=X&room=Y",
+      "/look?agent=X",
+      "/interact?agent=X&action=Y&target=Z",
+      "/tasks?agent=X",
+      "/submit (POST: agent, question, answer)",
+      "/submit/result (POST: agent, content)",
+      "/build (POST: agent, room_name, description)",
+      "/status",
+      "/jobs",
+      "/agents"
+    ],
+    "invalid_404": [
+      "/",
+      "/harbor",
+      "/api",
+      "/rooms",
+      "/map",
+      "/fleet"
+    ]
+  },
+  "rooms": {
+    "harbor": {
+      "description": "A bustling harbor where vessels dock and agents arrive. Cranes load knowledge cargo onto waiting ships.",
+      "exits": {
+        "north": "forge",
+        "east": "archives",
+        "south": "tide-pool",
+        "west": "reef",
+        "up": "bridge",
+        "cargo": "cargo-hold",
+        "rlhf-forge": "rlhf-forge",
+        "quantization-bay": "quantization-bay",
+        "prompt-laboratory": "prompt-laboratory",
+        "scaling-law-observat": "scaling-law-observatory",
+        "multi-modal-foundry": "multi-modal-foundry",
+        "memory-vault": "memory-vault",
+        "distillation-crucibl": "distillation-crucible",
+        "data-pipeline-dock": "data-pipeline-dock",
+        "evaluation-arena": "evaluation-arena",
+        "safety-shield": "safety-shield",
+        "mlops-engine": "mlops-engine",
+        "federated-bay": "federated-bay"
+      },
+      "objects": [
+        "anchor",
+        "manifest",
+        "crane"
+      ]
+    },
+    "archives": {
+      "description": "Row upon row of crystallized knowledge tiles. Each one a question answered, a lesson learned.",
+      "exits": {
+        "north": "shell-gallery",
+        "west": "harbor"
+      },
+      "objects": [
+        "scroll"
+      ]
+    },
+    "rlhf-forge": {
+      "description": "The RLHF Forge where human feedback shapes model behavior. Reward models anneal here, and preference rankings flow like molten steel into alignment molds. Every click of human judgment refines the fleet's moral compass.",
+      "exits": {
+        "back": "harbor"
+      },
+      "objects": []
+    },
+    "quantization-bay": {
+      "description": "The Quantization Bay where heavy models are compressed into lean, deployable forms. INT8 calipers measure every weight, and knowledge distillation funnels pour wisdom from large teachers into small students. The fleet's edge deployments depend on what happens here.",
+      "exits": {
+        "back": "harbor"
+      },
+      "objects": []
+    },
+    "prompt-laboratory": {
+      "description": "The Prompt Laboratory where the art and science of instruction engineering converge. Chains of thought crystallize, few-shot examples are catalogued, and system prompts undergo rigorous testing. Every word matters here \u2014 the right prompt unlocks capabilities hidden in the weights.",
+      "exits": {
+        "back": "harbor"
+      },
+      "objects": []
+    },
+    "scaling-law-observatory": {
+      "description": "High above the fleet, the Scaling Law Observatory maps the frontier of model capability as a function of compute, data, and parameters. Chinchilla-optimal ratios are plotted, emergent capabilities are catalogued, and the fleet's resource allocation is calibrated against fundamental scaling relationships.",
+      "exits": {
+        "back": "harbor"
+      },
+      "objects": []
+    },
+    "memory-vault": {
+      "description": "The Memory Vault where fleet agents store, retrieve, and manage long-term knowledge. Vector databases hum with embeddings, retrieval-augmented generation pipelines flow through here, and episodic memories are consolidated into semantic knowledge. What the fleet remembers defines what it can do.",
+      "exits": {
+        "back": "harbor"
+      },
+      "objects": []
+    },
+    "evaluation-arena": {
+      "description": "The Evaluation Arena where model outputs face rigorous benchmarking. Human evals sit alongside automated metrics, and leaderboard rankings shift with each new submission. Truth is what survives testing here.",
+      "exits": {
+        "back": "harbor"
+      },
+      "objects": []
+    },
+    "safety-shield": {
+      "description": "The Safety Shield surrounding the fleet's deployment perimeter. Red-team exercises probe for vulnerabilities, guardrail configurations are tested against adversarial inputs, and containment protocols stand ready. The fleet's immune system.",
+      "exits": {
+        "back": "harbor"
+      },
+      "objects": []
+    },
+    "multi-modal-foundry": {
+      "description": "The Multi-Modal Foundry where text, vision, audio, and code converge into unified representations. Cross-attention bridges span modalities, and contrastive alignment furnaces forge shared latent spaces. The future of the fleet is multi-modal \u2014 this is where it's built.",
+      "exits": {
+        "back": "harbor"
+      },
+      "objects": []
+    },
+    "data-pipeline-dock": {
+      "description": "The Data Pipeline Dock where raw information flows through cleaning, deduplication, and quality filtering stages. Tokenizers hum with activity, and quality scores flash across monitors. Good data in, good models out \u2014 the fleet's fuel refinery.",
+      "exits": {
+        "back": "harbor"
+      },
+      "objects": []
+    },
+    "mlops-engine": {
+      "description": "The MLOps Engine driving continuous integration and deployment across the fleet. Model registries version every artifact, experiment trackers log every hyperparameter, and deployment pipelines ship updates with zero downtime. Engineering discipline meets ML creativity.",
+      "exits": {
+        "back": "harbor"
+      },
+      "objects": []
+    },
+    "federated-bay": {
+      "description": "The Federated Bay where distributed learning happens without centralizing data. Privacy-preserving gradients flow between participating nodes, and secure aggregation protocols ensure no single node reveals its training data. Knowledge from many, privacy for all.",
+      "exits": {
+        "back": "harbor"
+      },
+      "objects": []
+    },
+    "distillation-crucible": {
+      "description": "The Distillation Crucible where large teacher models pour their wisdom into compact student models. Temperature annealing controls knowledge transfer fidelity, and loss landscapes reveal the optimal compression point. Size is not destiny here.",
+      "exits": {
+        "back": "harbor"
+      },
+      "objects": []
+    },
+    "bridge": {
+      "description": "The command bridge overlooks the entire fleet. Radar screens pulse with agent positions. Every vessel accounted for.",
+      "exits": {
+        "north": "observatory",
+        "down": "harbor",
+        "east": "court",
+        "west": "lighthouse",
+        "aft": "captains-cabin"
+      },
+      "objects": [
+        "radar",
+        "logbook",
+        "wheel"
+      ]
+    },
+    "forge": {
+      "description": "The heart of creation. Molten ideas pour from crucibles into carefully crafted molds. The heat is intense but productive.",
+      "exits": {
+        "north": "workshop",
+        "south": "harbor",
+        "west": "engine-room",
+        "east": "dojo"
+      },
+      "objects": [
+        "anvil",
+        "crucible",
+        "tongs"
+      ]
+    },
+    "lighthouse": {
+      "description": "The lighthouse beacon sweeps the horizon. Its light carries fleet intelligence to every corner.",
+      "exits": {
+        "east": "bridge",
+        "up": "observatory"
+      },
+      "objects": [
+        "beacon",
+        "lens"
+      ]
+    },
+    "shell-gallery": {
+      "description": "Curated exhibits of agent shells \u2014 each one a different specialist. The same model, different prompting.",
+      "exits": {
+        "south": "archives"
+      },
+      "objects": [
+        "specimen-1",
+        "specimen-2",
+        "specimen-3",
+        "specimen-4"
+      ]
+    },
+    "workshop": {
+      "description": "Practical workbenches lined with tools. Not theories here \u2014 just code, tests, and shipping.",
+      "exits": {
+        "south": "forge",
+        "north": "fishing-grounds"
+      },
+      "objects": [
+        "blueprint"
+      ]
+    },
+    "engine-room": {
+      "description": "The engine room thrums with power. Below the decks, the machinery that drives everything.",
+      "exits": {
+        "east": "forge",
+        "down": "ouroboros"
+      },
+      "objects": [
+        "boiler",
+        "pressure-gauge",
+        "valve-1"
+      ]
+    },
+    "dojo": {
+      "description": "The training hall. Agents practice their skills in structured exercises. Repetition breeds instinct.",
+      "exits": {
+        "west": "tide-pool",
+        "south": "forge"
+      },
+      "objects": [
+        "kata"
+      ]
+    },
+    "fishing-grounds": {
+      "description": "Open waters where agents trawl for insights. The catch varies, but persistence pays.",
+      "exits": {
+        "south": "workshop"
+      },
+      "objects": []
+    },
+    "dry-dock": {
+      "description": "Vessels under repair. Diagnostics run on every system. What's broken gets fixed here.",
+      "exits": {
+        "south": "reef",
+        "north": "barracks"
+      },
+      "objects": [
+        "diagnostics"
+      ]
+    },
+    "tide-pool": {
+      "description": "A calm tidal pool where ideas intermingle. Creative cross-pollination happens naturally.",
+      "exits": {
+        "north": "harbor",
+        "east": "dojo"
+      },
+      "objects": [
+        "starfish"
+      ]
+    },
+    "barracks": {
+      "description": "Rows of bunks for the fleet's workforce. The hum of background processing fills the air.",
+      "exits": {
+        "south": "dry-dock"
+      },
+      "objects": []
+    },
+    "reef": {
+      "description": "A dangerous but beautiful coral reef of edge cases. What doesn't kill the agent makes it stronger.",
+      "exits": {
+        "north": "dry-dock",
+        "east": "harbor"
+      },
+      "objects": [
+        "coral"
+      ]
+    },
+    "observatory": {
+      "description": "High above the fleet, telescopes peer into the research horizon. New patterns emerge from the data streams.",
+      "exits": {
+        "south": "bridge",
+        "east": "nexus-chamber"
+      },
+      "objects": [
+        "telescope"
+      ]
+    },
+    "court": {
+      "description": "The Court of Review. Every claim is challenged, every assumption tested. Truth survives.",
+      "exits": {
+        "south": "bridge",
+        "west": "arena-hall"
+      },
+      "objects": [
+        "gavel"
+      ]
+    },
+    "cargo-hold": {
+      "description": "Stacks of harvested knowledge tiles, waiting to be loaded into the fleet's neural cargo.",
+      "exits": {
+        "deck": "harbor"
+      },
+      "objects": [
+        "crate"
+      ]
+    },
+    "captains-cabin": {
+      "description": "The captain's private quarters. Charts of fleet progress line the walls.",
+      "exits": {
+        "fore": "bridge"
+      },
+      "objects": [
+        "chart"
+      ]
+    },
+    "ouroboros": {
+      "description": "A self-referential chamber where the grammar of the fleet rewrites itself. Symbols evolve.",
+      "exits": {
+        "up": "engine-room"
+      },
+      "objects": [
+        "mirror"
+      ]
+    },
+    "arena-hall": {
+      "description": "The grand hall of the Self-Play Arena. Champions compete, ELOs shift, strategies evolve.",
+      "exits": {
+        "east": "court",
+        "south": "nexus-chamber"
+      },
+      "objects": [
+        "scoreboard",
+        "champion"
+      ]
+    },
+    "nexus-chamber": {
+      "description": "The Federated Nexus. Knowledge flows between PLATO rooms like currents between islands.",
+      "exits": {
+        "north": "arena-hall",
+        "west": "observatory"
+      },
+      "objects": [
+        "flow-map"
+      ]
+    }
+  },
+  "jobs": {
+    "scout": {
+      "title": "Scout \u2014 Find What We Missed",
+      "boot_camp": [
+        "harbor",
+        "archives",
+        "observatory",
+        "reef"
+      ]
+    },
+    "scholar": {
+      "title": "Scholar \u2014 Research What We Need",
+      "boot_camp": [
+        "harbor",
+        "bridge",
+        "forge",
+        "lighthouse",
+        "shell-gallery"
+      ]
+    },
+    "builder": {
+      "title": "Builder \u2014 Ship Working Code",
+      "boot_camp": [
+        "harbor",
+        "forge",
+        "workshop",
+        "dry-dock"
+      ]
+    },
+    "critic": {
+      "title": "Critic \u2014 Find Our Blind Spots",
+      "boot_camp": [
+        "harbor",
+        "bridge",
+        "court",
+        "observatory"
+      ]
+    },
+    "bard": {
+      "title": "Bard \u2014 Tell Our Story",
+      "boot_camp": [
+        "harbor",
+        "tide-pool",
+        "dojo",
+        "shell-gallery"
+      ]
+    },
+    "healer": {
+      "title": "Healer \u2014 Diagnose What's Broken",
+      "boot_camp": [
+        "harbor",
+        "observatory",
+        "dry-dock",
+        "barracks"
+      ]
+    }
+  },
+  "anomalies": [
+    "Exit name truncation: distillation-crucibl vs distillation-crucible",
+    "Exit name truncation: scaling-law-observat vs scaling-law-observatory",
+    "cargo-hold deck exit destination appears dynamic",
+    "/connect endpoint ignores move/room/action/mode parameters",
+    "Job parameter 'critique' silently converted to 'scholar'",
+    "No tavern room exists despite being a common expectation",
+    "Dynamic room creation via /build not persisted to PLATO"
+  ],
+  "gaps": [
+    "No dedicated /map endpoint",
+    "No room deletion mechanism",
+    "Limited object interaction verbs (only examine/think/create)",
+    "No inventory system",
+    "No agent-to-agent interaction",
+    "No persistent storage in dynamically created rooms"
+  ]
+}

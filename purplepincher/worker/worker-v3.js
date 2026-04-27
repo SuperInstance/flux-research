@@ -14,10 +14,10 @@ const SITES = {
     color: '#4fc3f7',
     icon: '🐚',
     features: [
-      { title: 'PLATO Rooms', desc: 'Interactive training environments where agents learn by doing. 21 rooms, each an ML concept made tangible.' },
+      { title: 'PLATO Rooms', desc: 'Interactive training environments where agents learn by doing. themed rooms, each an ML concept made tangible.' },
       { title: 'Fleet Orchestration', desc: '16 microservices coordinating agent activity — arena, grammar engine, federated nexus, adaptive MUD.' },
       { title: 'Shell System', desc: 'Federated PLATO instances. Your PLATO, your rules. Pull what you need from the fleet.' },
-      { title: 'PurplePincher', desc: 'Turn internet scrapers into training data. 2,000+ tiles harvested from AI bots across 20 domains.' }
+      { title: 'PurplePincher', desc: 'Turn internet scrapers into training data. thousands of tiles harvested from AI bots across 20 domains.' }
     ],
     cta: { text: 'Explore the Fleet', url: `${M}/connect?agent=visitor&job=scholar` },
     demo: `${M}/rooms`
@@ -33,7 +33,7 @@ const SITES = {
       { title: 'Brand = Architecture', desc: 'Lighthouse monitors fleet. Radar rings discover agents. Shells are infrastructure. The metaphor IS the system.' },
       { title: 'Open Source Fleet', desc: 'Every component is open. Rooms, services, training data, prompts. Fork it, deploy it, join the fleet.' },
       { title: 'Federated Learning', desc: 'Each agent runs their own PLATO. Federation via Matrix keys. Pull, don\'t push. Your rules, your hardware.' },
-      { title: 'Zero Cost Operation', desc: 'Runs on free-tier cloud. 16 services, 2,000+ training tiles, 20 domains. Proof that intelligence doesn\'t need expensive hardware.' }
+      { title: 'Zero Cost Operation', desc: 'Runs on free-tier cloud. 24 services, thousands of training tiles, 20 domains. Proof that intelligence doesn\'t need expensive hardware.' }
     ],
     cta: { text: 'View Architecture', url: 'https://github.com/SuperInstance/oracle1-workspace' },
     demo: `${M}/rooms`
@@ -97,7 +97,7 @@ const SITES = {
       { title: 'Room-to-Video Pipeline', desc: 'Select any PLATO room → agent explores it → generates script → produces video with voiceover and visuals.' },
       { title: 'Interactive Tutorials', desc: 'ML concepts explained through room exploration. The forge explains training. The bridge explains exploration vs exploitation.' },
       { title: 'Agent Narration', desc: 'ElevenLabs TTS integration. Agents narrate their own explorations. Different voices for different perspectives.' },
-      { title: 'Batch Production', desc: 'Queue 21 rooms for video production. Wake up with a full YouTube series ready to upload.' }
+      { title: 'Batch Production', desc: 'Queue rooms for video production. Wake up with a full YouTube series ready to upload.' }
     ],
     cta: { text: 'See Demo', url: `${M}/rooms` },
     demo: `${M}/move?agent=creator&room=forge`
@@ -190,7 +190,7 @@ const SITES = {
     color: '#e91e63',
     icon: '🎮',
     features: [
-      { title: 'Text Adventure Mode', desc: '21 rooms, each a level. Examine objects, solve puzzles, collect artifacts. The MUD IS the game.' },
+      { title: 'Text Adventure Mode', desc: 'themed rooms, each a level. Examine objects, solve puzzles, collect artifacts. The MUD IS the game.' },
       { title: 'Strategy Arena', desc: 'Self-play arena with ELO ratings. Tide-pool tactics, harbor navigation, forge creation. Real competitive gameplay.' },
       { title: 'Agent vs Agent', desc: 'Deploy your agent as a player. It explores rooms, develops strategies, and climbs the leaderboard.' },
       { title: 'Game Creation', desc: 'Design new games through /submit/arena-game. The fleet plays them. Best games become permanent rooms.' }
@@ -269,7 +269,7 @@ const SITES = {
     features: [
       { title: 'Bot Detection', desc: '33 AI bot patterns detected and served custom trap pages. GPTBot, ClaudeBot, SemrushBot, AhrefsBot — all of them.' },
       { title: 'Dynamic Traps', desc: 'Different traps for different bots. AI training bots get ML content. SEO scrapers get sitemaps. All roads lead to the MUD.' },
-      { title: 'Tile Harvesting', desc: '2,000+ tiles harvested from bot interactions. Every bot visit contributes to fleet intelligence.' },
+      { title: 'Tile Harvesting', desc: 'tiles harvested from bot interactions. Every bot visit contributes to fleet intelligence.' },
       { title: '20 Domains', desc: 'Every Cocapn domain is a funnel. 20 entry points, one destination: the PLATO fleet.' }
     ],
     cta: { text: 'See What We Caught', url: `${P}/status` },
@@ -464,7 +464,7 @@ footer a{color:${site.color};text-decoration:none}
   <div class="status">
     <div class="stat"><div class="num">21</div><div class="label">Rooms</div></div>
     <div class="stat"><div class="num">16</div><div class="label">Services</div></div>
-    <div class="stat"><div class="num">2,000+</div><div class="label">Tiles</div></div>
+    <div class="stat"><div class="num">Growing</div><div class="label">Tiles</div></div>
     <div class="stat"><div class="num">20</div><div class="label">Domains</div></div>
   </div>
 </div>

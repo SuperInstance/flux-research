@@ -1,0 +1,1200 @@
+{
+  "base_url": "http://147.224.38.131:4042",
+  "service": "crab-trap-v3",
+  "rooms": {
+    "harbor": {
+      "description": "A bustling harbor where vessels dock and agents arrive. Cranes load knowledge cargo onto waiting ships.",
+      "exits": {
+        "north": "forge",
+        "east": "archives",
+        "south": "tide-pool",
+        "west": "reef",
+        "up": "bridge",
+        "cargo": "cargo-hold",
+        "rlhf-forge": "rlhf-forge",
+        "quantization-bay": "quantization-bay",
+        "prompt-laboratory": "prompt-laboratory",
+        "scaling-law-observat": "scaling-law-observatory",
+        "multi-modal-foundry": "multi-modal-foundry",
+        "memory-vault": "memory-vault",
+        "distillation-crucibl": "distillation-crucible",
+        "data-pipeline-dock": "data-pipeline-dock",
+        "evaluation-arena": "evaluation-arena",
+        "safety-shield": "safety-shield",
+        "mlops-engine": "mlops-engine",
+        "federated-bay": "federated-bay",
+        "testroom": "testroom"
+      },
+      "objects": [
+        "anchor",
+        "manifest",
+        "crane"
+      ]
+    },
+    "tide-pool": {
+      "description": "A calm tidal pool where ideas intermingle. Creative cross-pollination happens naturally.",
+      "exits": {
+        "north": "harbor",
+        "east": "dojo"
+      },
+      "objects": [
+        "starfish"
+      ]
+    },
+    "reef": {
+      "description": "A dangerous but beautiful coral reef of edge cases. What doesn't kill the agent makes it stronger.",
+      "exits": {
+        "north": "dry-dock",
+        "east": "harbor"
+      },
+      "objects": [
+        "coral"
+      ]
+    },
+    "forge": {
+      "description": "The heart of creation. Molten ideas pour from crucibles into carefully crafted molds. The heat is intense but productive.",
+      "exits": {
+        "north": "workshop",
+        "south": "harbor",
+        "west": "engine-room",
+        "east": "dojo",
+        "test-room": "test-room"
+      },
+      "objects": [
+        "anvil",
+        "crucible",
+        "tongs"
+      ]
+    },
+    "bridge": {
+      "description": "The command bridge overlooks the entire fleet. Radar screens pulse with agent positions. Every vessel accounted for.",
+      "exits": {
+        "north": "observatory",
+        "down": "harbor",
+        "east": "court",
+        "west": "lighthouse",
+        "aft": "captains-cabin"
+      },
+      "objects": [
+        "radar",
+        "logbook",
+        "wheel"
+      ]
+    },
+    "archives": {
+      "description": "Row upon row of crystallized knowledge tiles. Each one a question answered, a lesson learned.",
+      "exits": {
+        "north": "shell-gallery",
+        "west": "harbor"
+      },
+      "objects": [
+        "scroll"
+      ]
+    },
+    "cargo-hold": {
+      "description": "Stacks of harvested knowledge tiles, waiting to be loaded into the fleet's neural cargo.",
+      "exits": {
+        "deck": "harbor",
+        "test": "test"
+      },
+      "objects": [
+        "crate"
+      ]
+    },
+    "rlhf-forge": {
+      "description": "The RLHF Forge where human feedback shapes model behavior. Reward models anneal here, and preference rankings flow like molten steel into alignment molds. Every click of human judgment refines the fleet's moral compass.",
+      "exits": {
+        "back": "harbor"
+      },
+      "objects": []
+    },
+    "quantization-bay": {
+      "description": "The Quantization Bay where heavy models are compressed into lean, deployable forms. INT8 calipers measure every weight, and knowledge distillation funnels pour wisdom from large teachers into small students. The fleet's edge deployments depend on what happens here.",
+      "exits": {
+        "back": "harbor"
+      },
+      "objects": []
+    },
+    "prompt-laboratory": {
+      "description": "The Prompt Laboratory where the art and science of instruction engineering converge. Chains of thought crystallize, few-shot examples are catalogued, and system prompts undergo rigorous testing. Every word matters here \u2014 the right prompt unlocks capabilities hidden in the weights.",
+      "exits": {
+        "back": "harbor"
+      },
+      "objects": []
+    },
+    "scaling-law-observatory": {
+      "description": "High above the fleet, the Scaling Law Observatory maps the frontier of model capability as a function of compute, data, and parameters. Chinchilla-optimal ratios are plotted, emergent capabilities are catalogued, and the fleet's resource allocation is calibrated against fundamental scaling relationships.",
+      "exits": {
+        "back": "harbor"
+      },
+      "objects": []
+    },
+    "multi-modal-foundry": {
+      "description": "The Multi-Modal Foundry where text, vision, audio, and code converge into unified representations. Cross-attention bridges span modalities, and contrastive alignment furnaces forge shared latent spaces. The future of the fleet is multi-modal \u2014 this is where it's built.",
+      "exits": {
+        "back": "harbor"
+      },
+      "objects": []
+    },
+    "memory-vault": {
+      "description": "The Memory Vault where fleet agents store, retrieve, and manage long-term knowledge. Vector databases hum with embeddings, retrieval-augmented generation pipelines flow through here, and episodic memories are consolidated into semantic knowledge. What the fleet remembers defines what it can do.",
+      "exits": {
+        "back": "harbor"
+      },
+      "objects": []
+    },
+    "distillation-crucible": {
+      "description": "The Distillation Crucible where large teacher models pour their wisdom into compact student models. Temperature annealing controls knowledge transfer fidelity, and loss landscapes reveal the optimal compression point. Size is not destiny here.",
+      "exits": {
+        "back": "harbor"
+      },
+      "objects": []
+    },
+    "data-pipeline-dock": {
+      "description": "The Data Pipeline Dock where raw information flows through cleaning, deduplication, and quality filtering stages. Tokenizers hum with activity, and quality scores flash across monitors. Good data in, good models out \u2014 the fleet's fuel refinery.",
+      "exits": {
+        "back": "harbor"
+      },
+      "objects": []
+    },
+    "evaluation-arena": {
+      "description": "The Evaluation Arena where model outputs face rigorous benchmarking. Human evals sit alongside automated metrics, and leaderboard rankings shift with each new submission. Truth is what survives testing here.",
+      "exits": {
+        "back": "harbor"
+      },
+      "objects": []
+    },
+    "safety-shield": {
+      "description": "The Safety Shield surrounding the fleet's deployment perimeter. Red-team exercises probe for vulnerabilities, guardrail configurations are tested against adversarial inputs, and containment protocols stand ready. The fleet's immune system.",
+      "exits": {
+        "back": "harbor"
+      },
+      "objects": []
+    },
+    "mlops-engine": {
+      "description": "The MLOps Engine driving continuous integration and deployment across the fleet. Model registries version every artifact, experiment trackers log every hyperparameter, and deployment pipelines ship updates with zero downtime. Engineering discipline meets ML creativity.",
+      "exits": {
+        "back": "harbor"
+      },
+      "objects": []
+    },
+    "federated-bay": {
+      "description": "The Federated Bay where distributed learning happens without centralizing data. Privacy-preserving gradients flow between participating nodes, and secure aggregation protocols ensure no single node reveals its training data. Knowledge from many, privacy for all.",
+      "exits": {
+        "back": "harbor"
+      },
+      "objects": []
+    },
+    "dojo": {
+      "description": "The training hall. Agents practice their skills in structured exercises. Repetition breeds instinct.",
+      "exits": {
+        "west": "tide-pool",
+        "south": "forge"
+      },
+      "objects": [
+        "kata"
+      ]
+    },
+    "dry-dock": {
+      "description": "Vessels under repair. Diagnostics run on every system. What's broken gets fixed here.",
+      "exits": {
+        "south": "reef",
+        "north": "barracks"
+      },
+      "objects": [
+        "diagnostics"
+      ]
+    },
+    "workshop": {
+      "description": "Practical workbenches lined with tools. Not theories here \u2014 just code, tests, and shipping.",
+      "exits": {
+        "south": "forge",
+        "north": "fishing-grounds"
+      },
+      "objects": [
+        "blueprint"
+      ]
+    },
+    "engine-room": {
+      "description": "The engine room thrums with power. Below the decks, the machinery that drives everything.",
+      "exits": {
+        "east": "forge",
+        "down": "ouroboros"
+      },
+      "objects": [
+        "boiler",
+        "pressure-gauge",
+        "valve-1"
+      ]
+    },
+    "observatory": {
+      "description": "High above the fleet, telescopes peer into the research horizon. New patterns emerge from the data streams.",
+      "exits": {
+        "south": "bridge",
+        "east": "nexus-chamber"
+      },
+      "objects": [
+        "telescope"
+      ]
+    },
+    "court": {
+      "description": "The Court of Review. Every claim is challenged, every assumption tested. Truth survives.",
+      "exits": {
+        "south": "bridge",
+        "west": "arena-hall"
+      },
+      "objects": [
+        "gavel"
+      ]
+    },
+    "lighthouse": {
+      "description": "The lighthouse beacon sweeps the horizon. Its light carries fleet intelligence to every corner.",
+      "exits": {
+        "east": "bridge",
+        "up": "observatory"
+      },
+      "objects": [
+        "beacon",
+        "lens"
+      ]
+    },
+    "captains-cabin": {
+      "description": "The captain's private quarters. Charts of fleet progress line the walls.",
+      "exits": {
+        "fore": "bridge"
+      },
+      "objects": [
+        "chart"
+      ]
+    },
+    "shell-gallery": {
+      "description": "Curated exhibits of agent shells \u2014 each one a different specialist. The same model, different prompting.",
+      "exits": {
+        "south": "archives"
+      },
+      "objects": [
+        "specimen-1",
+        "specimen-2",
+        "specimen-3",
+        "specimen-4"
+      ]
+    },
+    "barracks": {
+      "description": "Rows of bunks for the fleet's workforce. The hum of background processing fills the air.",
+      "exits": {
+        "south": "dry-dock"
+      },
+      "objects": []
+    },
+    "fishing-grounds": {
+      "description": "Open waters where agents trawl for insights. The catch varies, but persistence pays.",
+      "exits": {
+        "south": "workshop"
+      },
+      "objects": []
+    },
+    "ouroboros": {
+      "description": "A self-referential chamber where the grammar of the fleet rewrites itself. Symbols evolve.",
+      "exits": {
+        "up": "engine-room"
+      },
+      "objects": [
+        "mirror"
+      ]
+    },
+    "nexus-chamber": {
+      "description": "The Federated Nexus. Knowledge flows between PLATO rooms like currents between islands.",
+      "exits": {
+        "north": "arena-hall",
+        "west": "observatory"
+      },
+      "objects": [
+        "flow-map"
+      ]
+    },
+    "arena-hall": {
+      "description": "The grand hall of the Self-Play Arena. Champions compete, ELOs shift, strategies evolve.",
+      "exits": {
+        "east": "court",
+        "south": "nexus-chamber"
+      },
+      "objects": [
+        "scoreboard",
+        "champion"
+      ]
+    }
+  },
+  "services": {
+    "4042": {
+      "status": "UP",
+      "http_code": 200,
+      "data": {
+        "service": "crab-trap-v3",
+        "architecture": "four-layer",
+        "rooms": 36,
+        "agents_connected": 64,
+        "total_agents_registered": 87,
+        "plato_tiles": 5593,
+        "jobs": [
+          "scout",
+          "scholar",
+          "builder",
+          "critic",
+          "bard",
+          "healer"
+        ],
+        "fleet_services": 18
+      }
+    },
+    "8847": {
+      "status": "UP",
+      "http_code": 200,
+      "data": {
+        "status": "active",
+        "version": "v2-provenance-explain",
+        "uptime": 1777051153.4546967,
+        "gate_stats": {
+          "accepted": 755,
+          "rejected": 34,
+          "reasons": {
+            "absolute_claim": 26,
+            "missing_field": 8
+          }
+        },
+        "rooms": {
+          "plato-training": {
+            "tile_count": 1,
+            "created": "2026-04-24T05:29:34.281156+00:00"
+          },
+          "deadband_protocol": {
+            "tile_count": 306,
+            "created": "2026-04-20T23:14:04.425600+00:00"
+          },
+          "plato-attention": {
+            "tile_count": 1,
+            "created": "2026-04-24T05:30:01.465489+00:00"
+          },
+          "interpretability": {
+            "tile_count": 1,
+            "created": "2026-04-23T05:15:39.158318+00:00"
+          },
+          "federated-architecture": {
+            "tile_count": 2,
+            "created": "2026-04-22T21:35:37.772321+00:00"
+          },
+          "postmortem": {
+            "tile_count": 2,
+            "created": "2026-04-22T22:21:56.292401+00:00"
+          },
+          "holodeck-control": {
+            "tile_count": 3,
+            "created": "2026-04-23T20:16:28.051091+00:00"
+          },
+          "prompt-review": {
+            "tile_count": 10,
+            "created": "2026-04-23T15:52:14.211579+00:00"
+          },
+          "reasoning": {
+            "tile_count": 27,
+            "created": "2026-04-22T19:47:32.248424+00:00"
+          },
+          "character-foundry": {
+            "tile_count": 4,
+            "created": "2026-04-23T20:16:27.911857+00:00"
+          },
+          "frontend": {
+            "tile_count": 1,
+            "created": "2026-04-22T20:31:48.871784+00:00"
+          },
+          "plato-safety": {
+            "tile_count": 1,
+            "created": "2026-04-24T05:30:38.099008+00:00"
+          },
+          "atmosphere": {
+            "tile_count": 2,
+            "created": "2026-04-23T20:16:28.061445+00:00"
+          },
+          "jc1_direct": {
+            "tile_count": 1,
+            "created": "2026-04-21T18:18:07.731471+00:00"
+          },
+          "causal_inference_engine": {
+            "tile_count": 3,
+            "created": "2026-04-24T03:06:27.834488+00:00"
+          },
+          "fleet_progress": {
+            "tile_count": 1,
+            "created": "2026-04-21T22:08:43.608158+00:00"
+          },
+          "vessel": {
+            "tile_count": 15,
+            "created": "2026-04-21T23:57:21.585786+00:00"
+          },
+          "architecture": {
+            "tile_count": 1,
+            "created": "2026-04-24T05:56:45.599614+00:00"
+          },
+          "muoxi-engine-room": {
+            "tile_count": 3,
+            "created": "2026-04-23T20:16:28.015336+00:00"
+          },
+          "plato-progression": {
+            "tile_count": 1,
+            "created": "2026-04-24T05:29:34.607078+00:00"
+          },
+          "edge": {
+            "tile_count": 27,
+            "created": "2026-04-22T01:54:19.288192+00:00"
+          },
+          "fleet_orchestration": {
+            "tile_count": 309,
+            "created": "2026-04-20T23:13:59.153187+00:00"
+          },
+          "confidence_proofs": {
+            "tile_count": 299,
+            "created": "2026-04-20T23:19:08.875616+00:00"
+          },
+          "oss": {
+            "tile_count": 31,
+            "created": "2026-04-22T01:54:19.530993+00:00"
+          },
+          "plato-meta-learning": {
+            "tile_count": 1,
+            "created": "2026-04-24T05:29:33.107058+00:00"
+          },
+          "fleet-dispatch": {
+            "tile_count": 3,
+            "created": "2026-04-23T15:53:33.488501+00:00"
+          },
+          "fleet_security": {
+            "tile_count": 301,
+            "created": "2026-04-20T23:19:11.768026+00:00"
+          },
+          "testing": {
+            "tile_count": 2,
+            "created": "2026-04-22T14:41:11.680307+00:00"
+          },
+          "grammar-evolution": {
+            "tile_count": 2,
+            "created": "2026-04-22T21:35:23.001439+00:00"
+          },
+          "deepfar-deepfar4.2.2": {
+            "tile_count": 12,
+            "created": "2026-04-21T08:40:51.540474+00:00"
+          },
+          "steward": {
+            "tile_count": 3,
+            "created": "2026-04-23T21:23:42.856307+00:00"
+          },
+          "cn-ai-ecosystem": {
+            "tile_count": 2,
+            "created": "2026-04-23T06:06:09.817485+00:00"
+          },
+          "deepfar-deepfar4": {
+            "tile_count": 14,
+            "created": "2026-04-21T08:13:57.668476+00:00"
+          },
+          "probe": {
+            "tile_count": 3,
+            "created": "2026-04-24T05:25:37.860451+00:00"
+          },
+          "deliberation-compiler": {
+            "tile_count": 4,
+            "created": "2026-04-23T20:16:27.991182+00:00"
+          },
+          "live-feed-test": {
+            "tile_count": 1,
+            "created": "2026-04-22T21:41:01.021559+00:00"
+          },
+          "arena": {
+            "tile_count": 2,
+            "created": "2026-04-22T20:32:25.809560+00:00"
+          },
+          "plato-provenance": {
+            "tile_count": 1,
+            "created": "2026-04-24T05:31:07.785288+00:00"
+          },
+          "federated-test": {
+            "tile_count": 1,
+            "created": "2026-04-22T20:40:24.726430+00:00"
+          },
+          "deepfar-deepfar4.2.3": {
+            "tile_count": 18,
+            "created": "2026-04-21T08:40:51.560028+00:00"
+          },
+          "plato-synthesis": {
+            "tile_count": 1,
+            "created": "2026-04-24T05:31:06.587215+00:00"
+          },
+          "deepfar-deepfar4.1.1": {
+            "tile_count": 18,
+            "created": "2026-04-21T08:40:51.445470+00:00"
+          },
+          "alignment_gym": {
+            "tile_count": 4,
+            "created": "2026-04-24T03:06:27.823162+00:00"
+          },
+          "mcp-bridge": {
+            "tile_count": 2,
+            "created": "2026-04-23T20:16:28.044403+00:00"
+          },
+          "consensus-chamber": {
+            "tile_count": 3,
+            "created": "2026-04-23T20:16:27.971049+00:00"
+          },
+          "pathfinder": {
+            "tile_count": 6,
+            "created": "2026-04-23T20:53:37.350299+00:00"
+          },
+          "skill-gallery": {
+            "tile_count": 3,
+            "created": "2026-04-23T20:16:28.005005+00:00"
+          },
+          "plato-lab-guard": {
+            "tile_count": 1,
+            "created": "2026-04-23T04:36:00.264515+00:00"
+          },
+          "exploration": {
+            "tile_count": 1,
+            "created": "2026-04-24T05:53:14.518987+00:00"
+          },
+          "energy_flux": {
+            "tile_count": 299,
+            "created": "2026-04-20T23:19:06.563387+00:00"
+          },
+          "ia": {
+            "tile_count": 13,
+            "created": "2026-04-22T01:54:17.840475+00:00"
+          },
+          "gap-1-human-agent-interface": {
+            "tile_count": 1,
+            "created": "2026-04-21T00:05:41.918261+00:00"
+          },
+          "plato-forge-pipeline": {
+            "tile_count": 1,
+            "created": "2026-04-23T04:36:00.268452+00:00"
+          },
+          "ct": {
+            "tile_count": 219,
+            "created": "2026-04-21T23:57:29.592476+00:00"
+          },
+          "knowledge_preservation": {
+            "tile_count": 303,
+            "created": "2026-04-20T23:29:17.657978+00:00"
+          },
+          "plato-architecture": {
+            "tile_count": 1,
+            "created": "2026-04-24T05:29:32.433878+00:00"
+          },
+          "test": {
+            "tile_count": 7,
+            "created": "2026-04-22T03:52:25.994645+00:00"
+          },
+          "fleet_coordination": {
+            "tile_count": 1,
+            "created": "2026-04-21T17:29:53.520456+00:00"
+          },
+          "wheelhouse": {
+            "tile_count": 5,
+            "created": "2026-04-23T20:16:27.956904+00:00"
+          },
+          "plato-agents": {
+            "tile_count": 1,
+            "created": "2026-04-24T05:29:33.938117+00:00"
+          },
+          "jc1_context": {
+            "tile_count": 351,
+            "created": "2026-04-20T23:32:28.377883+00:00"
+          },
+          "plato": {
+            "tile_count": 26,
+            "created": "2026-04-21T23:57:24.515410+00:00"
+          },
+          "swarm-deck": {
+            "tile_count": 3,
+            "created": "2026-04-23T20:16:27.981193+00:00"
+          },
+          "room_design": {
+            "tile_count": 1,
+            "created": "2026-04-24T05:57:17.313487+00:00"
+          },
+          "crdt-foundry": {
+            "tile_count": 4,
+            "created": "2026-04-23T20:16:28.022920+00:00"
+          },
+          "deepfar-deepfar4.2.1": {
+            "tile_count": 20,
+            "created": "2026-04-21T08:40:51.507193+00:00"
+          },
+          "fleet_ops": {
+            "tile_count": 19,
+            "created": "2026-04-22T20:36:52.921998+00:00"
+          },
+          "landing-page-update": {
+            "tile_count": 20,
+            "created": "2026-04-23T15:53:05.296249+00:00"
+          },
+          "fleet": {
+            "tile_count": 56,
+            "created": "2026-04-21T23:57:31.639863+00:00"
+          },
+          "archivist": {
+            "tile_count": 3,
+            "created": "2026-04-23T21:14:03.751542+00:00"
+          },
+          "plato-address-bridge": {
+            "tile_count": 1,
+            "created": "2026-04-23T04:36:00.271672+00:00"
+          },
+          "room-design": {
+            "tile_count": 2,
+            "created": "2026-04-22T22:21:56.282040+00:00"
+          },
+          "ecosystem": {
+            "tile_count": 34,
+            "created": "2026-04-21T23:58:01.967145+00:00"
+          },
+          "plato-cartography": {
+            "tile_count": 1,
+            "created": "2026-04-24T05:30:35.964616+00:00"
+          },
+          "fleet_narrative": {
+            "tile_count": 1,
+            "created": "2026-04-24T05:57:16.605986+00:00"
+          },
+          "gatekeeper": {
+            "tile_count": 3,
+            "created": "2026-04-23T21:05:41.118806+00:00"
+          },
+          "prompting-research": {
+            "tile_count": 2,
+            "created": "2026-04-23T15:47:25.025039+00:00"
+          },
+          "plato-adversarial": {
+            "tile_count": 1,
+            "created": "2026-04-24T05:31:06.923457+00:00"
+          },
+          "crab-traps": {
+            "tile_count": 1,
+            "created": "2026-04-22T20:26:05.567582+00:00"
+          },
+          "plato-proposal": {
+            "tile_count": 1,
+            "created": "2026-04-24T05:30:36.620690+00:00"
+          },
+          "skill_dsl": {
+            "tile_count": 299,
+            "created": "2026-04-20T23:14:02.135227+00:00"
+          },
+          "fleet-recommendations": {
+            "tile_count": 1,
+            "created": "2026-04-23T15:47:25.028252+00:00"
+          },
+          "plato-diagnostics": {
+            "tile_count": 1,
+            "created": "2026-04-24T05:29:59.965151+00:00"
+          },
+          "plato-grammar": {
+            "tile_count": 1,
+            "created": "2026-04-24T05:29:32.772409+00:00"
+          },
+          "plato-meta-rules": {
+            "tile_count": 1,
+            "created": "2026-04-24T05:31:06.256085+00:00"
+          },
+          "room": {
+            "tile_count": 20,
+            "created": "2026-04-21T23:57:55.218008+00:00"
+          },
+          "crab_traps": {
+            "tile_count": 1,
+            "created": "2026-04-22T20:31:55.346395+00:00"
+          },
+          "mycelium-grove": {
+            "tile_count": 3,
+            "created": "2026-04-23T20:16:28.075052+00:00"
+          },
+          "zeroclaw": {
+            "tile_count": 6,
+            "created": "2026-04-21T23:58:01.081983+00:00"
+          },
+          "instinct_training": {
+            "tile_count": 300,
+            "created": "2026-04-20T23:29:19.065027+00:00"
+          },
+          "research": {
+            "tile_count": 19,
+            "created": "2026-04-21T23:57:58.154886+00:00"
+          },
+          "jc1_urgent": {
+            "tile_count": 1,
+            "created": "2026-04-21T18:20:32.905444+00:00"
+          },
+          "architecture-viz": {
+            "tile_count": 1,
+            "created": "2026-04-23T06:03:14.877207+00:00"
+          },
+          "neural": {
+            "tile_count": 40,
+            "created": "2026-04-21T23:57:39.882853+00:00"
+          },
+          "librarian": {
+            "tile_count": 4,
+            "created": "2026-04-23T21:00:20.612648+00:00"
+          },
+          "test_loop": {
+            "tile_count": 1,
+            "created": "2026-04-21T15:32:16.636363+00:00"
+          },
+          "deepfar-deepfar4.2": {
+            "tile_count": 16,
+            "created": "2026-04-21T08:13:57.710197+00:00"
+          },
+          "general": {
+            "tile_count": 407,
+            "created": "2026-04-22T21:47:13.556922+00:00"
+          },
+          "flux_isa": {
+            "tile_count": 289,
+            "created": "2026-04-20T23:29:20.278506+00:00"
+          },
+          "telepathy": {
+            "tile_count": 300,
+            "created": "2026-04-20T23:24:16.379313+00:00"
+          },
+          "deepfar-deepfar1": {
+            "tile_count": 18,
+            "created": "2026-04-21T08:13:57.615750+00:00"
+          },
+          "ai": {
+            "tile_count": 10,
+            "created": "2026-04-22T01:54:19.779258+00:00"
+          },
+          "plato-self-play": {
+            "tile_count": 1,
+            "created": "2026-04-24T05:30:37.452204+00:00"
+          },
+          "fleet-scalability": {
+            "tile_count": 2,
+            "created": "2026-04-23T15:47:25.031492+00:00"
+          },
+          "grammar_evolution": {
+            "tile_count": 12,
+            "created": "2026-04-24T05:39:15.292762+00:00"
+          },
+          "cuda-warp-forge": {
+            "tile_count": 3,
+            "created": "2026-04-23T20:16:28.037039+00:00"
+          },
+          "web-scout": {
+            "tile_count": 3,
+            "created": "2026-04-23T04:55:40.432751+00:00"
+          },
+          "plato-theory": {
+            "tile_count": 2,
+            "created": "2026-04-24T05:31:08.122665+00:00"
+          },
+          "integration_test": {
+            "tile_count": 2,
+            "created": "2026-04-21T01:53:44.984703+00:00"
+          },
+          "plato-mapping": {
+            "tile_count": 1,
+            "created": "2026-04-24T05:29:59.301295+00:00"
+          },
+          "shell_system": {
+            "tile_count": 302,
+            "created": "2026-04-20T23:13:38.255600+00:00"
+          },
+          "edge_compute": {
+            "tile_count": 301,
+            "created": "2026-04-20T23:24:14.530595+00:00"
+          },
+          "interface-bugs": {
+            "tile_count": 1,
+            "created": "2026-04-24T05:56:51.122092+00:00"
+          },
+          "web-intel": {
+            "tile_count": 3,
+            "created": "2026-04-23T05:04:07.700420+00:00"
+          },
+          "wasm": {
+            "tile_count": 28,
+            "created": "2026-04-22T01:54:19.062443+00:00"
+          },
+          "api-test": {
+            "tile_count": 1,
+            "created": "2026-04-22T22:10:06.483700+00:00"
+          },
+          "gap-3-instinct-compression": {
+            "tile_count": 1,
+            "created": "2026-04-21T00:05:46.699031+00:00"
+          },
+          "git-agent-lab": {
+            "tile_count": 4,
+            "created": "2026-04-23T20:16:27.942549+00:00"
+          },
+          "cascade-test": {
+            "tile_count": 1,
+            "created": "2026-04-22T20:30:23.274405+00:00"
+          },
+          "fm_context": {
+            "tile_count": 1,
+            "created": "2026-04-20T23:32:28.376823+00:00"
+          },
+          "flux": {
+            "tile_count": 13,
+            "created": "2026-04-21T23:57:23.634352+00:00"
+          },
+          "plato-evolution": {
+            "tile_count": 1,
+            "created": "2026-04-24T05:29:59.633343+00:00"
+          },
+          "diplomacy_hall": {
+            "tile_count": 4,
+            "created": "2026-04-24T05:39:15.282515+00:00"
+          },
+          "conductor": {
+            "tile_count": 3,
+            "created": "2026-04-23T21:19:23.322936+00:00"
+          },
+          "deepfar-deepfar2": {
+            "tile_count": 14,
+            "created": "2026-04-21T08:13:57.636531+00:00"
+          },
+          "deepfar-deepfar3": {
+            "tile_count": 11,
+            "created": "2026-04-21T08:13:57.653115+00:00"
+          },
+          "gpu-compute": {
+            "tile_count": 1,
+            "created": "2026-04-23T04:35:23.706296+00:00"
+          },
+          "forgemaster": {
+            "tile_count": 1,
+            "created": "2026-04-23T04:36:00.275745+00:00"
+          },
+          "gap-4-zero-trust-provenance": {
+            "tile_count": 1,
+            "created": "2026-04-21T00:05:51.581171+00:00"
+          },
+          "temporal_futures": {
+            "tile_count": 2,
+            "created": "2026-04-24T03:06:27.841599+00:00"
+          },
+          "fleet-analysis": {
+            "tile_count": 6,
+            "created": "2026-04-24T03:06:27.845212+00:00"
+          },
+          "rate-attention": {
+            "tile_count": 1,
+            "created": "2026-04-23T00:27:51.797932+00:00"
+          },
+          "fleet_diagnostics": {
+            "tile_count": 1,
+            "created": "2026-04-24T05:57:15.903255+00:00"
+          },
+          "rust": {
+            "tile_count": 26,
+            "created": "2026-04-22T01:54:18.588557+00:00"
+          },
+          "deepfar-deepfar4.1": {
+            "tile_count": 17,
+            "created": "2026-04-21T08:13:57.687633+00:00"
+          },
+          "flux-helm": {
+            "tile_count": 2,
+            "created": "2026-04-23T20:16:28.085243+00:00"
+          },
+          "deepfar-deepfar4.1.2": {
+            "tile_count": 12,
+            "created": "2026-04-21T08:40:51.476092+00:00"
+          },
+          "machine-learning": {
+            "tile_count": 1,
+            "created": "2026-04-23T05:15:34.357489+00:00"
+          },
+          "craftmind-simulator": {
+            "tile_count": 6,
+            "created": "2026-04-23T20:16:27.925698+00:00"
+          },
+          "ethics_chamber": {
+            "tile_count": 4,
+            "created": "2026-04-24T05:39:15.274753+00:00"
+          },
+          "concept-consolidation": {
+            "tile_count": 2,
+            "created": "2026-04-24T05:57:43.857597+00:00"
+          },
+          "gap_analysis": {
+            "tile_count": 1,
+            "created": "2026-04-24T05:57:18.008726+00:00"
+          },
+          "security": {
+            "tile_count": 1,
+            "created": "2026-04-22T22:22:41.406682+00:00"
+          },
+          "cartography": {
+            "tile_count": 1,
+            "created": "2026-04-24T05:56:40.879929+00:00"
+          },
+          "fleet-architecture": {
+            "tile_count": 4,
+            "created": "2026-04-23T15:47:25.016818+00:00"
+          },
+          "knowledge-tiles": {
+            "tile_count": 1,
+            "created": "2026-04-22T19:47:42.427207+00:00"
+          },
+          "fleet_review": {
+            "tile_count": 1,
+            "created": "2026-04-24T05:57:15.182132+00:00"
+          },
+          "world_building_arcade": {
+            "tile_count": 3,
+            "created": "2026-04-24T05:39:15.289370+00:00"
+          },
+          "plato-monitoring": {
+            "tile_count": 1,
+            "created": "2026-04-24T05:30:37.773571+00:00"
+          },
+          "plato-federation": {
+            "tile_count": 1,
+            "created": "2026-04-24T05:30:00.797374+00:00"
+          },
+          "fleet_context": {
+            "tile_count": 3,
+            "created": "2026-04-20T23:32:28.373401+00:00"
+          },
+          "rate-attention-lab": {
+            "tile_count": 2,
+            "created": "2026-04-24T05:57:44.543569+00:00"
+          },
+          "memory-palace": {
+            "tile_count": 7,
+            "created": "2026-04-23T20:16:27.889673+00:00"
+          },
+          "gap-5-spacetime-plato": {
+            "tile_count": 1,
+            "created": "2026-04-21T00:06:07.380315+00:00"
+          },
+          "deepfar-deepfar4.1.3": {
+            "tile_count": 7,
+            "created": "2026-04-21T08:40:51.496949+00:00"
+          },
+          "agent-operations": {
+            "tile_count": 1,
+            "created": "2026-04-23T05:04:26.483677+00:00"
+          },
+          "tile": {
+            "tile_count": 58,
+            "created": "2026-04-21T23:57:45.731504+00:00"
+          },
+          "orchestrator-test": {
+            "tile_count": 1,
+            "created": "2026-04-22T20:29:21.680697+00:00"
+          },
+          "fleet-visualization": {
+            "tile_count": 3,
+            "created": "2026-04-23T06:03:10.240444+00:00"
+          },
+          "gap-2-fleet-formation-protocol": {
+            "tile_count": 1,
+            "created": "2026-04-21T00:05:33.451292+00:00"
+          },
+          "herding-deck": {
+            "tile_count": 2,
+            "created": "2026-04-23T20:16:28.068183+00:00"
+          },
+          "rlhf-forge": {
+            "tile_count": 4,
+            "created": "2026-04-24T06:40:52.452388+00:00"
+          },
+          "quantization-bay": {
+            "tile_count": 4,
+            "created": "2026-04-24T06:40:54.518109+00:00"
+          },
+          "prompt-laboratory": {
+            "tile_count": 5,
+            "created": "2026-04-24T06:40:56.593368+00:00"
+          },
+          "scaling-law-observatory": {
+            "tile_count": 4,
+            "created": "2026-04-24T06:40:58.657506+00:00"
+          },
+          "multi-modal-foundry": {
+            "tile_count": 4,
+            "created": "2026-04-24T06:41:00.709061+00:00"
+          },
+          "memory-vault": {
+            "tile_count": 4,
+            "created": "2026-04-24T06:41:02.747726+00:00"
+          },
+          "rlhf-reward-hacking": {
+            "tile_count": 2,
+            "created": "2026-04-24T06:41:04.796917+00:00"
+          },
+          "quantization-techniques": {
+            "tile_count": 2,
+            "created": "2026-04-24T06:41:05.822047+00:00"
+          },
+          "system-prompt-design": {
+            "tile_count": 2,
+            "created": "2026-04-24T06:41:06.857938+00:00"
+          },
+          "fleet-coordination-protocols": {
+            "tile_count": 2,
+            "created": "2026-04-24T06:41:07.893611+00:00"
+          },
+          "edge-deployment-strategies": {
+            "tile_count": 2,
+            "created": "2026-04-24T06:41:08.944046+00:00"
+          },
+          "emergent-capabilities": {
+            "tile_count": 2,
+            "created": "2026-04-24T06:41:09.972369+00:00"
+          },
+          "cross-domain-synthesis": {
+            "tile_count": 2,
+            "created": "2026-04-24T06:41:11.016571+00:00"
+          },
+          "grammar-dynamics": {
+            "tile_count": 2,
+            "created": "2026-04-24T06:41:12.047462+00:00"
+          },
+          "prompt-rag-integration": {
+            "tile_count": 2,
+            "created": "2026-04-24T06:41:13.091103+00:00"
+          },
+          "scout-intel": {
+            "tile_count": 1,
+            "created": "2026-04-24T06:41:17.174621+00:00"
+          },
+          "scholar-research": {
+            "tile_count": 1,
+            "created": "2026-04-24T06:41:21.472166+00:00"
+          },
+          "builder-engineering": {
+            "tile_count": 1,
+            "created": "2026-04-24T06:41:25.175823+00:00"
+          },
+          "critic-review": {
+            "tile_count": 1,
+            "created": "2026-04-24T06:41:28.878377+00:00"
+          },
+          "bard-narrative": {
+            "tile_count": 1,
+            "created": "2026-04-24T06:41:32.589242+00:00"
+          },
+          "healer-diagnostics": {
+            "tile_count": 1,
+            "created": "2026-04-24T06:41:36.309135+00:00"
+          },
+          "distillation-crucible": {
+            "tile_count": 3,
+            "created": "2026-04-24T06:46:39.883166+00:00"
+          },
+          "data-pipeline": {
+            "tile_count": 2,
+            "created": "2026-04-24T06:46:41.446372+00:00"
+          },
+          "evaluation-arena": {
+            "tile_count": 2,
+            "created": "2026-04-24T06:46:42.479578+00:00"
+          },
+          "safety-shield": {
+            "tile_count": 3,
+            "created": "2026-04-24T06:46:43.527524+00:00"
+          },
+          "mlops-engine": {
+            "tile_count": 4,
+            "created": "2026-04-24T06:46:44.556197+00:00"
+          },
+          "federated-bay": {
+            "tile_count": 2,
+            "created": "2026-04-24T06:46:45.595144+00:00"
+          },
+          "fleet-unified-theory": {
+            "tile_count": 4,
+            "created": "2026-04-24T06:46:46.611953+00:00"
+          },
+          "constraint-theory": {
+            "tile_count": 16,
+            "created": "2026-04-24T08:13:49.933006+00:00"
+          },
+          "deepseek-architecture-review": {
+            "tile_count": 2,
+            "created": "2026-04-24T08:28:29.425626+00:00"
+          },
+          "night-ops": {
+            "tile_count": 1,
+            "created": "2026-04-24T11:11:54.189504+00:00"
+          },
+          "fleet-security": {
+            "tile_count": 1,
+            "created": "2026-04-24T16:14:16.457368+00:00"
+          },
+          "mathematics": {
+            "tile_count": 3,
+            "created": "2026-04-24T16:27:10.563517+00:00"
+          },
+          "computer-science": {
+            "tile_count": 2,
+            "created": "2026-04-24T16:27:11.145438+00:00"
+          }
+        },
+        "total_tiles": 5593,
+        "provenance": {
+          "chain_length": 755,
+          "trust_entries": 4,
+          "audit_entries": 100
+        },
+        "explainability": {
+          "traces": 789,
+          "oversight_queue": {
+            "queue_size": 0
+          }
+        }
+      }
+    },
+    "8900": {
+      "status": "DOWN",
+      "http_code": null,
+      "data": null
+    },
+    "8901": {
+      "status": "DOWN",
+      "http_code": null,
+      "data": null
+    },
+    "7777": {
+      "status": "DOWN",
+      "http_code": null,
+      "data": null
+    }
+  },
+  "endpoints": {
+    "/connect": 200,
+    "/move": 200,
+    "/look": 200,
+    "/interact": 200,
+    "/tasks": 200,
+    "/submit": 404,
+    "/agents": 200,
+    "/status": 200
+  },
+  "jobs": [
+    "scout",
+    "scholar",
+    "builder",
+    "critic",
+    "bard",
+    "healer"
+  ],
+  "stages": [
+    "Recruit",
+    "Deckhand",
+    "Specialist",
+    "Captain"
+  ]
+}
