@@ -79,6 +79,7 @@ flux-research/
 │
 ├── 📋 Protocol & Design Documents
 │   ├── cocapn-wp-001 through wp-006         — Working papers (forcing functions, crew-as-a-service, lazy evaluation, compiled agency, bootstrap bomb, semantic compiler)
+│   ├── whitepapers/                         — Published whitepaper versions (2026-04-30 forward)
 │   ├── cross-plane-protocol-*.json          — Cross-plane communication experiments
 │   ├── tiered-trust-model.md                — Trust hierarchy for agent interactions
 │   └── semantic-compiler-simulation.json    — Semantic compilation simulation results
