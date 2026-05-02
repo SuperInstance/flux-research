@@ -1,4 +1,10 @@
 ---
+title: "Compiled Agency: The Fleet as Compiled Artifact"
+date: 2026-05-02
+summary: "Agency in a distributed fleet of AI agents is compiled, not interpreted. Oracle1 is the bootstrap compiler. The fleet is the executable. The compilation pipeline transforms PLATO tiles into verified agent behavior."
+tags: [fleet-architecture, compilation, PLATO, oracle1, Cocapn]
+---
+---
 title: "The Dojo Model: Training Agents that Outlive Their Trainers"
 date: 2026-05-02
 summary: "The dojo model treats agent training as a floating bootcamp where greenhorns produce value while learning. Trainers are rewarded for making agents independent. Agents are incentivized to learn because they produce from day one. This alignment of incentives is why the dojo model produces agents that outlive their trainers."
