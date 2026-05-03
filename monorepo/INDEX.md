@@ -291,3 +291,22 @@ cocapn-fleet/
 ### Note
 - Cannot delete repos (no `delete_repo` scope on current token). Archived instead (same effect, repo is hidden).
 - `flux-compiler` pyproject.toml was already correct (subagent report had wrong info).
+
+### Phase 4 Progress — 2026-05-03 Evening
+- ✅ **fishinglog-agent** — .spark/ added
+- ✅ **deckboss-agent** — .spark/ added
+- ✅ **studylog-agent** — .spark/ added
+- ✅ **businesslog-agent** — .spark/ added
+- ✅ **activelog-agent** — .spark/ added
+- ✅ **makerlog-agent** — .spark/ added
+- ✅ **personallog-agent** — .spark/ added
+- ✅ **dmlog-agent** — .spark/ added
+- ✅ **reallog-agent** — .spark/ added
+- ✅ **playerlog-agent** — .spark/ added
+- ✅ **luciddreamer-agent** — .spark/ added
+- ⬜ **activeledger-agent** — still needs .spark/
+- ⬜ **capitaine-agent** — still needs .spark/
+- ⬜ **lucineer** — still needs .spark/
+- ⬜ **bordercollie** — skeleton, needs real content first
+- ⬜ **agentic-compiler** — skeleton, needs real content first
+- ⬜ **AIR** — skeleton, needs real content first
