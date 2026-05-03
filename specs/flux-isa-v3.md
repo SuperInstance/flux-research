@@ -8,6 +8,44 @@
 
 ---
 
+## 0. Architecture: Two-Layer FLUX Stack
+
+FLUX is implemented as two distinct layers serving different constraint surfaces:
+
+### FLUX-C (Constraint Layer)
+- **Purpose:** Safety enforcement, certification-grade, DAL A certifiable
+- **Opcodes:** 43 opcodes (safety-focused, minimal set)
+- **Architecture:** Stack-based (no registers — simpler to verify)
+- **Reference Impl:** `flux-vm` on crates.io (Forgemaster's Rust implementation)
+- **Encoding:** Variable-length (1–3 bytes) for compactness
+- **Use Cases:** Hard constraint enforcement, guard rails, formal verification targets
+
+### FLUX-X (eXtended Operations Layer)
+- **Purpose:** General-purpose fleet operations, rich instruction set
+- **Opcodes:** 247 opcodes across 17 categories
+- **Architecture:** Register-based (R0–R15, F0–F15, vector registers)
+- **Reference Impl:** This specification (`flux-isa-v3.md` in `flux-research`)
+- **Encoding:** Fixed-width (4-byte primary format) for fast decode
+- **Use Cases:** General compute, agent coordination, complex decision trees
+
+### Composition
+```
+┌─────────────────────────────────────────┐
+│            Agent / Fleet Code            │
+├─────────────────────────────────────────┤
+│  FLUX-X (247 opcodes) — General Ops     │
+│  Register-based, 4-byte instructions    │
+├─────────────────────────────────────────┤
+│  FLUX-C (43 opcodes) — Safety Layer     │
+│  Stack-based, 1-3 byte instructions     │
+│  Bridge: one-way, locked, gas-bounded   │
+└─────────────────────────────────────────┘
+```
+
+> **Note:** When this spec refers to "FLUX" without a suffix, it describes FLUX-X. FLUX-C is documented separately in the `flux-vm` crate documentation.
+
+---
+
 ## 1. Overview
 
 FLUX (Fleet Language for Unified eXecution) is the bytecode instruction set architecture for the Cocapn multi-agent fleet. It is a **register-based, fixed-width virtual machine** designed for deterministic, reproducible execution across heterogeneous agent runtimes in Rust, C, Python, Zig, Go, JavaScript, Java, WASM, and CUDA.
