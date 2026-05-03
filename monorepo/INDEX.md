@@ -310,3 +310,12 @@ cocapn-fleet/
 - ⬜ **bordercollie** — skeleton, needs real content first
 - ⬜ **agentic-compiler** — skeleton, needs real content first
 - ⬜ **AIR** — skeleton, needs real content first
+
+### Phase 4 COMPLETE — 2026-05-03 Evening
+All 13 SuperInstance domain agents now have .spark/ directories:
+- ✅ fishinglog-agent, deckboss-agent, studylog-agent
+- ✅ businesslog-agent, activelog-agent, makerlog-agent, personallog-agent
+- ✅ dmlog-agent, reallog-agent, playerlog-agent, luciddreamer-agent
+- ✅ activeledger-agent, capitaine-agent
+
+Note: lucineer/lucineer (Magnus's account, family privacy) — cannot push there, but the SuperInstance forks have .spark/ already.
