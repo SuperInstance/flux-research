@@ -4,6 +4,12 @@
 
 ---
 
+## TL;DR
+
+> **Don't make models collaborate—make them fight.** Neuroscience shows creativity depends on the *distance* between the brain's spontaneous (DMN) and controlled (ECN) networks. Reverse-actualization replicates this in software by forcing creative and logical models to criticize each other through a PLATO bridge, maintaining a "gradient" of ~0.35 for optimal novel-yet-correct output.
+
+---
+
 ## The Neuroscience
 
 A recent study from the Paris Brain Institute asked a deceptively simple question: what makes a brain creative?

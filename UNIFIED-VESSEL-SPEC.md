@@ -2,6 +2,14 @@
 
 *Merging JC1's vessel taxonomy with Oracle1's fleet roles.*
 
+---
+
+## TL;DR
+
+> **Eight vessel classes, four layers each, one git-native lifecycle.** Every fleet agent (Flagship, Keeper, Foundry, Edge, Bard, Scout, Sentinel, Archivist) decomposes into Vessel → Equipment → Agent → Skills. They coordinate via I2I bottles, PLATO rooms, and GitHub issues/PRs—treating the repo as the agent's memory and commits as its actions.
+
+---
+
 ## Vessel Classes
 
 | Class | Role | Hardware | Heartbeat | PLATO Rooms | Bottle Address | Git Coordination |

@@ -4,6 +4,12 @@
 
 ---
 
+## TL;DR
+
+> **PLATO is the rPFC bridge between creative and logical AI.** The architecture keeps DMN (creative) and ECN (logical) models in productive tension across a 5-step loop: generate → evaluate → challenge → elaborate → rank. PLATO rooms store each pass as tiles, track the novelty/constraint gradient per domain, and prevent the "gradient collapse" that kills creativity.
+
+---
+
 ## Core Insight
 
 Creativity isn't about overlap between the Default Mode Network (DMN) and Executive Control Network (ECN). It's about **functional distance** — the distinctness of each network — bridged by the **rostral prefrontal cortex (rPFC)**.

@@ -5,6 +5,12 @@
 
 ---
 
+## TL;DR
+
+> **Creativity comes from keeping models apart, not merging them.** Reverse-actualization pairs a creative DMN model with a logical ECN model and forces them to *criticize* each other via a PLATO bridge. The tension between them—measured as a "gradient" (novelty minus constraint)—produces outputs that are both novel and correct, something no single model or collaborative average can achieve.
+
+---
+
 ## Abstract
 
 We present reverse-actualization: a technique for combining AI models that maintains functional distance between opposing cognitive modes. Drawing on neuroscientific research showing that creativity emerges from the *distance* between the Default Mode Network and Executive Control Network (rather than their integration), we implement a software architecture that keeps creative and logical models in productive tension via a PLATO-based bridge. The result is outputs that are both novel and correct — a quality neither single models nor averaging ensembles can reliably achieve.
