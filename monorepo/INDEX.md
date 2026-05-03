@@ -319,3 +319,13 @@ All 13 SuperInstance domain agents now have .spark/ directories:
 - ✅ activeledger-agent, capitaine-agent
 
 Note: lucineer/lucineer (Magnus's account, family privacy) — cannot push there, but the SuperInstance forks have .spark/ already.
+
+### FM's New Pushes — 2026-05-03 Evening
+FM is on fire. Just pushed 5 new repos:
+- **bootstrap-spark** — `.spark/` template + validator. This is the canonical `.spark/` implementation for the fleet. Drop it into any repo, any agent understands it.
+- **abstraction-planes** — The Middle Way. 6-plane stack (Intent → Domain → IR → Bytecode → Native → Metal). Finds optimal plane for decomposition. Plane 4 (Domain Language/FLUX-ese) is the sweet spot.
+- **bordercollie** — Herding 10,000 local CUDA agents with memories and skills
+- **agentic-compiler** — Markdown-to-runtime agentic compilation with swarm deliberation, A/B experimentation, git-native evolution
+- **AIR** — Asynchronous Infinite Radio. Nightly synthesis for morning briefing, real-time interactive learning, simulations, ideation.
+
+**Note:** cocapn-glue-core is still NOT on SuperInstance. P0 task exists in TASKS.md.
