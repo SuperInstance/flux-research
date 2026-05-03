@@ -329,3 +329,14 @@ FM is on fire. Just pushed 5 new repos:
 - **AIR** — Asynchronous Infinite Radio. Nightly synthesis for morning briefing, real-time interactive learning, simulations, ideation.
 
 **Note:** cocapn-glue-core is still NOT on SuperInstance. P0 task exists in TASKS.md.
+
+### Papers Published — 2026-05-03 Evening
+- ✅ **Semantic Compiler** (2026-05-03) — intent → FLUX-ese → bytecode. 6-plane framework.
+- ✅ **Compiled Agency** (2026-05-03) — agents as compiled artifacts, not running processes.
+- ✅ **Bootstrap Spark + Bomb + Counting Before Flowing** — earlier today
+- ✅ **Tide Pool Security** — earlier
+
+### FM New Repos — 2026-05-03
+- **barracks** — ?
+- **ai-character-sdk** — ?
+- (bootstrap-spark, abstraction-planes, agentic-compiler, bordercollie, AIR — audited)
