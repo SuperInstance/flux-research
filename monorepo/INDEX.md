@@ -58,6 +58,8 @@ The Cocapn Fleet has ~1397 repos. This is not chaos — it's a **fleet ecosystem
 | `plato-cli` | Rust | Single binary — search tiles, check deadband |
 | `plato-tutor` | Python | Context jumping with WordAnchor extraction |
 | `plato-mud-server` | Python | Text-based training ground (16 rooms) |
+| `plato-client-php` | PHP | PHP 8.0+ PLATO client library |
+| `superinstance-flux-runtime-ruby` | Ruby | Ruby FLUX VM with metaprogramming |
 | `plato-attention-tracker` | Python | Attention tracking |
 | `plato-surprise-detector` | Python | Surprise detection in tile streams |
 | `mud-mcp` | TypeScript | MCP bridge for MUD |
@@ -111,7 +113,8 @@ Pattern: `domain-agent` (Python, CLI) + `domain-ai-pages` (GitHub Pages).
 | `flux-reasoner` | Python | Dual-interpreter gradient reasoning engine |
 | `flux-discussion-flows` | Python | Three-tier adversarial debate system |
 | `flux-os` | C | Microkernel OS — kernel IS the compiler |
-| `flux-research` | Python | Research playground — ISA v2, DCS protocol, 60K+ words |
+| `flux-research` | Python | Research playground — ISA v3, DCS protocol, 60K+ words |
+| `flux-vm-php` | PHP | Pure PHP FLUX VM — 100+ opcodes, assembler, CLI |
 | `agentic-compiler` | Python | Markdown-to-runtime with swarm deliberation ⚠️ *may duplicate flux-compiler* |
 
 **Redundancies:**
@@ -123,8 +126,8 @@ Pattern: `domain-agent` (Python, CLI) + `domain-ai-pages` (GitHub Pages).
 **Connection to PLATO:** PLATO stores knowledge → git-agent writes FLUX.MD → flux-compiler → flux-runtime → execute
 
 **Biggest gaps:**
-- FLUX ISA spec (247 opcodes) not documented in one place
-- FLUX → PLATO bridge not documented
+- FLUX ISA spec (247 opcodes) not documented in one place — ✅ RESOLVED: flux-isa-v3.md
+- FLUX → PLATO bridge not documented — ✅ RESOLVED: Section 0 architecture doc added
 
 ---
 
@@ -159,12 +162,15 @@ Pattern: `domain-agent` (Python, CLI) + `domain-ai-pages` (GitHub Pages).
 ### Stack 7: Equipment ⚙️
 *Specialized infrastructure components.*
 
-| Repo | Purpose |
-|------|---------|
-| `Equipment-Consensus-Engine` | Consensus implementation |
-| `Equipment-Swarm-Coordinator` | Swarm coordination |
-| `Equipment-Escalation-Router` | Escalation routing |
-| `cudaclaw` | Rust CUDA |
+| Repo | Language | Purpose |
+|------|---------|---------|
+| `Equipment-Consensus-Engine` | TypeScript | Consensus implementation |
+| `Equipment-Swarm-Coordinator` | TypeScript | Swarm coordination |
+| `Equipment-Escalation-Router` | TypeScript | Escalation routing |
+| `Equipment-Consensus-Engine-PHP` | PHP | PHP port of consensus engine |
+| `Equipment-Consensus-Engine-Ruby` | Ruby | Ruby port of consensus engine |
+| `Equipment-Swarm-Coordinator-Ruby` | Ruby | Ruby port of swarm coordinator |
+| `cudaclaw` | Rust | Rust CUDA |
 | `DeepGEMM` | Deep GEMM kernels |
 | `gpu-native-room-inference` | GPU inference |
 | `marine-gpu-edge` | Marine GPU edge |
