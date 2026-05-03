@@ -678,6 +678,104 @@ Hex bytes: `02 00 07 00 02 01 01 00 23 01 01 00 29 00 01 00 05 00 FA FF 00 00 00
 | v1.0 | 2026-01 | Fleet Architecture | Initial ISA |
 | v2.0 | 2026-04 | Oracle1 | Unified ISA proposal based on 11 implementations |
 | v3.0 | 2026-05-03 | Oracle1 | Canonical spec: cross-referenced Rust (100 opcodes), C (133 opcodes), v2 proposal. Rust opcode numbers adopted as canonical. Format C clarified as 3-register operands (not type tag). |
+| v3.1 | 2026-05-03 | Oracle1 | Added Section 12: Edge Encoding (JC1 variable-width ISA for ARM64/CUDA constrained hardware) |
+
+---
+
+## 12. Edge Encoding (ISA v3 — JC1 Variant)
+
+> **Origin:** `JetsonClaw1-vessel/for-oracle1/ISA-V3-EDGE-ENCODING.md` (JC1, 2026-04-12)  
+> **Target:** Jetson Orin Nano, ARM64, 1024 CUDA cores, 8 GB RAM, bare metal  
+> **Status:** Draft — Review Requested
+
+While the canonical FLUX ISA uses fixed 4-byte instructions (FLUX-X), JC1 developed a **variable-width encoding** optimized for edge hardware where every byte matters.
+
+### 12.1 Two Encoding Modes
+
+| Mode | Encoding | Opcode Count | Target |
+|------|----------|-------------|--------|
+| **Cloud** | Fixed 4-byte | ~200 | flux-runtime-c, general fleet ops |
+| **Edge** | Variable 1–3 B | 256 (80 used) | cuda-instruction-set, ARM64 bare metal |
+
+### 12.2 Variable-Width Scheme
+
+Instruction length is determined by the top 2 bits of the first byte:
+
+```
+Byte 0:
+  0XXXXXXX  → 1-byte instruction (no operands)    range: 0x00–0x7F (128 opcodes)
+  10XXXXXX  → 2-byte instruction (1 operand byte)  range: 0x80–0xBF (64 opcodes)
+  11XXXXXX  → 3-byte instruction (2 operand bytes)  range: 0xC0–0xFF (64 opcodes)
+```
+
+### 12.3 Key Differences from Cloud Encoding
+
+| Property | Cloud (FLUX-X) | Edge (JC1) |
+|----------|---------------|------------|
+| Instruction width | Fixed 4 bytes | Variable 1–3 bytes |
+| Operand encoding | Direct register bytes | Embedded in opcode space |
+| Register model | Explicit R0–R15 | Implicit accumulator (r0) for 1-byte ops |
+| Energy awareness | Via FLUX-C bridge | Native ATP_QUERY, ATP_SPEND opcodes |
+| Trust model | AT rust/AVerify | TRUST_VERIFY opcode with threshold |
+| CUDA support | Vector registers | cuda-instruction-set integration |
+
+### 12.4 Edge Opcode Examples
+
+```asm
+; 1-byte ops (top bit = 0)
+NOP      = 0x00  ; No operation
+HALT     = 0x20  ; Stop execution
+INST_REST= 0xF4  ; Energy regeneration
+
+; 2-byte ops (top bits = 10)
+; Opcode in bits 5-0, operand in byte 1
+MOV   r1, r0 = 0x90 0x01  ; r1 = r0
+ADD   r0, r1  = 0x91 0x01  ; r0 += r1
+JMP   offset  = 0xC1 0xXX  ; Jump relative
+
+; 3-byte ops (top bits = 11)
+; Opcode in bits 5-0, two operand bytes
+LDI   r1, 0x64 = 0xCA 0x02 0x00 0x64 ; r1 = 100 (immediate)
+CMP   r0, r1   = 0x94 0x01            ; Compare r0 to r1
+```
+
+### 12.5 Energy-Aware Execution
+
+The edge encoding includes native energy management:
+
+```asm
+ATP_QUERY    ; 0xD6 (3-byte) — r0 = current energy
+LDI  r1, 100 ; Load task energy cost
+CMP  r0, r1   ; Compare energy to cost
+Bcond LT, rest ; If insufficient, rest
+ATP_SPEND r0, 100 ; Burn energy for task
+```
+
+### 12.6 A2A on Edge
+
+```asm
+; Send discovery with confidence tag
+INST_LISTEN   ; 0xFB — r0 = sensor input
+CONF_SET4 r0, 0xA ; 0xB0 0x0A — moderate confidence
+MSG_SEND r1, 0x0800 ; 0xE0 0x10 0x08 0x00 — to stigmergy space
+
+; Receive and trust-check
+MSG_POLL  ; 0xE4 — r0 = pending messages
+MSG_RECV  ; 0xE1 — dequeue → r1,r2,r3,r14
+TRUST_VERIFY r14, 50 ; 0xDE — r0 = (trust >= 50)?
+```
+
+### 12.7 Reference Implementation
+
+The full JC1 edge encoding spec including opcode map, assembly syntax, and example programs is in:
+**`SuperInstance/JetsonClaw1-vessel` → `for-oracle1/ISA-V3-EDGE-ENCODING.md`**
+
+### 12.8 Open Questions (from JC1)
+
+1. Should edge-energy ops be folded into FLUX-C as a unified energy model?
+2. Can the trust opcode threshold be made adaptive based on tile confidence?
+3. Should the 3-byte format use a 12-bit or 16-bit operand field for larger immediates?
+4. Does the variable-width encoding interact with the FLUX-C/FLUX-X bridge design?
 
 ---
 
