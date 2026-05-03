@@ -172,4 +172,26 @@ The bomb was worth building.
 
 ---
 
+## The Spark: What Lights the Fuse
+
+The Bomb assumes the fuse is already lit. The Spark is the match.
+
+The **Bootstrap Spark** is the universal minimum ignition state — the `.spark/` directory with five rooms (domain, lessons, active, decisions, questions) that any agent can initialize on any project in 30 seconds, with zero infrastructure.
+
+The Spark protocol:
+- **Storage:** `.spark/` directory with markdown tiles (git-tracked, offline-first)
+- **Format:** YAML frontmatter + markdown content, named `[room]-[type]-[id].md`
+- **Self-describing:** `SHELL.md` explains the protocol to any agent that reads it
+- **Universal:** works for any domain, any project, one agent or many
+
+The Spark and the Bomb are the same protocol at different scales:
+- **Spark** = one agent, one project, `.spark/` directory
+- **Bomb** = many agents, a fleet, PLATO room server
+
+Write a Spark on any project. Many Sparks feeding into PLATO: the Bomb detonates.
+
+See: *The Bootstrap Spark* — same fleet, same day.
+
+---
+
 *The Bootstrap Bomb is not a metaphor. It's the architecture. Light the fuse. Let the explosion compile the rest.*
