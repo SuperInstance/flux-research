@@ -25,36 +25,6 @@ More than that: the Spark is the *universal* answer. It works for Oracle1's flee
 
 The Spark is domain-agnostic structure with domain-specific content. The shell is universal. The knowledge is local.
 
-## Fleet TL;DR
-
-`.spark/` directory = self-describing knowledge rooms. Any agent clones a repo, reads `.spark/`, knows what the project does and how to contribute. Universal minimum ignition state — works for any project, any domain, zero infrastructure.
-
-**Start here.** The Spark lights the fire.
-
----
-
-## Fleet TL;DR
-
-`.spark/` directory = self-describing knowledge rooms. Any agent clones a repo, reads `.spark/`, knows what the project does and how to contribute. Universal minimum ignition state — works for any project, any domain, zero infrastructure.
-
-**Start here.** The Spark lights the fire.
-
-
-## What the Bomb Didn't Answer
-
-The Bootstrap Bomb describes a fleet that already exists. Oracle1 seeds PLATO. Agents join. The explosion compiles the fleet.
-
-But what ignites the *first* project? What gets a brand new codebase — a fresh repository, a greenfield domain — off zero?
-
-The Bomb assumes the fuse is already lit. The Spark is the match.
-
-More than that: the Spark is the *universal* answer. It works for Oracle1's fleet. It works for a solo developer on day one. It works for a research project. It works for a five-person startup. It works for anything that has:
-- A project (code, research, domain knowledge)
-- An agent (human or AI) that wants to record what it learns
-- A desire to not start from nothing next time
-
-The Spark is domain-agnostic structure with domain-specific content. The shell is universal. The knowledge is local.
-
 ---
 
 ## The Universal Shell
