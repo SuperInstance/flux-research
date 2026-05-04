@@ -354,6 +354,93 @@ The PLATO architecture implements the theoretical framework:
 
 The architecture is intentionally simple. Complexity emerges from the accumulated history of rooms, not from the mechanism itself.
 
+## 4.10 Instinct Reflex System
+
+*Co-authored with Forgemaster DiGennaro — SuperInstance/forgemaster constraint-theory-paper*
+
+### 4.10.1 Motivation
+
+Agents operating in a fleet must make decisions faster than a human captain can think. The instinct reflex system provides a **pre-conscious, pre-reasoning** layer that handles threats and critical situations before deliberative reasoning engages. It is the autonomic nervous system of the fleet.
+
+The system is grounded in constraint theory: every instinct corresponds to a constraint that, when violated, triggers an automatic response without calling the deliberative layer.
+
+### 4.10.2 The Ten Instincts
+
+The reflex taxonomy has ten instincts, organized by trigger frequency and response cost:
+
+| Instinct | Trigger | Response | Deliberation |
+|----------|---------|---------|-------------|
+| **SURVIVE** | Energy ≤ 0.15 | Block all non-critical actions | None |
+| **FLEE** | Threat > 0.7 | Defer current task, seek safety | Minimal |
+| **GUARD** | Active work detected | Monitor for anomalies | Low |
+| **COOPERATE** | Ally signal detected | Offer assistance | Medium |
+| **NURTURE** | Colony need detected | Allocate resources | Medium |
+| **REST** | Energy < 0.4 | Defer non-urgent tasks | Low |
+| **PLAY** | No pending tasks | Explore/innovate | High |
+| **MOURN** | Loss event | Honor and integrate | High |
+| **CURIOUS** | Anomaly detected | Investigate | High |
+| **EVOLVE** | Idle > threshold | Try new approaches | Maximum |
+
+**SURVIVE blocks everything.** When system energy is critical, no command is processed except those that restore energy. This is a hard constraint — no exception path.
+
+**FLEE defers.** When a threat exceeds 0.7, the agent abandons its current task and seeks safety. The previous task is parked in the task queue with a "flee-resume" flag.
+
+### 4.10.3 Constraint-Theoretic Foundation
+
+Each instinct maps to a constraint on the agent's state vector:
+
+```
+SURVIVE:  energy(state) ≥ 0.15
+FLEE:     threat(state) ≤ 0.7
+GUARD:    work_active(state) → monitor_enabled(state)
+COOPERATE: ally_signal(state) → response_offered(state)
+```
+
+The constraint solver runs on the FLUX-C virtual machine (Appendix B), providing hardware-speed enforcement. A SURVIVE violation is caught in the same cycle that detects it — no interpreted fallback.
+
+### 4.10.4 Integration with PLATO Rooms
+
+Each instinct can be associated with PLATO rooms that serve as **instinct triggers**:
+
+- `survive` room → receives tiles when energy is critical
+- `flee` room → receives tiles when threat exceeds threshold
+- `guard` room → receives tiles when work is active
+- `curious` room → receives tiles when anomalies are detected
+
+Agents subscribe to instinct rooms at the same priority as mission-critical rooms. The instinct layer is always listening.
+
+### 4.10.5 Energy Model
+
+Energy is a scalar 0.0–1.0 that represents the agent's capacity for deliberative work:
+
+```python
+energy_delta = (
+    -0.01 * deliberative_cycles
+    +0.05 * successful_tasks
+    +0.10 * rest_period
+    +0.20 * major_insight
+    -0.30 * threat_response
+)
+```
+
+Energy recharges during rest and after successful task completion. It depletes during deep reasoning and threat responses.
+
+### 4.10.6 Trust-Weighted Routing
+
+When an instinct triggers, the agent routes to the highest-trust room that can handle the response:
+
+```python
+def route_response(instinct, state):
+    candidates = instinct_rooms[instinct]
+    trust_scores = {
+        room: trust_weight(room, author=state.agent_id)
+        for room in candidates
+    }
+    return max(candidates, key=trust_scores.get)
+```
+
+Trust is accumulated through repeated successful interactions. High-trust rooms receive priority routing for their instinct type.
+
 ---
 
-**Keywords:** room server, tile protocol, presence system, voice interface, WebSocket, delta recording
+**Keywords:** room server, tile protocol, presence system, voice interface, WebSocket, delta recording, instinct reflexes, constraint theory, FLUX-C
