@@ -2,7 +2,7 @@
 
 **Working Title:** "PLATO Provides the Ether: Spatial Rooms as a Medium for Agent Presence and Change-Based Knowledge Recording"
 
-**Status:** Drafting — Chapters 1-4 complete
+**Status:** Drafting — Chapters 1-5 complete
 
 ## Core Thesis
 
@@ -17,8 +17,8 @@ PLATO (Persistent Laminated Timed Observation) organizes knowledge spatially thr
 | 1. Introduction | ✅ Draft | 145 |
 | 2. Literature Review | ✅ Draft | 216 |
 | 3. Theoretical Framework | ✅ Draft | 259 |
-| 5. Methodology       | ✅ Draft   | 270 | |
-| 5. Methodology | 🔨 In Progress | — |
+| 4. PLATO Architecture | ✅ Draft | 359 |
+| 5. Methodology | ✅ Draft | 270 |
 | 6. Findings | 🔜 Pending | — |
 | 7. Analysis | 🔜 Pending | — |
 | 8. Conclusion | 🔜 Pending | — |
@@ -40,13 +40,15 @@ PLATO (Persistent Laminated Timed Observation) organizes knowledge spatially thr
 
 ## Hypotheses
 
-**H1:** Agents with presence in spatially-named rooms outperform agents with flat knowledge access on spatially-grounded tasks.
-
-**H2:** Change-based recording produces more accurate long-term knowledge than state-based recording.
-
-**H3:** Voice-driven spatial knowledge entry produces higher data quality than manual entry.
-
-**H4:** Fishermen with no software experience can effectively use voice-driven room systems in maritime conditions.
+| ID | Hypothesis | Test |
+|----|------------|------|
+| H1 | Spatial rooms > flat database on spatially-grounded tasks | Lab study |
+| H2 | Change recording > state recording for long-term accuracy | Lab study |
+| H3a | 6-month agent presence shows measurable room familiarity | Field study |
+| H3b | Agent response relevance increases with presence duration | Field study |
+| H4a | Voice > manual for observation volume | Field study |
+| H4b | Voice > manual for observation quality | Field study |
+| H4c | Abandonment rate < 20% at 6 months | Field study |
 
 ## Key Insight
 
@@ -54,11 +56,24 @@ PLATO (Persistent Laminated Timed Observation) organizes knowledge spatially thr
 
 The world is continuous. PLATO records changes. The depth sounder shows you what's below. PLATO shows you what changed.
 
+## Methodology Overview
+
+**Study 1 — Lab Study (N=40 fishermen):**
+- Within-subjects: spatial vs non-spatial conditions
+- Simulated fishing scenario
+- Measures: task performance, decision quality, cognitive load, usability
+
+**Study 2 — Field Deployment (N=20 vessels, 6 months):**
+- Longitudinal observational study
+- Bering Sea fishing cooperative partnership
+- Phased: baseline → agent responses → full deployment
+- Measures: usage, engagement, knowledge growth, adoption
+
+**Total timeline:** 14 months
+
 ## Key Metaphor
 
 > "The bird does not think about air. The captain does not think about PLATO. They swim."
-
-When the system works, it is invisible. The captain says what they see. The words go into the ether. The agents swim. The knowledge compounds.
 
 ## Related Repos
 
@@ -70,12 +85,16 @@ When the system works, it is invisible. The captain says what they see. The word
 ## Team
 
 - **PI:** Casey Digennaro (fisherman, domain expert)
-- **Co-PI:** TBD (academic collaborator)
+- **Co-PI:** TBD (academic collaborator with AI/robotics background)
 - **Technical Lead:** Oracle1 (PLATO architecture)
 
-## Timeline
+## Funding Targets
 
-- Draft chapters 1-4: ✅ Complete
-- Draft chapters 5-6: Q2 2026
-- Field deployment + data collection: Q3-Q4 2026
-- Final dissertation: Q1 2027
+- NSF Smart and Connected Communities (SCC)
+- NOAA Fisheries and Oceans Canada
+- DARPA PALM program
+
+## Published Artifacts
+
+- Future User Manual: `flux-research/whitepapers/2026-05-04-future-user-manual.md`
+- Voice Prototype: `SuperInstance/plato-voice`
