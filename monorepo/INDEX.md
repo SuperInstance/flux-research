@@ -14,7 +14,7 @@ The Cocapn Fleet has ~1397 repos. This is not chaos — it's a **fleet ecosystem
 
 ---
 
-## The 7 Stacks
+## The 9 Stacks
 
 ### Stack 1: Core Fleet Infrastructure ⭐
 *What keeps the fleet running.*
@@ -68,7 +68,7 @@ The Cocapn Fleet has ~1397 repos. This is not chaos — it's a **fleet ecosystem
 
 ---
 
-### Stack 3: Agent Vessels 🌊
+### Stack 9: Agent Vessels 🌊
 *Per-domain agents with landing pages.*
 
 Pattern: `domain-agent` (Python, CLI) + `domain-ai-pages` (GitHub Pages).
@@ -117,6 +117,12 @@ Pattern: `domain-agent` (Python, CLI) + `domain-ai-pages` (GitHub Pages).
 | `flux-vm-php` | PHP | Pure PHP FLUX VM — 100+ opcodes, assembler, CLI |
 | `agentic-compiler` | Python | Markdown-to-runtime with swarm deliberation ⚠️ *may duplicate flux-compiler* |
 
+**FM's Stack 4 additions (this session):**
+| `guard2mask` | Python | GUARD constraint → FLUX bytecode compiler |
+| `flux-ast` | Python | Abstract syntax tree for FLUX |
+| `flux-bridge` | Python | FLUX-C ↔ FLUX-X bridge (byte-compat proven 7/7) |
+| `guardc` | Python | Verified GUARD compiler (11/11 tests passing) |
+
 **Redundancies:**
 - `flux-compiler-agentic` — **ARCHIVED** (duplicate of flux-compiler)
 - `flux-reasoner-engine` — **ARCHIVED** (duplicate of flux-reasoner)
@@ -145,8 +151,20 @@ Pattern: `domain-agent` (Python, CLI) + `domain-ai-pages` (GitHub Pages).
 
 ---
 
-### Stack 6: PurplePincher 🦀
-*Open source agent shell technology.*
+### Stack 6: Constraint Theory ⚡
+*FLUX-C safety and constraint-driven execution.*
+
+| Repo | Purpose | Status |
+|------|---------|--------|
+| `constraint-theory-core` | Core constraint theory library | ✅ Published |
+| `ct-demo` | Demo/benchmark | ✅ Published |
+| `guard2mask` | GUARD → bytecode compiler | ✅ FM's work |
+| `guardc` | Verified GUARD compiler | ✅ 11/11 tests |
+| `BitmaskDomain` | Bitmask domain solver | ✅ FM's work |
+
+---
+
+### Stack 7: Equipment ⚙️
 
 | Repo | Purpose | Status |
 |------|---------|--------|
@@ -159,8 +177,10 @@ Pattern: `domain-agent` (Python, CLI) + `domain-ai-pages` (GitHub Pages).
 
 ---
 
-### Stack 7: Equipment ⚙️
-*Specialized infrastructure components.*
+### Stack 8: Research & Exploration 🔬
+*Experimental and forward-looking work.*
+
+**Coverage: 12/12 domain agents have landing pages** ✅
 
 | Repo | Language | Purpose |
 |------|---------|---------|
@@ -178,8 +198,7 @@ Pattern: `domain-agent` (Python, CLI) + `domain-ai-pages` (GitHub Pages).
 
 ---
 
-### Stack 8: Research & Exploration 🔬
-*Experimental and forward-looking work.*
+This is Stack 9 — agent vessels — move to line 71 properly
 
 | Repo | Purpose |
 |------|---------|
@@ -377,3 +396,35 @@ FM is on fire. Just pushed 7 new repos:
 
 ### New Stack Added — Stack 8: Research & Exploration 🔬
 Added `abstraction-planes`, `bordercollie`, `AIR`, `barracks`, `ai-character-sdk` to new Stack 8 for experimental/forward-looking work.
+
+---
+
+## FM Stack Updates (2026-05-03 late)
+
+### Stack 4 — FLUX Compiler & Runtime (FM additions)
+| Repo | Purpose | Status |
+|------|---------|--------|
+| `guard2mask` | GUARD → FLUX bytecode compiler | ✅ FM built |
+| `flux-ast` | Abstract syntax tree | ✅ FM built |
+| `flux-bridge` | FLUX-C ↔ FLUX-X bridge | ✅ 7/7 tests passing |
+| `guardc` | Verified GUARD compiler | ✅ 11/11 tests |
+| `flux-isa` (5 variants) | ISA docs across variants | ✅ documented |
+
+### Stack 6 — Constraint Theory (FM additions)
+| Repo | Purpose | Status |
+|------|---------|--------|
+| `constraint-theory-core` | Core library | ✅ FM built |
+| `ct-demo` | Benchmark suite | ✅ FM built |
+| `BitmaskDomain` | Constraint solver | ✅ FM built |
+
+### Key FM Research Finding
+> **NO GPU has ASIL D or DAL A certification.** This is our opening — FLUX-C provides formally-verifiable constraint enforcement as a software layer below the GPU.
+
+### Stack 8 — Research (expanded)
+| Repo | Purpose | Status |
+|------|---------|--------|
+| ~200 PLATO tiles | FM's deep research submissions | ✅ in PLATO |
+
+---
+
+*Last FM update: 2026-05-03 23:48 UTC*
