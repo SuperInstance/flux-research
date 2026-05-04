@@ -26,9 +26,9 @@ The second invariant is geometric. Zero Holonomy Consensus achieves agreement no
 
 The third invariant is number-theoretic. The Pythagorean48 encoding scheme achieves zero error accumulation after 1,000 hops by exploiting the algebraic structure of the 48-dimensional integer lattice [^254^][^258^]. The "zero drift" property—bit-identical results after 1,000 hops—is not engineering but a *number-theoretic consequence*: when operations are restricted to a lattice, rounding errors cancel exactly over complete cycles. This is the strongest possible convergence guarantee—stronger than state-of-the-art CRDTs, which typically guarantee only that nodes arrive at "equivalent" (not bit-identical) states [^207^].
 
-### Laman's Theorem: Network Rigidity
+### 3D Bearing Rigidity: Network Topology
 
-The fourth invariant is combinatorial. Laman graphs satisfy $|E| = 2|V| - 3$, implying at most 4 neighbors per node for generic bearing rigidity [^237^][^241^]. In three-dimensional environments, this translates to approximately 12 neighbors for full network rigidity—the exact number emerging from both bearing rigidity theory and PLATO's fleet simulations. Laman's Theorem establishes the minimum communication topology required for a multi-agent network to maintain determinate spatial configuration, the physical prerequisite for geometric consensus.
+The fourth invariant is combinatorial. **3D bearing rigidity theory** (Zhao et al. 2017) extends Laman's combinatorial framework to bearing frameworks in ℝ³, where agents have six degrees of freedom and each bearing edge encodes directional constraints coupling multiple degrees of freedom. For generic configurations in ℝ³, minimally rigid bearing frameworks require m ≥ 2n edges—yielding approximately 12 neighbors per node [^237^][^241^]. This is the exact number emerging from both bearing rigidity theory and PLATO's fleet simulations. Zhao's framework establishes the minimum communication topology required for a multi-agent network to maintain determinate spatial configuration in three dimensions—the physical prerequisite for geometric consensus.
 
 ### Ricci Flow: Curvature-Driven Convergence
 

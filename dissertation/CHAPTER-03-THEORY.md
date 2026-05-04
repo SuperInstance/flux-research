@@ -211,7 +211,7 @@ Traditional storage requires: who queried for this? The ether requires: who was 
 
 The mathematical framework underlying PLATO rooms is provided by constraint theory (Forgemaster, 2026). Specifically:
 
-- **Rigidity:** A fleet of agents forms a coherent structure when each agent maintains approximately 12 connections to neighbors. Fewer connections produce fragility; more produce overconstraint. This is Laman's theorem (Lam 1970) applied to agent networks.
+- **Rigidity:** A fleet of agents forms a coherent structure when each agent maintains approximately 12 connections to neighbors. Fewer connections produce fragility; more produce overconstraint. This is **3D bearing rigidity theory** (Zhao et al. 2017), extending Laman's combinatorial framework to bearing frameworks in ℝ³, applied to agent networks.
 
 - **Holonomy:** When a change propagates around a closed cycle of agents and returns to its origin unchanged, the network is in a consistent state. When the propagation returns changed, there is inconsistency somewhere. This provides consensus without voting.
 

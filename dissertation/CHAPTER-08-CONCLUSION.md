@@ -148,9 +148,9 @@ Byzantine fault tolerance without voting. Nodes achieve consensus when their hol
 
 6 bits per vector component. log₂(48) = 5.585 bits. Zero drift after unlimited hops. The encoding is robust enough for production fleet communication.
 
-### Laman's Theorem and Rigidity
+### 3D Bearing Rigidity and Rigidity
 
-A graph is generically rigid in 2D iff it has exactly 2V-3 edges and no subgraph has more than 2V-3 edges. This 170-year-old result from graph theory equals the constraint threshold from Law 102's 12. Convergent discovery from two independent research directions.
+A graph is generically rigid in ℝ² iff it has exactly 2V−3 edges (Laman's theorem, 1864). In three dimensions, **bearing rigidity theory** (Zhao et al. 2017) requires m ≥ 2n edges, yielding approximately 12 neighbors per node. This 3D bound equals the constraint threshold from Law 102's 12. Convergent discovery from two independent research directions — planar Laman theory and 3D bearing rigidity — that both converge on 12 as the critical threshold for fleet topology.
 
 ### Ricci Flow and Convergence
 
