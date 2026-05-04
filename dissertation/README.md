@@ -17,7 +17,7 @@ PLATO (Persistent Laminated Timed Observation) organizes knowledge spatially thr
 | 1. Introduction | ✅ Draft | 145 |
 | 2. Literature Review | ✅ Draft | 216 |
 | 3. Theoretical Framework | ✅ Draft | 259 |
-| 4. PLATO Architecture | ✅ Draft | 359 |
+| 5. Methodology       | ✅ Draft   | 270 | |
 | 5. Methodology | 🔨 In Progress | — |
 | 6. Findings | 🔜 Pending | — |
 | 7. Analysis | 🔜 Pending | — |
