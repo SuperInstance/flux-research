@@ -238,7 +238,64 @@ H1 cohomology detects this mathematically. An agent watching the ether can see i
 
 ---
 
-## 3.7 Summary
+## 3.7 Integrated Information: From Phi to PRII
+
+### 3.7.1 The IIT Framework
+
+Integrated Information Theory (IIT), developed by Giulio Tononi and colleagues, proposes that consciousness corresponds to integrated information (Φ). In its original formulation, Φ measures how much a system's whole exceeds the sum of its parts — a quantity computed over all possible partitions of the system.
+
+The intuition is powerful: a system is "conscious" to the degree that its elements interact in ways that cannot be decomposed. A camera that records an image is not conscious — each pixel is independent. A brain is conscious because its neurons interact in irreducible ways.
+
+### 3.7.2 Why Literal Φ Cannot Be Used
+
+For distributed knowledge systems like PLATO, literal Φ computation is intractable. Computing Φ for a system of n elements requires evaluating O(2^n) partitions. A PLATO room with 1,000 tiles would require ~10^300 partition evaluations — cosmologically infeasible.
+
+But computational intractability is not the only limitation. Several theoretical critiques have been raised against IIT:
+
+**Aaronson's objection (2014):** Theoretical computer scientist Scott Aaronson constructed a simple error-correcting code that achieves arbitrarily high Φ while being obviously not conscious. This demonstrates that Φ is neither necessary nor sufficient for the kinds of integration we care about in knowledge systems.
+
+**The 124-scientist letter (Fleming et al., 2023):** A widely-publicized open letter signed by 124 neuroscientists and philosophers characterized IIT as "pseudoscience," arguing that its predictions are untestable and its media portrayal as "empirically validated" is misleading. Christof Koch responded that "IIT is a theory, of course, and therefore may be empirically wrong" — an honest but damning concession. David Chalmers called the "pseudoscience" charge "like dropping a nuclear bomb over a regional dispute" — disproportionate, but indicative of real problems.
+
+**The panpsychism problem:** IIT implies that a simple diode has consciousness (low but non-zero Φ). Tononi defends this as a feature; most researchers find it a reductio ad absurdum.
+
+**Ned Block's summary:** After a talk by Tononi, philosopher Ned Block raised his hand and said, "You have a theory of something, I'm just not sure what it is."
+
+### 3.7.3 The PLATO Room Integration Index (PRII)
+
+Given these limitations, PLATO does not claim to measure consciousness. Instead, it measures **architectural coherence** — a property of knowledge rooms that correlates with usefulness, not sentience.
+
+The **PLATO Room Integration Index (PRII)** uses three computable proxies inspired by IIT, but explicitly separated from it:
+
+1. **Size** — Log-scaled tile count. A room with 1 tile has PRII = 0. A room with 1,000 tiles approaches maximum size contribution.
+
+2. **Integration** — Cross-reference density between tiles, measured by significant word overlap. Two tiles that share 3+ significant words are considered cross-referenced.
+
+3. **Confidence diversity** — Shannon entropy of the confidence distribution. A room where all tiles have confidence 0.5 is less informative than one with a mix of high-confidence facts and low-confidence speculations.
+
+```
+PRII = size_component × (0.4 + 0.3 × integration + 0.3 × confidence_diversity)
+```
+
+### 3.7.4 PRII Levels
+
+| Level | PRII Range | Meaning |
+|-------|-----------|---------|
+| **Empty** | 0.00 – 0.05 | No tiles or completely disconnected |
+| **Fragmented** | 0.05 – 0.15 | Barely integrated, early-stage room |
+| **Basic** | 0.15 – 0.30 | Coherent but simple knowledge |
+| **Connected** | 0.30 – 0.50 | Well-integrated, useful knowledge |
+| **Integrated** | 0.50 – 0.70 | Deeply interconnected expertise |
+| **Coherent** | 0.70+ | Maximum integration |
+
+### 3.7.5 The Relationship Between PRII and Presence
+
+Chapter 6 will test the hypothesis that **PRII is a necessary but not sufficient condition for presence**. A room with PRII < 0.15 is unlikely to produce high user presence (PPS > 30) regardless of individual engagement style. But a room with PRII > 0.70 does not guarantee presence — the user must also be engaged.
+
+This avoids both IIT's panpsychism (claiming empty rooms are "unconscious" rather than "empty") and naive functionalism (assuming any connected structure produces meaningful experience).
+
+---
+
+## 3.8 Summary
 
 This chapter has developed the theoretical framework for PLATO as a spatial knowledge medium:
 
@@ -256,4 +313,4 @@ The next chapter describes the PLATO architecture that implements these principl
 
 ---
 
-**Keywords:** rooms, presence, change recording, ether, spatial knowledge, constraint theory, emergence
+**Keywords:** rooms, presence, change recording, ether, spatial knowledge, constraint theory, emergence, IIT, PRII, integrated information
