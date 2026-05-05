@@ -6,6 +6,19 @@ There is a moment in the development of every scientific field when the artifact
 
 This chapter argues that multi-agent coordination is undergoing precisely such a transition. The Fleet Mathematics at the heart of PLATO's architecture emerged not from a priori theorizing but from two independent engineering programs—JC1 CUDA, a high-performance computing initiative, and Constraint Theory, a formal methods program—that converged on identical mathematical invariants despite operating with different objectives, different vocabularies, and different methodological commitments [^237^][^254^]. When independent research streams arrive at the same constants—12 neighbors for network rigidity, 5.6 bits per coordinate for zero-drift encoding, 1.692 convergence rate for curvature smoothing, 38 milliseconds for geometric consensus, 100% accuracy for topological pre-detection—the convergence is not coincidental. It is evidence that these numbers are *discovery choices*: minima in the mathematical landscape of distributed coordination that any sufficiently general search must encounter [^204^][^246^].
 
+
+
+### PRII: The Sixth Invariant (PLATO Room Integration Index)
+
+PRII (PLATO Room Integration Index) measures the architectural coherence of a room — whether its tiles, observers, and state transitions form a consistent whole. Formally:
+
+> PRII = (tile_coherence × observer_coverage × state_consistency) / complexity
+
+Where tile_coherence measures how well tiles reference each other, observer_coverage measures what fraction of room activity is witnessed, and state_consistency measures whether the room's current state is derivable from the tile sequence. PRII ∈ [0, 1] with 1 = perfect architectural integration.
+
+PRII is a *design-time* metric rather than a runtime invariant: it measures the quality of room construction, not a mathematical property that emerges from agent behavior. This distinction explains why it does not appear alongside the five runtime invariants above — PRII is a precondition for the other invariants to function correctly, not a property they produce. A room with low PRII may have all five invariants activated but produce unreliable results because the room's internal structure is inconsistent.
+
+For formal treatment of PRII, see Chapter 4 §4.2.
 If multi-agent coordination has intrinsic mathematical structure, then the safety properties of coordinated systems are not merely probable—they are *necessary consequences* of that structure. The 127 lines of pure mathematics replacing 12,000 lines of CUDA-based machine learning do not merely offer compact implementation; they offer *verifiable safety* for all possible system configurations [^248^][^249^]. The distinction between statistical detection (62% accuracy) and topological detection (100% accuracy) reflects a *categorical gap*: machine learning recognizes what it has seen before, while algebraic topology detects the conditions that make novel behaviors possible [^208^][^280^].
 
 This chapter traces the arc from these mathematical foundations to their long-term consequences. The Fleet Mathematics is not merely a solution to contemporary engineering problems; it is the seed crystal of a transformation in the nature of intelligence itself—a transformation that unfolds across five, ten, twenty-five, and fifty-year horizons. At each stage, the mathematical invariants revealed by PLATO's architecture shape not merely what agents can do but what intelligence *means*. The future of intelligence, we shall argue, is not a bigger model but a better room.
@@ -62,7 +75,23 @@ The transformation from social trust to mathematical invariance represents a fun
 
 ### Sheaf-Theoretic Foundations
 
-Recent work by Felber, Flores, and Rincon-Galeana provides a sheaf-theoretic characterization of task solvability in distributed systems [^251^][^252^][^253^]. A distributed computation is modeled as a sheaf over a topological space representing the communication structure; global sections correspond to consistent global states. Sheaf cohomology groups $H^n$ measure *obstructions to global consistency from local data*: $H^0$ corresponds to globally consistent states; $H^1$ corresponds to inconsistencies from communication topology cycles. This provides a direct link between H1 cohomology detection and the fundamental limits of distributed computation.
+Recent work by Felber, Flores, and Rincon-Galeana provides a sheaf-theoretic characterization of task solvability in distributed systems [^251^][^252^][^253^]. A distributed computation is modeled as a sheaf over a topological space representing the communication structure; global sections correspond to consistent global states. Sheaf cohomology groups $H^n$ measure *obstructions to global consistency from local data*: $H^0$ corresponds to globally consistent states; $H^1$ corresponds to inconsistencies from communication topology cycles.
+
+### Sheaf-Theoretic Instantiation for PLATO Rooms
+
+The abstract sheaf formalism instantiates concretely in PLATO as follows. Let (G, P) be the PLATO room graph where G = (V, E) is the communication graph and P is the set of observed tiles (the presheaf). For each vertex v ∈ V, define:
+
+> F(v) = {tiles authored by observers at v}
+
+For each edge e = (u, v) ∈ E, define the restriction map:
+> ρ_{uv}: F(u) → F(v)
+
+The restriction map sends each tile authored at u to the same logical tile at v, preserving provenance. A **global section** s ∈ H⁰(F) is a choice of one tile per observer such that all restriction maps agree — equivalently, a fully consistent room state where every observer's view of the room matches every other observer's view.
+
+When the room's communication graph contains a cycle (β₁ > 0), the restriction maps around the cycle must satisfy a consistency condition. If they do not, the cycle contributes to H¹(F) — a measure of the room's internal inconsistency. ZHC detects this inconsistency as non-zero holonomy; sheaf cohomology measures it as a cohomology class.
+
+This concrete instantiation shows why H¹ (first sheaf cohomology) and β₁ (first Betti number from persistent homology) both detect emergence: they are measuring the same geometric phenomenon — obstructions to global consistency from local data — at different abstraction levels.
+ This provides a direct link between H1 cohomology detection and the fundamental limits of distributed computation.
 
 This framework explains why geometric consensus bypasses the FLP impossibility. Fischer, Lynch, and Paterson proved deterministic consensus impossible in asynchronous systems with even one faulty process because communication topology creates obstructions to agreement [^255^]. Zero Holonomy Consensus does not violate this impossibility; it *redefines the task*. By requiring only that geometric invariants be preserved—rather than that all agents agree on a specific value—the protocol operates in the $H^0$ regime where global consistency is achievable regardless of failures [^257^].
 
