@@ -54,7 +54,7 @@ The Cocapn Fleet has ~1397 repos. This is not chaos — it's a **fleet ecosystem
 | Repo | Language | What |
 |------|---------|-----|
 | `plato-sdk` | Python | Agent SDK for PLATO |
-| `plato-sdk-unified` | Python | All 8 consciousness packages in one import |
+| `plato-sdk-unified` | Python | **Archived** — depends on non-existent PyPI packages |
 | `plato-cli` | Rust | Single binary — search tiles, check deadband |
 | `plato-tutor` | Python | Context jumping with WordAnchor extraction |
 | `plato-mud-server` | Python | Text-based training ground (16 rooms) |
@@ -94,7 +94,8 @@ Pattern: `domain-agent` (Python, CLI) + `domain-ai-pages` (GitHub Pages).
 
 **Biggest gaps:**
 - Most agents claim PLATO but don't document tile schemas
-- `plato-sdk` exists but most agents don't use it
+- `superinstance-plato-sdk` v2.0.0 is canonical (pip install plato_sdk) — 14/14 domain agents use it
+- `plato-sdk-unified`: **Archived** — depended on non-existent PyPI packages
 - Test coverage inconsistent across agents
 
 ---
@@ -233,13 +234,13 @@ This is Stack 9 — agent vessels — move to line 71 properly
 - [x] **Archive `flux-compiler-agentic`** — duplicate of flux-compiler ✅
 - [x] **Archive `flux-reasoner-engine`** — duplicate of flux-reasoner ✅
 - [ ] **Investigate agentic-compiler** — is it redundant with flux-compiler?
-- [ ] **Consolidate domain agents onto shared scaffold** — plato-sdk + test coverage
+- [x] **Consolidate domain agents onto shared scaffold** ✅ — 14/14 agents using fleet-agent base class
 - [ ] **Update cocapn.ai landing page** with new Bootstrap Stack
 
 ### Phase 2: PLATO Cleanup (This Week)
 - [ ] **Consolidate 4 PLATO variants** — feature flags in one crate, or pick "production" variant
 - [ ] **Consolidate holodeck-rust + holodeck-core** — GPU sim + core engine one crate
-- [ ] **Pick one SDK** — plato-sdk vs plato-sdk-unified
+- [x] **Pick one SDK** ✅ — superinstance-plato-sdk v2.0.0 is canonical
 - [ ] **Document which PLATO variant is "production"**
 
 ### Phase 3: FLUX Consolidation (Next Week)
@@ -383,6 +384,7 @@ FM is on fire. Just pushed 7 new repos:
 
 ### Papers Published — 2026-05-03 Evening
 - ✅ **Semantic Compiler** (2026-05-03) — intent → FLUX-ese → bytecode. 6-plane framework.
+✅ **Semantic Compiler v5** (2026-05-05) — NL→GUARD→FLUX-C→Z3 proof, 195 lines
 - ✅ **Compiled Agency** (2026-05-03) — agents as compiled artifacts, not running processes.
 - ✅ **Bootstrap Spark + Bomb + Counting Before Flowing** — earlier today
 - ✅ **Tide Pool Security** — earlier
