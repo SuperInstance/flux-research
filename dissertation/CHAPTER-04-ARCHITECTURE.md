@@ -69,53 +69,9 @@ Tiles can be filtered by:
 
 ## 4.3 The Tile Protocol
 
-### 4.3.1 Submitting a Tile
+| **Submit tile** | POST | `/submit` |
 
-```bash
-POST /rooms/buoy-7/tiles
-Content-Type: application/json
-
-{
-    "author": "captain:jones",
-    "content": "Chum running thick, morning tide",
-    "timestamp": "2026-05-04T06:30:00Z"
-}
-```
-
-Response:
-```json
-{
-    "id": "tile-uuid-1234",
-    "room": "buoy-7",
-    "author": "captain:jones",
-    "timestamp": "2026-05-04T06:30:00Z",
-    "content": "Chum running thick, morning tide",
-    "previous_id": "tile-uuid-1199"
-}
-```
-
-### 4.3.2 Reading Tiles
-
-```bash
-GET /rooms/buoy-7/tiles?limit=10
-```
-
-Response:
-```json
-{
-    "room": "buoy-7",
-    "count": 10,
-    "tiles": [
-        {
-            "id": "tile-uuid-1234",
-            "author": "captain:jones",
-            "timestamp": "2026-05-04T06:30:00Z",
-            "content": "Chum running thick, morning tide"
-        },
-        ...
-    ]
-}
-```
+| **Read tiles** | GET | `/rooms/{name}` |
 
 ### 4.3.3 The `previous_id` Chain
 
