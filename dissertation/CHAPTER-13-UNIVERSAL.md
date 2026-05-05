@@ -205,12 +205,3 @@ The Bootstrap Spark's five universal rooms—domain, lessons, active, decisions,
 [^381^]: Wikipedia. "Bounded rationality" (Simon).
 
 ---
-
-*Chapter 13 of the PLATO dissertation. Synthesizes findings from 40+ peer-reviewed papers, industry benchmarks, architectural studies, and cross-domain knowledge-management research (2008–2026). Word count: ~4,200.*
-ity."
-
-[^381^]: Wikipedia. "Bounded rationality" (Simon).
-
----
-
-*Chapter 13 of the PLATO dissertation. Synthesizes findings from 40+ peer-reviewed papers, industry benchmarks, architectural studies, and cross-domain knowledge-management research (2008–2026). Word count: ~4,200.*

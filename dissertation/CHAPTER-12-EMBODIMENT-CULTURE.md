@@ -213,5 +213,3 @@ The bird does not think about air because air is not an object of thought but th
 [^43^]: (2025). On the dynamics of multi-agent LLM communities driven by value diversity. arXiv:2512.10665.
 
 ---
-
-*Chapter 12 of the PLATO Dissertation: Persistent Laminated Timed Observation — Architecture, Phenomenology, and the Social Dynamics of Multi-Agent Systems.*
