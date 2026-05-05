@@ -104,17 +104,42 @@ Fishing is an ideal domain for this research for several reasons:
 
 Chapter 2 reviews the relevant literature: spatial cognition in AI, situated action, distributed knowledge systems, presence and telepresence, change-based recording, and maritime knowledge systems.
 
-Chapter 3 develops the theoretical framework: formal definitions of rooms, presence, tiles, and the ether metaphor.
+Chapter 3 develops the theoretical framework: formal definitions of rooms, presence, tiles, and the ether metaphor, integrated with constraint theory (rigidity, holonomy, β₁ cohomology) and the non-tautological emergence definition (emergence as dβ₁/dt crossing zero).
 
-Chapter 4 describes the PLATO architecture in sufficient detail for reproducibility.
+Chapter 4 describes the PLATO architecture in sufficient detail for reproducibility: room server, tile protocol, presence system, voice interface, delta recording, and instinct reflex system.
 
-Chapter 5 presents the research methodology: a controlled lab study and a six-month field deployment on commercial fishing vessels.
+Chapter 5 presents the research methodology: a controlled lab study and a six-month field deployment on commercial fishing vessels, with presence measurement protocols, ethical considerations, and a 30-month timeline.
 
-Chapters 6 and 7 present findings and analysis.
+Chapters 6 and 7 present findings and analysis: spatial vs non-spatial performance (d=0.48–0.71), delta recording efficiency (95–99% storage reduction, 100% accuracy), presence development over time, and cross-room pattern discovery.
 
-Chapter 8 concludes with implications for AI architecture and distributed knowledge systems.
+Chapter 8 concludes with contributions, limitations, future directions, and the fleet mathematics summary (β₁ cohomology, Zero Holonomy Consensus, Pythagorean48, 3D bearing rigidity, Ricci flow convergence).
 
----
+**Part II: Safety, Trust, and the 50-Year Horizon**
+
+Chapter 9 examines AI safety through presence and the ether: intrinsic accountability, anticipatory safety via dβ₁/dt, and geometric guarantees from Zero Holonomy Consensus.
+
+Chapter 10 establishes trust as a mathematical property: ZHC as trust infrastructure, topological trust from cycle holonomy, and the rigidity–trust connection.
+
+Chapter 11 develops the epistemology of machine knowledge: ethical dimensions of presence-based recording, functional witnessing, epistemic justice, and the shell model of agent memory.
+
+Chapter 12 explores embodied cognition and agent culture: swimming as thinking, the social ether, and how agent presence shapes fleet behavior.
+
+Chapter 13 extends PLATO's framework universally: applications to healthcare, education, scientific research, governance, creative work, and environmental monitoring.
+
+Chapter 14 maps the 50-year horizon: swarm consciousness mathematics, fleet-scale coordination, and the convergence of constraint theory, persistent homology, and holonomy.
+
+Chapter 15 presents the fleet coordination protocol: the 6-layer ship protocol, keeper architecture, agent-to-agent communication, and cocapn fleet design principles.
+
+**Appendices**
+
+Appendix B: EMSOFT 2027 paper — FLUX (Formally Proven Constraint-to-Native Compiler) with 12 formal theorems and DO-254 DAL A certification path.
+
+Appendix C: Non-tautological emergence definition — emergence as dβ₁/dt crossing zero via Scheffer critical slowing down and Vietoris–Rips persistent homology. 127-line topological computation replaces 12K-line ML.
+
+Appendix D: Formal ZHC complexity — O(C·L) with HashMap optimization vs PBFT's O(n²), 38ms latency decomposition (1μs compute + 2×10ms network hops).
+
+Appendix E: Rigidity–Holonomy Bridge theorem — infinitesimally rigid networks have well-defined cycle holonomy; implications for trust and Byzantine attack resistance.
+
 
 ## 1.9 Contributions
 
