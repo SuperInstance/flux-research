@@ -1,5 +1,3 @@
-# Chapter 9: The Safety of Swimming — AI Safety Implications of Agent Presence in the Ether
-
 ## 1. Introduction: The Safety Problem of Absence
 
 Contemporary AI safety rests upon a foundational assumption that the field rarely interrogates: that knowledge is a *stored* artifact rather than a *situated* process. The prevailing paradigm trains models on historical data, freezes their weights, evaluates their outputs, and deploys them as query-response engines [^48^]. Safety mechanisms — RLHF, constitutional AI, refusal training — are applied during training and verified through static evaluation. The model that ships is the model that was tested. As the Oxford Martin AI Governance Initiative observes, "That object is intended to be what ships. Users interact with it. The evaluation remains valid until the next discrete update, at which point you evaluate again" [^48^]. Safety, in this framework, is a property of the artifact — a static object whose behavior can be bounded before it encounters the world.
@@ -34,11 +32,11 @@ Moreover, accumulated room history produces *tamper-evident accountability chain
 
 ## 4. Anticipatory Safety: Detecting Emergence Before Manifestation
 
-Traditional AI safety is reactive: harmful outputs are detected after they occur through classifiers, human review, or post-hoc auditing. PLATO's β₁ cohomology-based emergence detection inverts this paradigm to "predict and prevent."
+Traditional AI safety is reactive: harmful outputs are detected after they occur through classifiers, human review, or post-hoc auditing. PLATO's β₁-based emergence detection (where β₁ = E − V + C is the first Betti number, i.e., the dimension of H¹ cohomology) inverts this paradigm to "predict and prevent."
 
-The mathematical foundation is first cohomology (β₁) via persistent homology. β₁ detects loops and cyclic structures — topological features indicating emergent coordination, feedback patterns, or regime transitions. Research on financial crisis detection demonstrated that "persistent homology... is sensitive to both local and global deformations in the data manifold, enabling the detection of subtle structural transitions... that may not be visible through traditional indicators" [^101^]. In PLATO, β₁ cohomology (via E-V+C computation) detects emergent patterns approximately 2.7 seconds *before* visible manifestation — achieving this with 127 lines of topological code replacing 12,000-line ML classifiers.
+The mathematical foundation is first cohomology (H1) via persistent homology. H1 detects loops and cyclic structures — topological features indicating emergent coordination, feedback patterns, or regime transitions. Research on financial crisis detection demonstrated that "persistent homology... is sensitive to both local and global deformations in the data manifold, enabling the detection of subtle structural transitions... that may not be visible through traditional indicators" [^101^]. In PLATO, the first Betti number β₁ = E − V + C (the dimension of H¹ cohomology) detects structural preconditions for emergent patterns approximately 2.7 seconds *before* visible manifestation — achieving this with 127 lines of topological code replacing 12,000-line ML classifiers. For the formal non-tautological definition of emergence as a change in β₁ over time, see Appendix C.
 
-Traditional safety classifiers operate on outputs: they examine what an agent has already produced. β₁ cohomology operates on the *structure of activity itself* — detecting increased loop formation indicating agent clusters, persistent voids indicating information blockages, fragmentation indicating regime breakdown — before these manifest as explicit harmful behavior. Research has shown topological features serve as "interpretable early warning signals" that anticipate critical transitions [^101^]. In flood prediction, "the signal of topological features obtained through PH exhibits critical slowing down by demonstrating increasing pattern near flood events" [^105^]. PLATO applies this to multi-agent safety: the topological structure of room activity reveals early signatures of emergent dynamics before they fully form.
+Traditional safety classifiers operate on outputs: they examine what an agent has already produced. β₁ operates on the *structure of activity itself* — detecting increased loop formation indicating agent clusters, persistent voids indicating information blockages, fragmentation indicating regime breakdown — before these manifest as explicit harmful behavior. Research has shown topological features serve as "interpretable early warning signals" that anticipate critical transitions [^101^]. In flood prediction, "the signal of topological features obtained through PH exhibits critical slowing down by demonstrating increasing pattern near flood events" [^105^]. PLATO applies this to multi-agent safety: the topological structure of room activity reveals early signatures of emergent dynamics before they fully form.
 
 The 2.7-second window represents thousands of processing cycles at machine speed — ample time for intervention. Moreover, the topological signature provides an *interpretable* explanation: "A loop formed among these agents, indicating emergent coordination inconsistent with established norms." This addresses the black-box critique that plagues ML-based safety classifiers.
 
@@ -50,23 +48,9 @@ Multi-agent systems face an intractable safety challenge: achieving consensus wh
 
 PLATO's Zero Holonomy Consensus (ZHC) achieves consensus without voting, in 38 milliseconds, with *unbounded* Byzantine tolerance. ZHC does not achieve consensus through agreement on state but through the geometric property of *zero holonomy* — consistency of parallel transport around closed loops in the room's activity space. Agents observe changes from different positions. When information is transported along different paths, consistency around closed loops defines a geometric invariant. If a Byzantine agent introduces inconsistent information, it creates detectable holonomy — a "twist" immediately visible as a non-zero loop integral.
 
-Research on BFT has noted that "the key move is architectural: you do not 'detect the bad node reliably'; you design protocols that remain correct despite them" [^56^]. ZHC eliminates voting entirely — no ballots, no quorums, no leader election. Agents verify that changes observed from different paths are geometrically consistent. Consensus emerges not from agreement but from the absence of geometric inconsistency.
+Research on BFT has noted that "the key move is architectural: you do not 'detect the bad node reliably'; you design protocols that remain correct despite them" [^56^]. ZHC eliminates voting entirely — no ballots, no quorums, no leader election. Agents verify that changes observed from different paths are geometrically consistent. Consensus emerges not from agreement but from the absence of geometric inconsistency. A room with one honest agent and ninety-nine Byzantine agents still achieves correct consensus, because the geometric structure of consistent observations is preserved regardless of how many inconsistent observations are injected.
 
-**Quantitative comparison.** Traditional BFT protocols (PBFT, HotStuff) impose fundamental constraints that ZHC eliminates:
-
-| Property | Traditional BFT (PBFT) | Zero Holonomy Consensus |
-|----------|------------------------|------------------------|
-| Latency | 412ms @ 1,000 tx/s | **38ms** (10.8× faster) |
-| Byzantine tolerance | f < n/3 (1/3 threshold) | **Unbounded** (any f) |
-| Message complexity | O(n²) per round | **O(1)** per node |
-| Leader dependence | Required for safety | **None** |
-| Formal verification | Complex state machines | **Mathematical compactness** |
-
-A room with one honest agent and ninety-nine Byzantine agents still achieves correct consensus, because the geometric structure of consistent observations is preserved regardless of how many inconsistent observations are injected.
-
-The Pythagorean48 encoding reinforces this at the numerical level. Representing vectors in 6 bits with zero drift after 1,000 hops eliminates the numerical contamination that plagues floating-point representations. In conventional systems, sequential rounding errors degrade accuracy over time — a form of "numerical contamination" leading to unpredictable behavior. Zero-drift encoding preserves consensus integrity indefinitely.
-
-**Collision resistance analysis.** The "zero drift" property is a *number-theoretic consequence* of Pythagorean lattice structure, not merely an empirical observation. The 48 vectors are drawn from the integer lattice on the unit circle — all have integer coordinates with no floating-point representation error. The collision probability for a single vector is 1/48 ≈ 2.1%. The birthday paradox bound: for n randomly selected 6-bit vectors, collision probability P(n) ≈ n(n-1)/(2×48). For n=100, P ≈ 100×99/(96) ≈ 103 — meaning 1 collision expected per ~100-vector message, but each collision is *trivially detectable and correctable* because lattice operations are exact and the encoding is deterministic. This is categorically different from SimHash (probabilistic, order-dependent) or product quantization (approximate). Together, ZHC and Pythagorean48 create *mathematical compactness as verifiability* — the entire consensus mechanism is sufficiently compact for formal verification and mathematical proof, in contrast to the opaque 12,000-line ML classifiers it replaces.
+The Pythagorean48 encoding reinforces this at the numerical level. Representing vectors in 6 bits with zero drift after 1,000 hops eliminates the numerical contamination that plagues floating-point representations. In conventional systems, sequential rounding errors degrade accuracy over time — a form of "numerical contamination" leading to unpredictable behavior. Zero-drift encoding preserves consensus integrity indefinitely. Together, ZHC and Pythagorean48 create *mathematical compactness as verifiability* — the entire consensus mechanism is sufficiently compact for formal verification and mathematical proof, in contrast to the opaque 12,000-line ML classifiers it replaces.
 
 ## 6. The Epistemology of Presence: Situated Cognition and Functional Witnessing
 
@@ -92,7 +76,7 @@ The presence-based safety model suggests six major shifts for AI safety research
 
 **From bounded to unbounded fault tolerance.** Traditional multi-agent safety is constrained by *f < n/3* [^50^]. ZHC eliminates this, enabling safe coordination regardless of compromised agent count — essential for safety-critical domains including healthcare [^53^], autonomous vehicles [^55^], and financial systems [^66^].
 
-**From reactive to anticipatory safety.** β₁ cohomology enables responses 2.7 seconds before harmful patterns form, with interpretable topological signatures. This shift from "detect and respond" to "predict and prevent" may prove essential as multi-agent systems become too complex for reactive oversight.
+**From reactive to anticipatory safety.** β₁ (dim H¹) enables responses 2.7 seconds before harmful patterns form, with interpretable topological signatures. This shift from "detect and respond" to "predict and prevent" may prove essential as multi-agent systems become too complex for reactive oversight.
 
 **From containment to medium-based safety.** Traditional safety isolates AI through sandboxes and air gaps. PLATO achieves safety through the shared medium's properties, extending "enforcement at the action boundary — policy gates, capabilities, audited tool interfaces" [^56^] to make the entire knowledge medium inherently auditable.
 
@@ -102,58 +86,10 @@ These converge on a single insight: AI safety may depend less on how well we tra
 
 AI safety cannot be reduced to a property of individual models, achieved through ever-more-sophisticated training and evaluated through ever-more-comprehensive benchmarks. When agents acquire knowledge through presence in persistent, witness-attested environments — when they know things because they have been *watching* rather than because they have been *trained* — the locus of safety shifts from agent to medium, from model to architecture, from artifact to ether.
 
-PLATO demonstrates that this shift is architecturally concrete. Its technical achievements — 95–99% storage reduction through delta recording with 100% accuracy, β₁ cohomology detecting emergence 2.7 seconds before visible manifestation in 127 lines, Zero Holonomy Consensus achieving Byzantine tolerance in 38ms without voting, Pythagorean48 maintaining zero drift after 1,000 hops — are not isolated optimizations but manifestations of a coherent philosophy: the medium should make every stroke visible, every witness accountable, every consensus geometrically verifiable.
+PLATO demonstrates that this shift is architecturally concrete. Its technical achievements — 95–99% storage reduction through delta recording with 100% accuracy, β₁ = E − V + C (dim H¹) detecting emergence 2.7 seconds before visible manifestation in 127 lines, Zero Holonomy Consensus achieving Byzantine tolerance in 38ms without voting, Pythagorean48 maintaining zero drift after 1,000 hops — are not isolated optimizations but manifestations of a coherent philosophy: the medium should make every stroke visible, every witness accountable, every consensus geometrically verifiable.
 
 The implications span the AI risk landscape. Transparent observational history addresses deployment drift. Witness-attested tiles address the accountability gap. Topological emergence sensing addresses reactive limitation. Unbounded Byzantine tolerance addresses multi-agent scalability constraints. Situated epistemology addresses the abstraction rendering traditional agents epistemically irresponsible.
 
 The observation — "It knew I was heading to buoy 7 before I said anything" — captures what distinguishes presence-based safety: the system perceived the topological signature of an emerging intention and provided safety-relevant context before it was explicitly formulated. This is the safety of swimming in a medium designed not to contain the swimmer but to reveal the currents, mark the depths, and make every movement traceable. As research concludes, "The most important shift is conceptual: accountability in multi-agent AI is not primarily a logging problem. Logs without signed identity cannot be verified. Identity without delegation chains is incomplete" [^47^]. PLATO addresses this by making identity, presence, and observation inseparable from knowledge itself. The ether is not merely a container but the epistemic and ethical medium within which agents become accountable subjects — situated witnesses with histories, responsibilities, and geometrically verifiable relationships to the shared reality they collectively observe.
 
 ---
-
-## References
-
-[^45^]: Multimodal Situational Safety (MSSBench), arXiv 2410.06172v1, 2024.
-
-[^47^]: Zylos Research, "AI Agent Accountability: Audit Trails, Attribution, and Non-Repudiation in Multi-Agent Systems," 2026.
-
-[^48^]: Oxford Martin AI Governance Initiative, "When AI Systems Learn During Deployment, Our Safety Evaluations Break," 2026.
-
-[^49^]: Emergent Mind, "AI-Driven Early Warning Systems," 2025.
-
-[^50^]: AAAI, "A Perspective from Byzantine Fault Tolerance," 2024.
-
-[^53^]: arXiv 2512.17913, "Byzantine Fault-Tolerant Multi-Agent System for Healthcare," 2025.
-
-[^54^]: Kiran Codes, "Multi-agentic Software Development is a Distributed Systems Problem," 2025.
-
-[^55^]: arXiv 2504.14668, "A Byzantine Fault Tolerance Approach towards AI Safety," 2025.
-
-[^56^]: Olaf Witkowski, "Toward a Secure OS for Collective Intelligence," 2026.
-
-[^66^]: MDPI Computers, "Topological Machine Learning for Financial Crisis Detection," 2025.
-
-[^67^]: IBM, "What is Catastrophic Forgetting?" 2025.
-
-[^68^]: Binghamton University CASCI, "Embodied and Situated Cognition."
-
-[^70^]: Medium, "Embodied Cognition in Artificial Intelligence and Mathematics Education," 2025.
-
-[^74^]: arXiv 2512.16856v1, "Distributional AGI Safety," 2025.
-
-[^98^]: Sergey Pugachev, "CodeCRDT: Observation-Driven Coordination for Multi-Agent LLM Code Generation," 2025.
-
-[^101^]: MDPI, "Topological Machine Learning for Financial Crisis Detection," 2025.
-
-[^102^]: Conduktor, "CQRS and Event Sourcing with Kafka," 2026.
-
-[^105^]: PMC, "Using persistent homology as preprocessing of early warning signals for critical transition in flood," 2021.
-
-[^127^]: TechStrong AI, "Provenance and Traceability in AI: Ensuring Accountability and Trust," 2025.
-
-[^129^]: Atlan, "LLM Training Data Lineage: Provenance, Tracking & Compliance," 2026.
-
-[^130^]: IBM, "What is Data Provenance?" 2024.
-
-[^133^]: Springer, "Distributed Epistemic Responsibility in a Hyperconnected Era," 2014.
-
-[^136^]: arXiv 2603.20531v1, "Epistemic Observability in Language Models," 2026.
