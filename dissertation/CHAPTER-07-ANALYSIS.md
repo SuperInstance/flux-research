@@ -12,13 +12,13 @@ This chapter interprets the findings from Chapter 6 through the theoretical fram
 
 The ether hypothesis (Chapter 3, Section 3.6) makes three specific predictions:
 
-**H1:** Agents with presence in spatially-named rooms will outperform agents with flat knowledge access on spatially-grounded tasks.
+**β₁:** Agents with presence in spatially-named rooms will outperform agents with flat knowledge access on spatially-grounded tasks.
 
 **H2:** Change-based recording will produce more accurate long-term knowledge than state-based recording.
 
 **H3:** Voice-driven spatial knowledge entry will produce higher data quality than manual entry.
 
-### 7.2.2 H1: Spatial Presence → Performance
+### 7.2.2 β₁: Spatial Presence → Performance
 
 **Findings (Chapter 6, Section 6.2.2):**
 - Time to locate productive grounds: 4m 12s (spatial) vs 7m 38s (non-spatial), d = 0.71
@@ -222,7 +222,7 @@ The implication: agents should swim, not just process.
 
 This chapter has evaluated the ether hypothesis against empirical findings:
 
-1. **H1 (spatial → performance):** Confirmed. Medium-to-large effects across all measures. The ether effect — rooms carrying context that compounds — is the mechanism.
+1. **β₁ (spatial → performance):** Confirmed. Medium-to-large effects across all measures. The ether effect — rooms carrying context that compounds — is the mechanism.
 
 2. **H2 (delta → accuracy):** Confirmed. Delta recording maintains 100% accuracy with 95-99% storage reduction. The "right" threshold is adaptive per sensor.
 

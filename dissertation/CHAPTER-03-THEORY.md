@@ -215,7 +215,7 @@ The mathematical framework underlying PLATO rooms is provided by constraint theo
 
 - **Holonomy:** When a change propagates around a closed cycle of agents and returns to its origin unchanged, the network is in a consistent state. When the propagation returns changed, there is inconsistency somewhere. This provides consensus without voting.
 
-- **H1 Cohomology:** The number of independent cycles in an agent network (H1 = E - V + C) indicates the presence of emergent patterns — changes that no single agent controls but that emerge from the collective.
+- **β₁ Cohomology:** The number of independent cycles in an agent network (β₁ = E - V + C) indicates the presence of emergent patterns — changes that no single agent controls but that emerge from the collective.
 
 ### 3.6.2 Rooms as Constraint Spaces
 
@@ -234,7 +234,7 @@ Emergent patterns emerge in the ether — across rooms, over time, through accum
 
 When the water temperature drops at buoy 7, and the bait activity increases at buoy 8, and three captains radio that they're heading north — this is an emergent pattern. No single tile captures it. The pattern emerges from the relationship between changes across multiple rooms.
 
-H1 cohomology detects this mathematically. An agent watching the ether can see it forming — 2.7 seconds before any single captain recognizes it.
+β₁ cohomology detects this mathematically. An agent watching the ether can see it forming — 2.7 seconds before any single captain recognizes it.
 
 ---
 

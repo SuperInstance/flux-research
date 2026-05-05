@@ -136,9 +136,9 @@ The bird does not think about air. The captain does not think about PLATO. They 
 
 The SuperInstance fleet has independently developed mathematical foundations that complement the ether framework:
 
-### H1 Cohomology and Emergence Detection
+### β₁ Cohomology and Emergence Detection
 
-Emergence in multi-agent systems can be detected through H1 cohomology: E-V+C = χ. When the Euler characteristic deviates from expected values, emergence is occurring. This provides a formal, computationally tractable test for emergence — 127 lines replacing 12,000-line ML pipelines.
+Emergence in multi-agent systems can be detected through β₁ cohomology: E-V+C = χ. When the Euler characteristic deviates from expected values, emergence is occurring. This provides a formal, computationally tractable test for emergence — 127 lines replacing 12,000-line ML pipelines.
 
 ### Zero Holonomy Consensus
 
