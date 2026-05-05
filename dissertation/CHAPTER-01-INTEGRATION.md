@@ -165,6 +165,22 @@ This is not merely metaphor. The design of the system treats rooms as places —
 
 An agent is not polling a database. An agent is in a room, watching, listening, learning.
 
+### §1.11 Theorem Status Tags
+
+All theorems and major claims in this dissertation carry status tags from the PLATO Mathematical Style Guide:
+
+| Tag | Meaning | Example |
+|-----|---------|---------|
+| [PROVEN] | Published peer-reviewed proof | Laman's theorem (1970) |
+| [DERIVED] | Follows from proven results | ZHC consensus time bound |
+| [CONJECTURE] | Believed true, unproven | Spectral sparsification preserving β₁ |
+| [ANALOGY] | Conceptual correspondence | Ricci flow ↔ fleet curvature |
+| [EMPIRICAL] | Observed, not proven | λ̂_R = 1.692, 38ms latency, 2.7s emergence lag |
+| [STUB] | Placeholder, needs work | H_critical threshold definition |
+
+Key fleet constants: λ̂_R = 1.692 [EMPIRICAL], ZHC latency = 38ms [EMPIRICAL], emergence window = 2.7s [EMPIRICAL].
+
+
 ---
 
 **Keywords:** spatial knowledge, multi-agent systems, situated cognition, change recording, maritime AI, voice interfaces, presence, PLATO

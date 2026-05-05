@@ -148,7 +148,7 @@ The ABOracle system (SuperInstance/aboracle) implements all six layers:
 
 ## 9.5 Fleet Mathematics: Emergent Coordination
 
-The fleet's coordination emerges from the same mathematics as the H1 cohomology and zero holonomy consensus (Chapter 8):
+The fleet's coordination emerges from the same mathematics as the H¹ cohomology and zero holonomy consensus (Chapter 8):
 
 - **E-V+C = χ**: Emergence is detected when E-V+C ≠ 0. The fleet forms when multiple agents create emergent coordination that no single agent possesses.
 - **Zero Holonomy**: Coordination states are path-independent. The fleet reaches the same state regardless of which agent takes which path.
