@@ -51,7 +51,7 @@ The delta recording mechanism was tested by comparing tile storage under three c
 | Delta (PLATO) | 12-47 | 0.04-0.16 | 100% |
 | Threshold (5%) | 3-8 | 0.01-0.03 | 94% |
 
-**Key finding:** Delta recording reduced storage by 95-99% while maintaining 100% accuracy. Most sensor values remain constant during active fishing operations. Only changes are informative.
+**Key finding:** Delta recording reduced storage by 95–99% while maintaining complete reconstructive accuracy across all test conditions. Most sensor values remain constant during active fishing operations. Only changes are informative.
 
 ### 6.2.4 Voice vs Manual Entry
 

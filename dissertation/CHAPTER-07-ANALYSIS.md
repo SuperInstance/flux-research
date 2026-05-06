@@ -34,7 +34,7 @@ This is the ether effect. The medium (rooms) is not neutral — it carries meani
 ### 7.2.3 H2: Delta Recording → Accuracy
 
 **Findings (Chapter 6, Section 6.2.3):**
-- Delta recording reduced storage by 95-99% while maintaining 100% accuracy
+- Delta recording reduced storage by 95–99% while maintaining complete reconstructive accuracy
 - Threshold recording (5%) reduced storage further but dropped to 94% accuracy
 
 **Analysis:** The critical finding is not that delta recording is more efficient (expected) but that it is not less accurate. Storing only changes does not lose information because changes are what matter.
@@ -206,7 +206,7 @@ The finding that spatial organization outperforms non-spatial retrieval suggests
 
 Similarly, PLATO treats change as the primitive unit of recording, not state. This is aligned with event sourcing and differential dataflow, but extends them with spatial semantics.
 
-The finding that delta recording maintains 100% accuracy while reducing storage 95-99% suggests that change is the correct primitive for experienced-based knowledge.
+The finding that delta recording maintains complete reconstructive accuracy while reducing storage 95–99% suggests that change is the correct primitive for experience-based knowledge.
 
 ### 7.7.3 Presence for Software Agents
 
@@ -224,7 +224,7 @@ This chapter has evaluated the ether hypothesis against empirical findings:
 
 1. **β₁ (spatial → performance):** Confirmed. Medium-to-large effects across all measures. The ether effect — rooms carrying context that compounds — is the mechanism.
 
-2. **H2 (delta → accuracy):** Confirmed. Delta recording maintains 100% accuracy with 95-99% storage reduction. The "right" threshold is adaptive per sensor.
+2. **H2 (delta → accuracy):** Confirmed. Delta recording maintains complete reconstructive accuracy with 95–99% storage reduction. The "right" threshold is adaptive per sensor.
 
 3. **H3 (voice → quality):** Confirmed. Voice entry is faster and more complete. The native interface matters — in maritime domains, voice is native.
 
