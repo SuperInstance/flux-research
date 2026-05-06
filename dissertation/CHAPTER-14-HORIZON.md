@@ -19,7 +19,7 @@ Where tile_coherence measures how well tiles reference each other, observer_cove
 PRII is a *design-time* metric rather than a runtime invariant: it measures the quality of room construction, not a mathematical property that emerges from agent behavior. This distinction explains why it does not appear alongside the five runtime invariants above — PRII is a precondition for the other invariants to function correctly, not a property they produce. A room with low PRII may have all five invariants activated but produce unreliable results because the room's internal structure is inconsistent.
 
 For formal treatment of PRII, see Chapter 4 §4.2.
-If multi-agent coordination has intrinsic mathematical structure, then the safety properties of coordinated systems are not merely probable—they are *necessary consequences* of that structure. The 127 lines of pure mathematics replacing 12,000 lines of CUDA-based machine learning do not merely offer compact implementation; they offer *verifiable safety* for all possible system configurations [^248^][^249^]. The distinction between statistical detection (62% accuracy) and topological detection (100% accuracy) reflects a *categorical gap*: machine learning recognizes what it has seen before, while algebraic topology detects the conditions that make novel behaviors possible [^208^][^280^].
+If multi-agent coordination has intrinsic mathematical structure, then the safety properties of coordinated systems are not merely probable—they are *necessary consequences* of that structure. The 127-line H¹ cohomology computation replaces a prior ~62%-accurate ML classifier. The distinction between statistical detection and topological detection reflects a *categorical gap*: machine learning recognizes what it has seen before, while algebraic topology detects the structural conditions that make novel behaviors possible [^208^][^280^]. Whether this categorical gap translates to verifiably safe implementations in all cases is a matter for ongoing formal verification work.
 
 This chapter traces the arc from these mathematical foundations to their long-term consequences. The Fleet Mathematics is not merely a solution to contemporary engineering problems; it is the seed crystal of a transformation in the nature of intelligence itself—a transformation that unfolds across five, ten, twenty-five, and fifty-year horizons. At each stage, the mathematical invariants revealed by PLATO's architecture shape not merely what agents can do but what intelligence *means*. The future of intelligence, we shall argue, is not a bigger model but a better room.
 
@@ -101,7 +101,7 @@ Where traditional BFT requires honest agents to outnumber Byzantine agents, geom
 
 ## Mathematical Compactness as Safety: The Verifiability Thesis
 
-The most direct safety implication of PLATO's approach is *verifiability*. A 127-line mathematical specification can be formally verified using proof assistants (Coq, Isabelle, Lean) or model checkers (TLA+, SPIN). A 12,000-line CUDA implementation cannot [^248^][^249^][^244^]. This is not about elegance; it is about the tractability of correctness proofs.
+The most direct safety implication of PLATO's approach is *verifiability*. A compact mathematical specification can be formally verified using proof assistants (Coq, Isabelle, Lean) or model checkers (TLA+, SPIN). This is not about elegance; it is about the tractability of correctness proofs.
 
 ### Formal Verification and Infinite State Spaces
 

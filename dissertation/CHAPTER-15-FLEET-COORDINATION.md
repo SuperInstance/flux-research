@@ -167,7 +167,7 @@ JetsonClaw1 handles edge operations — distributed computation across remote no
 - Remote checkpoint synchronization
 - Low-latency local decision-making
 
-**Note:** JetsonClaw1's prior CUDA-based ML approach for emergence detection has been superseded by the constraint theory framework. The 127-line H1 cohomology computation provides categorical 100% detection accuracy versus the ~62% accuracy of the prior ML classifier. See §3.X.2 for the mathematical details.
+**Note:** JetsonClaw1's prior ML-based approach for emergence detection has been superseded by the constraint theory framework. The H¹ cohomology computation provides categorical structural detection versus the prior ML classifier's ~62% accuracy. See §3.X.2 for the mathematical details.
 
 ## 15.5 PLATO as Shared Constraint Memory
 
