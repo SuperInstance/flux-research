@@ -142,7 +142,7 @@ Emergence in multi-agent systems can be detected through β₁ cohomology: E-V+C
 
 ### Zero Holonomy Consensus
 
-Byzantine fault tolerance without voting. Nodes achieve consensus when their holonomy (rotation around a closed loop) is zero. O(1) per node, 38ms latency, any Byzantine tolerance. This is the consensus mechanism for fleet coordination.
+Byzantine inconsistency detection without voting. Nodes achieve consensus when their holonomy (rotation around a closed loop) is zero. O(1) per node, 38ms latency, detectable inconsistency regardless of Byzantine count. This is the consensus mechanism for fleet coordination.
 
 ### Pythagorean48 Encoding
 

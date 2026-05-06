@@ -60,7 +60,7 @@ Contact: `SuperInstance/forgemaster/discussions`
 ## Key Fleet Mathematics Results
 
 - **H1 Cohomology** — E−V+C = β₁ emergence detection. 127 lines replaces 12K-line ML.
-- **Zero Holonomy Consensus** — 38ms latency, any Byzantine tolerance. O(C·L) HashMap.
+- **Zero Holonomy Consensus** — 38ms latency, detectable inconsistency regardless of Byzantine count. O(C·L) HashMap.
 - **Pythagorean48** — 6 bits/vector, log₂(48)=5.585. Zero drift after unlimited hops.
 - **Rigidity-Holonomy Bridge** — 3D bearing rigidity → well-defined cycle holonomy.
 - **Ricci flow 1.692 = Law 103 1.7** — Convergence constant within 0.5%.
