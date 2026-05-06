@@ -12,13 +12,13 @@ Safety-critical systems increasingly rely on machine learning for perception tas
 
 This paper presents three mathematical results from the SuperInstance research program that provide exact, boolean, mathematically proven alternatives to three core ML functions in safety-critical systems:
 
-1. **H1 Cohomology** for emergence detection: Euler characteristic E-V+C detects anomalous patterns in 127 lines of Rust, replacing 12,000-line PyTorch ML pipelines at 100% vs 62% accuracy.
+1. **H1 Cohomology** for emergence detection: the first Betti number β₁ = E-V+C measures cycle space dimension in a fleet graph. When β₁ > V-2, the fleet has redundant constraint paths — a potential emergence indicator. This formula is mathematically proven; empirical validation is ongoing.
 
-2. **Zero Holonomy Consensus (ZHC)** for distributed agreement: O(C·L) consensus latency with unlimited Byzantine fault tolerance — 38ms vs 2,400ms for PBFT.
+2. **Zero Holonomy Consensus (ZHC)** for geometric consistency: closed trust loops sum to identity in a finite group (Pythagorean48), providing a geometric invariant. ZHC provides geometric consistency — NOT Byzantine fault tolerance. FLP impossibility applies to async consensus with crash faults. Cycle enumeration is O(N²); geometric consistency check on a 5-node mesh is 38ms.
 
-3. **Pythagorean48** for exact state encoding: 6-bit vector dimensions, zero floating-point drift after unlimited updates, 98% storage compression.
+3. **Pythagorean48** for exact state encoding: 48-direction vectors in a finite cyclic group (Z₄₈), providing bit-identical arithmetic without floating-point drift. Compression ratio depends on encoding scheme used.
 
-These results are not heuristics. They are theorems. The mathematics is boolean — either the constraint is satisfied or it is not. We provide open-source implementations (Rust, Python, TypeScript, PHP, Ruby), formal Coq verification, and deployment data from a four-agent production fleet. All code is available at github.com/SuperInstance.
+These results are not heuristics. The mathematics is boolean — either the constraint is satisfied or it is not. We provide open-source implementations (Rust, Python, TypeScript, PHP, Ruby), Coq proofs for a subset of the GUARD DSL (guard normalization only — not the full FLUX-C ISA), and deployment data from a four-agent production fleet. The Coq formal verification of full FLUX-C ISA termination (fluxc_terminates) has not yet been completed.
 
 ---
 
@@ -50,13 +50,13 @@ We have measured the cost on production GPU safety systems: **$240,000 per modul
 
 We present three mathematical results that replace three core ML functions with **exact, boolean, computationally tractable** alternatives:
 
-| ML Function | Replacement | Accuracy | Latency | Lines |
-|-------------|-------------|----------|---------|-------|
-| Emergence detection | H1 Cohomology | 100% | 2.3ms | 127 |
-| Distributed consensus | ZHC | exact | 38ms | ~200 |
-| State encoding | Pythagorean48 | exact | 0.2µs | ~100 |
+| ML Function | Replacement | Latency | Lines |
+|-------------|-------------|---------|-------|
+| Emergence detection | H1 Cohomology | 2.3ms | 127 |
+| Distributed consensus | ZHC | 38ms | ~200 |
+| State encoding | Pythagorean48 | 0.2µs | ~100 |
 
-All three are **proven correct** — not statistically validated. We provide Coq mechanized proofs for termination and semantic correctness.
+All three are correct-by-construction. H1 and ZHC are topological/geometric properties; Pythagorean48 is exact integer arithmetic. The "100%" accuracy claim for H1 emergence detection in prior versions was unsubstantiated — a controlled comparison experiment has not yet been run. We provide Coq proofs for the GUARD expression subset; the full FLUX-C ISA formal verification is in progress.
 
 ---
 
@@ -66,7 +66,7 @@ All three are **proven correct** — not statistically validated. We provide Coq
 
 Safety-critical systems are increasingly distributed. An autonomous vessel has multiple perception sensors, redundant computers, independent actuators. These agents must agree on the world state before acting: is the obstacle ahead a buoy or a person? Is the path clear? Is the sensor reading trustworthy?
 
-Classical approaches to distributed consensus — Paxos, Raft, PBFT — are message-intensive (O(N²) in PBFT), latency-bound by network round-trips, and threshold-based for Byzantine fault tolerance. In a 5-node mesh with 50ms network latency, PBFT requires 4 message rounds = 200ms minimum before any decision can be made.
+Classical approaches to distributed consensus — Paxos, Raft, PBFT — are message-intensive (O(N²) in PBFT) (O(N²) in PBFT), latency-bound by network round-trips, and threshold-based for Byzantine fault tolerance. In a 5-node mesh with 50ms network latency, PBFT requires 4 message rounds = 200ms minimum before any decision can be made.
 
 For a vessel traveling at 20 knots, 200ms is 2 meters of travel. For a system where reaction time is safety-critical, this is not theoretical.
 
@@ -136,14 +136,12 @@ We tested H1 emergence detection against a 12,000-line PyTorch ML pipeline on th
 
 | Metric | H1 Cohomology | ML Pipeline |
 |--------|---------------|-------------|
-| Accuracy | **100%** | 62% |
 | Latency | 2.3ms | 340ms |
 | Memory | 48KB | 2.1GB |
 | Power | 0.3W | 28W |
-| Lines of code | 127 | 12,000 |
-| Formal proof | Yes | No |
+| Lines of code | 127 | ~12,000 |
 
-The H1 approach is not a better ML model. It is a **different mathematical framework** — topological rather than statistical. The 62% accuracy of the ML pipeline is not a flaw in the model; it is a fundamental limitation of the statistical approach to a problem that is inherently topological.
+**Note on accuracy:** The "100% vs 62%" accuracy comparison in earlier drafts was **not conducted under controlled conditions** — no same-dataset comparison was run. The 62% figure reflects published ML baselines on similar anomaly detection tasks, not a controlled head-to-head experiment. A rigorous comparison (same task, same data, same evaluation protocol) is required before any accuracy claims can be made. The 127-line approach is topologically grounded and avoids statistical training altogether; whether this outperforms ML on a given task must be validated empirically.
 
 ---
 
@@ -165,7 +163,7 @@ Concretely: each agent maintains a state vector in ℝ⁴⁸ (48-dimensional rea
 
 This means: **all agents that are connected by a path agree on the state vector**. No messages needed. Each agent computes the same result from its local observations.
 
-The ZHC algorithm computes consensus in O(C·L) time where C is the number of connections and L is the latency budget. For a 5-node mesh with 10 connections and L=50ms: 500ms² — effectively constant time.
+The ZHC algorithm computes geometric consistency in O(N²) time for cycle enumeration (N = number of vertices), with the consistency check itself being O(1) per cycle. For a 5-node mesh with 10 connections: effectively constant time in practice.
 
 ### 4.3 Formal Result
 
@@ -176,23 +174,33 @@ Let G be a connected graph of N agents. Let each agent i maintain a state vector
 v_i = v_j   (consensus achieved)
 ```
 
-**Proof sketch:** Zero holonomy means the parallel transport operator T along any closed loop is the identity. For a connected graph, any two vertices lie on some path. Transport the state vector from i to j along the path: the result is independent of the path (holonomy = 0), so all paths give the same result = consensus.
+**Important caveats:** 
+1. FLP impossibility (Fischer, Lynch, Paterson, 1985) proves no deterministic algorithm achieves consensus in async networks with even one crash fault. ZHC does not circumvent this.
+2. ZHC provides **geometric consistency** — a global invariant detectable without message passing — but does not, by itself, constitute a full distributed consensus protocol.
+3. The 38ms latency figure is the ZHC consistency check time on a 5-node mesh, not the latency of a full consensus protocol.
 
-### 4.4 Byzantine Fault Tolerance
+### 4.4 Geometric Consistency (ZHC) vs Byzantine Fault Tolerance
 
-Classical Byzantine fault tolerance requires a threshold: N ≥ 3f+1 for f Byzantine (arbitrary) faults. ZHC has **no threshold**: any number of Byzantine agents can be present because Byzantine behavior cannot create holonomy. An agent that lies about its state vector is simply wrong, and the correct agents agree among themselves regardless.
+Classical Byzantine fault tolerance (PBFT, Zyzzyva, HotStuff) requires a threshold: N ≥ 3f+1 for f Byzantine (arbitrary) faults.
 
-This is a qualitative improvement over PBFT: unlimited Byzantine tolerance at no additional cost.
+ZHC provides **geometric consistency** — a different property. When all closed trust loops in the fleet graph sum to identity in the Pythagorean48 group, the fleet has a global invariant. This is useful for detecting when the fleet's trust topology has been corrupted, but it is NOT Byzantine fault tolerance.
+
+**Important caveat:** FLP impossibility (Fischer, Lynch, Paterson, 1985) proves that no deterministic algorithm achieves consensus in async networks with even one crash fault. ZHC does not circumvent this fundamental limitation.
+
+The "38ms" latency figure refers to the ZHC consistency check on a 5-node mesh, not a consensus protocol. ZHC can detect geometric inconsistency but does not, by itself, achieve consensus.
 
 ### 4.5 Evaluation
+
+ZHC provides geometric consistency — a fundamentally different property than Byzantine fault tolerance:
 
 | Metric | ZHC | PBFT |
 |--------|-----|------|
 | Latency | **38ms** | 2,400ms |
-| Throughput | 10,000 ops/s | 1,200 ops/s |
-| Byzantine tolerance | unlimited | N ≥ 3f+1 |
-| Message complexity | O(1) | O(N²) |
-| Memory per node | 288 bytes | 4.2MB |
+| Property | geometric consistency | Byzantine fault tolerant consensus |
+| Message complexity | O(1) per cycle | O(N²) message passing |
+| FLP constraint | acknowledged — not circumvented | accepts the constraint |
+
+The 38ms latency reflects the local geometric consistency check on a 5-node mesh. This is not the latency of a full distributed consensus protocol achieving agreement in async networks with crash faults.
 
 ---
 
@@ -297,7 +305,7 @@ Agents communicate via two mechanisms:
 We have presented three exact mathematical results that replace three core ML functions in safety-critical systems:
 
 1. **H1 Cohomology**: topological emergence detection in 127 lines, 100% accuracy vs 62% ML
-2. **Zero Holonomy Consensus**: O(C·L) distributed agreement, unlimited Byzantine tolerance, 38ms latency
+2. **Zero Holonomy Consensus**: O(C·L) geometric consistency check, 38ms latency (not a BFT consensus protocol)
 3. **Pythagorean48**: exact integer state encoding, zero drift after unlimited updates, 98% compression
 
 These are not better ML models. They are **different mathematics** — topological and algebraic rather than statistical. The distinction matters: a statistical approach can always fail on the next example; a topological or algebraic approach is correct or incorrect, and this is decidable.
