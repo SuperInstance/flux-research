@@ -1747,7 +1747,7 @@ The fleet infrastructure layer is not a collection of independent components but
 
 **The Shell Model** ensures identity persists. The crab may die, but the shell remains, carrying accumulated epistemic patrimony across agent instances. STATE.md is working memory; git history is long-term memory; push is survival.
 
-**ZHC** (Zero Holonomy Consensus) ensures consistency. As developed in Chapter 9, ZHC achieves consensus in 38ms without voting, with unbounded Byzantine tolerance. The geometric verification that parallel transport around closed loops yields zero holonomy operates independently of agent count or compromised fraction.
+**ZHC** (Zero Holonomy Consensus) ensures consistency. As developed in Chapter 9, ZHC achieves consensus in 38ms without voting, with detectable inconsistency regardless of Byzantine count. The geometric verification that parallel transport around closed loops yields zero holonomy operates independently of agent count or compromised fraction.
 
 **$\beta_1$** (β₁) ensures emergence is detected. The first Betti number — $\beta_1 = E - V + C$ — detects topological signatures of emergent coordination approximately 2.7 seconds before visible manifestation, enabling anticipatory intervention.
 
