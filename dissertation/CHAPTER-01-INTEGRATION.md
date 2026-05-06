@@ -134,11 +134,11 @@ Chapter 15 presents the fleet coordination protocol: the 6-layer ship protocol, 
 
 Appendix B: EMSOFT 2027 paper — FLUX (Formally Proven Constraint-to-Native Compiler) with 12 formal theorems and DO-254 DAL A certification path.
 
-Appendix C: Non-tautological emergence definition — emergence as dβ₁/dt crossing zero via Scheffer critical slowing down and Vietoris–Rips persistent homology. 127-line topological computation replaces 12K-line ML.
+Appendix C: Non-tautological emergence definition — emergence as dβ₁/dt crossing zero via Scheffer critical slowing down and Vietoris–Rips persistent homology. 127-line topological computation (no ML training) — empirical validation pending.
 
 Appendix D: Formal ZHC complexity — O(C·L) with HashMap optimization vs PBFT's O(n²), 38ms latency decomposition (1μs compute + 2×10ms network hops).
 
-Appendix E: Rigidity–Holonomy Bridge theorem — infinitesimally rigid networks have well-defined cycle holonomy; implications for trust and Byzantine attack resistance.
+Appendix E: Rigidity–Holonomy Bridge theorem — infinitesimally rigid networks have well-defined cycle holonomy; implications for trust and geometric consistency.
 
 
 ## 1.9 Contributions

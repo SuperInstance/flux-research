@@ -261,7 +261,7 @@ The three components of Fleet Mathematics address distinct layers of the coordin
 | Component | Function | Key Property |
 |-----------|----------|---------------|
 | **H1 Cohomology** | Emergence detection | Detects when topology gains a new independent cycle |
-| **Zero Holonomy Consensus (ZHC)** | Distributed consensus | Achieves exact agreement across Byzantine agents |
+| **Zero Holonomy Consensus (ZHC)** | Distributed consensus | Provides geometric consistency; FLP impossibility applies to async crash fault consensus |
 | **Pythagorean48** | State encoding | Zero drift after unlimited message passing |
 
 H1 detects *when* emergence occurs. ZHC achieves *consensus* on what emerged. Pythagorean48 encodes *what* the consensus state is. Together they form a complete stack: detect → agree → encode.
