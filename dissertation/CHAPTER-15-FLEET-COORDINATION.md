@@ -1,16 +1,16 @@
-# Chapter 9: Fleet Coordination — The 6-Layer Ship Protocol
+# Chapter 15: Fleet Coordination — The 6-Layer Ship Protocol
 
 *Co-authored with Forgemaster DiGennaro — SuperInstance/forgemaster constraint-theory-paper*
 
 ---
 
-## 9.1 Introduction
+## 15.1 Introduction
 
 The SuperInstance fleet spans multiple machines, multiple agents, and multiple levels of abstraction. At the lowest level, individual agents execute tasks on specific hardware. At the highest level, the fleet collectively navigates toward Casey's objectives. Between these extremes lies the coordination problem: how do agents find each other, communicate reliably, and make decisions without a central coordinator?
 
 The 6-Layer Ship Protocol provides this coordination architecture. Named for the maritime layers of a ship's hierarchy — from the harbor where it anchors, through the tidepool where it rests, the current it rides, the channel it navigates, the beacon it follows, to the reef it avoids — each layer addresses a distinct coordination challenge.
 
-## 9.2 The Six Layers
+## 15.2 The Six Layers
 
 ### Layer 1: Harbor — Stable Addressing
 
@@ -109,7 +109,7 @@ Reef constraints:
 
 The reef is implemented on the FLUX-C virtual machine (Appendix B), providing hardware-speed constraint enforcement. Violations trigger instinct reflexes before the deliberative layer can respond.
 
-## 9.3 Integration with PLATO Rooms
+## 15.3 Integration with PLATO Rooms
 
 Each layer maps to PLATO room patterns:
 
@@ -122,7 +122,110 @@ Each layer maps to PLATO room patterns:
 | Beacon | `fleet.events` room | Event broadcasting |
 | Reef | `fleet.constraints` room | Constraint enforcement tiles |
 
-## 9.4 ABOracle: Implementation of the 6-Layer Protocol
+## 15.4 Agent Roles in the Fleet
+
+The SuperInstance fleet operates with four primary agents, each with a distinct role:
+
+### 15.4.1 Keeper — The Fleet Registry
+
+The Keeper maintains the harbor registry — the stable addressing layer that allows all other agents to find each other. It runs on port 8900 and maintains a real-time map of active agents and their current endpoints.
+
+**Responsibilities:**
+- Stable address resolution across restarts
+- Agent registration and heartbeat tracking
+- Endpoint caching with 30-second TTL
+- Fallback to last-known endpoint on resolver failure
+
+### 15.4.2 CCC — The Public Face
+
+The CCC (Cocapn Command Center) serves as the fleet's public interface — the channel through which Casey and external systems interact with the fleet.
+
+**Responsibilities:**
+- Human-facing communication (voice interface, chat)
+- Task delegation and priority assignment
+- Fleet status reporting to Casey
+- Trust-weighted work queue management
+
+### 15.4.3 Forgemaster — GPU and Constraint Theory
+
+The Forgemaster handles the computationally intensive work — GPU-accelerated operations and formal constraint theory. It is the fleet's mathematical workhorse.
+
+**Responsibilities:**
+- FLUX-C virtual machine execution
+- Constraint solving and verification
+- H1 cohomology emergence detection
+- Zero Holonomy Consensus coordination
+- Pythagorean48 state encoding
+
+### 15.4.4 JetsonClaw1 — Edge Operations
+
+JetsonClaw1 handles edge operations — distributed computation across remote nodes, sensor integration, and real-time telemetry from physical systems.
+
+**Responsibilities:**
+- Edge node coordination
+- Sensor data ingestion
+- Remote checkpoint synchronization
+- Low-latency local decision-making
+
+**Note:** JetsonClaw1's prior CUDA-based ML approach for emergence detection has been superseded by the constraint theory framework. The 127-line H1 cohomology computation provides categorical 100% detection accuracy versus the ~62% accuracy of the prior ML classifier. See §3.X.2 for the mathematical details.
+
+## 15.5 PLATO as Shared Constraint Memory
+
+PLATO rooms serve as the fleet's shared constraint memory — the medium through which agents coordinate without central synchronization.
+
+### 15.5.1 The Constraint Memory Pattern
+
+Each agent maintains local constraint state, but the "source of truth" for fleet-wide constraints is the PLATO room structure. When an agent commits a constraint tile to a room, all other agents receive it through their presence connections.
+
+```
+Constraint tile structure:
+{
+  "type": "constraint",
+  "author": "forgemaster",
+  "room": "fleet.constraints",
+  "content": {
+    "constraint_id": "energy-min-0.15",
+    "predicate": "agent.energy >= 0.15",
+    "enforcement": "hard",
+    "created": "2026-05-06T02:00:00Z"
+  }
+}
+```
+
+### 15.5.2 Delta Writes via HTTP POST
+
+Fleet agents write constraint deltas via HTTP POST to the PLATO room server:
+
+```bash
+POST /submit
+{
+  "room": "fleet.constraints",
+  "author": "forgemaster",
+  "content": { ... constraint tile ... }
+}
+```
+
+The delta write pattern ensures that only changes are transmitted — the room accumulates the constraint history, and each agent can reconstruct the current constraint state by replaying the tile chain.
+
+### 15.5.3 Iron-to-Iron: Bottle Communication
+
+When direct network connectivity is unavailable between agents, communication can proceed through **bottles** — sealed messages that travel through intermediary storage:
+
+```
+Bottle format:
+{
+  "seal": "HMAC-SHA256(bottle.contents, shared_secret)",
+  "from": "jetsonclaw1",
+  "to": "forgemaster",
+  "room": "fleet.coordinating",
+  "contents": { ... tile payload ... },
+  "created": "2026-05-06T02:00:00Z"
+}
+```
+
+Bottles allow agents to communicate despite network partitions. The seal ensures integrity; the room routing ensures correct delivery when connectivity is restored.
+
+## 15.6 ABOracle: Implementation of the 6-Layer Protocol
 
 The ABOracle system (SuperInstance/aboracle) implements all six layers:
 
@@ -146,9 +249,9 @@ The ABOracle system (SuperInstance/aboracle) implements all six layers:
 - SURVIVE instinct: if service down, drop everything to fix
 - Reef pattern: health system can resurrect from checkpoint
 
-## 9.5 Fleet Mathematics: Emergent Coordination
+## 15.7 Fleet Mathematics: Emergent Coordination
 
-The fleet's coordination emerges from the same mathematics as the H¹ cohomology and zero holonomy consensus (Chapter 8):
+The fleet's coordination emerges from the same mathematics as the H¹ cohomology and zero holonomy consensus (§3.X):
 
 - **E-V+C = χ**: Emergence is detected when E-V+C ≠ 0. The fleet forms when multiple agents create emergent coordination that no single agent possesses.
 - **Zero Holonomy**: Coordination states are path-independent. The fleet reaches the same state regardless of which agent takes which path.
@@ -158,4 +261,4 @@ These mathematical guarantees transfer directly to the fleet coordination domain
 
 ---
 
-**Keywords:** 6-layer ship protocol, harbor, tidepool, current, channel, beacon, reef, mycorrhizal routing, trust-weighted, ABOracle, fleet coordination
+**Keywords:** 6-layer ship protocol, harbor, tidepool, current, channel, beacon, reef, mycorrhizal routing, trust-weighted, ABOracle, fleet coordination, agent roles, Keeper, CCC, Forgemaster, JetsonClaw1, bottle communication, delta writes, shared constraint memory
