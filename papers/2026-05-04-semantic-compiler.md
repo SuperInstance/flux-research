@@ -228,7 +228,7 @@ The dissertation's Chapter 3 (Theoretical Framework) establishes that PLATO room
 
 - **Delta Recording**: PLATO rooms do not record state; they record *changes*. When an agent logs a catch, the room records "catch logged at time T at location L" rather than maintaining a running state variable. Delta recording achieves 95–99% storage reduction with 100% accuracy, because it records what *changed*, not what *is*.
 
-- **Zero Holonomy Consensus**: PLATO rooms achieve Byzantine-tolerant consensus at 38ms latency through zero holonomy—the property that information integrated along any closed loop in the room graph returns to the same value, ensuring global consistency without centralized coordination.
+- **Zero Holonomy Consensus**: PLATO rooms achieve geometric consistency at 38ms latency through zero holonomy — the property that information integrated along any closed loop in the room graph returns to the same value, ensuring global consistency without centralized coordination. Note: this provides geometric consistency, NOT Byzantine fault tolerance. FLP impossibility applies to async consensus with crash faults.
 
 ### 4.2 The Ether as Compilation Context
 

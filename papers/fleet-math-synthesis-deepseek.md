@@ -40,4 +40,4 @@ Three boats in a triangle (V=3, E=3, β₁=1):
 1. All three boats exchange trust vectors at 1Hz
 2. Measure accumulated holonomy over 100 cycles
 3. If sum ≠ identity → ZHC violation
-4. Compare against ML baseline (12K lines vs 127 lines)
+4. Compare against ML baseline (127 lines of constraint theory vs equivalent ML approach — fair comparison not yet run)
