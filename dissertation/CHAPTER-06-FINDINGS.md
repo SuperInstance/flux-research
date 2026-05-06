@@ -209,13 +209,13 @@ The emergence detection capability was validated against the SuperInstance fleet
 
 | Metric | ML Approach (Prior) | H1 Cohomology (Current) |
 |--------|---------------------|--------------------------|
-| Code size | ~12,000 lines CUDA | 127 lines topological |
-| Detection accuracy | ~62% | 100% |
-| False positive rate | 18% | 0% |
+| Code size | ~12,000 lines CUDA | ~127 lines topological |
+| Detection approach | Statistical (~62%) | Categorical structural |
+| False positive rate | 18% | 0% (theoretical) |
 | Computation time | 340ms | 2.3ms |
 | Formal verification | Impossible | Axiomatic |
 
-**Key finding:** H1 cohomology provides categorical detection (100% accuracy) versus statistical detection (~62% accuracy). The 94-fold reduction in code size translates to reduced attack surface: every line of CUDA is a potential vulnerability; every mathematical axiom is a proven invariant.
+**Key finding:** H1 cohomology provides categorical structural detection versus statistical detection (~62%) for the prior ML classifier. The compact mathematical specification makes formal verification tractable in a way that CUDA code cannot approach.
 
 ### 6.7.2 Zero Holonomy Consensus: Distributed Agreement
 
@@ -243,7 +243,7 @@ The ANALOG_SPLINE protocol validated Pythagorean48 encoding against the prior fl
 | Drift after 100 hops | 0.0037 units | 0 (exact) |
 | Arithmetic type | IEEE 754 float | Exact integer |
 
-**Key finding:** Pythagorean48 encoding achieves 98% storage reduction (28 bytes vs 1,600 bytes) with zero drift after unlimited hops. The perfect-square norm property enables exact distance computations.
+**Key finding:** Pythagorean48 encoding achieves 98% storage reduction (28 bytes vs 1,600 bytes) with zero drift after 1,000 hops measured. The perfect-square norm property enables exact distance computations on a discrete lattice.
 
 ### 6.7.4 Bézier Spline Correction
 
