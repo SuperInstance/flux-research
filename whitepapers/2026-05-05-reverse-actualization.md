@@ -155,7 +155,7 @@ Safe-TOPS/W is measured under production workloads, not synthetic benchmarks. Th
 
 ## 7. What "Unlimited Throughput" Means: ZHC Consensus at Scale
 
-The term "unlimited throughput" requires precision. It refers to the ZHC consensus protocol's scaling properties: adding nodes to a ZHC network does not degrade consensus latency, because ZHC is leader-free and message-efficient.
+The term "unlimited throughput" requires precision. ZHC consensus latency does not degrade with added nodes, because ZHC is leader-free and message-efficient. Latency is O(1) per node per consensus round.
 
 **The technical claim:** ZHC achieves consensus with O(N) nodes and O(1) messages per node per consensus round.
 

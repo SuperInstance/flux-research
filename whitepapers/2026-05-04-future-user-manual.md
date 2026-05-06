@@ -147,7 +147,7 @@ When something unusual is happening across the fleet — like an unexpected bait
 Each agent = a point. Each coordination action = an edge. The number of "independent cycles" in the network tells you if something emergent is happening.
 
 - **Before:** Required 12,000 lines of ML code, 62% accuracy, detected patterns 1.2 seconds AFTER they became visible
-- **Now:** 127 lines of math, 100% accuracy, detects patterns 2.7 seconds BEFORE any individual notices
+- **Now:** 127 lines of topological code providing categorical structural detection — the 2.7-second window is an empirical observation from simulation
 
 ### How Information Encodes Efficiently (Pythagorean48)
 

@@ -8,7 +8,7 @@
 
 ## TL;DR
 
-The Semantic Compiler transforms natural language safety constraints into provably correct FLUX-C bytecode — without an ML model. It parses GUARD DSL → symbolic algebra → FLUX-C opcodes → Z3 formal verification. 100% accuracy, zero drift, mathematically certified.
+The Semantic Compiler transforms natural language safety constraints into provably correct FLUX-C bytecode — without an ML model. It parses GUARD DSL → symbolic algebra → FLUX-C opcodes → Z3 formal verification. categorical structural correctness for the GUARD DSL subset; zero drift on discrete lattice arithmetic. Full FLUX-C ISA formal verification is in progress.
 
 ---
 

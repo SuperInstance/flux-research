@@ -63,11 +63,11 @@ def detect_emergence(graph: CommunicationGraph) -> bool:
     return h1 != 0
 ```
 
-**Result:** 127 lines replace 12,000 lines. 100% accuracy vs 62% for ML.
+**Result:** 127 lines of topological code vs ~12,000 lines of CUDA. H¹ provides categorical structural detection vs statistical ~62% ML accuracy. A controlled comparison experiment has not yet been run.
 
 ### 3.4 The Early Warning Property
 
-H1 detects emergence 2.7 seconds BEFORE it becomes visible in behavior. This is because H1 is measuring the communication graph structure, which changes before behavior changes.
+H1 detects structural preconditions for emergence — a 2.7-second window observed in simulation. This is because H1 is measuring the communication graph structure, which changes before behavior changes.
 
 ---
 
