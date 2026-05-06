@@ -10,7 +10,7 @@ We present the zero holonomy consensus protocol: a Byzantine fault-tolerant cons
 
 Traditional consensus protocols (PBFT, Raft, Paxos) use voting and leader election to achieve consistency. Zero holonomy consensus replaces voting with curvature detection: if the system's state is consistent, parallel transport around any closed loop returns to the starting point. If there is inconsistency (Byzantine fault), holonomy is non-zero.
 
-Latency: 38ms for any Byzantine tolerance level. Throughput: unlimited (no coordination bottleneck).
+Latency: 38ms for geometric consistency check. Throughput: O(1) per cycle (no coordination bottleneck). Note: ZHC provides geometric consistency detection — it does NOT achieve Byzantine fault tolerant consensus. FLP impossibility applies to async crash fault consensus.
 
 ---
 
