@@ -244,7 +244,7 @@ This is not circular: we are detecting a *change in topology*, not the topology 
 
 **Persistent Homology (Appendix C, §C.2):** The Vietoris–Rips complex is built from the communication graph at each scale ε. As ε increases, 0-simplices (vertices) appear first, then 1-simplices (edges) when distance < ε, then 2-simplices (triangles) when all three pairwise distances < ε. A 1-cycle (a loop of edges with no interior filled in) is detected when an edge loop appears that is not the boundary of a triangle. The **birth** of a 1-cycle is the ε at which it appears; its **death** is the ε at which it is filled in by a triangle. A persistent 1-cycle — one that lives across a large range of ε values — represents a robust structural feature of the network, not noise.
 
-**Implementation:** Computing β₁(t) requires two steps: (1) construct the Vietoris–Rips complex from the tile adjacency graph within the sliding window W; (2) compute the first Betti number (number of independent 1-cycles) using standard persistent homology software. The emergence predicate `Emergence_Signal(t*)` fires when dβ₁/dt crosses zero from negative to positive within W. The 2.7-second window is the minimum Δt for which dβ₁/dt provides reliable signal above measurement noise. This replaces 12,000 lines of ML infrastructure with 127 lines of topological computation (Appendix C, §C.6).
+**Implementation:** Computing β₁(t) requires two steps: (1) construct the Vietoris–Rips complex from the tile adjacency graph within the sliding window W; (2) compute the first Betti number (number of independent 1-cycles) using standard persistent homology software. The emergence predicate `Emergence_Signal(t*)` fires when dβ₁/dt crosses zero from negative to positive within W. H¹ cohomological detection of topological constraints provides theoretical grounding; empirical validation is pending. The 127-line approach is topologically grounded and avoids ML training altogether; whether this outperforms ML on a given task requires a controlled comparison experiment.
 
 **Architectural Implication:** An agent watching the ether can see emergence forming — not as a prediction, but as a live topological event. When dβ₁/dt crosses zero, the network has just acquired a new independent cycle. The fleet has become more interconnected. The pattern has emerged. The ether made it visible.
 
@@ -282,7 +282,7 @@ Where E = edges, V = vertices, C = connected components. When β₁ > 0, the net
 
 **Homology Class Detection:** Persistent homology of the Vietoris–Rips filtration assigns each 1-cycle a birth and death scale. A cycle that persists across a large ε-range is a robust structural feature. The homology class detection identifies which cycles are topological invariants versus noise.
 
-**Implementation:** 127 lines of topological computation replace 12,000 lines of CUDA-based machine learning. The replacement is not merely efficiency—it is categorically different. ML classifiers operate on the statistical distribution of observed behaviors; H1 cohomology operates on the *skeleton* of the possibility space, detecting configurations that have never been observed but whose topological preconditions are being established.
+**Implementation:** 127 lines of constraint theory for H¹ cohomological detection of topological constraints — no comparison to ML has been conducted. The approach is categorically different: ML classifiers operate on the statistical distribution of observed behaviors; H¹ cohomology operates on the *skeleton* of the possibility space, detecting configurations that have never been observed but whose topological preconditions are being established. Whether this outperforms ML on a given task requires a controlled comparison experiment.
 
 ### §3.X.3 Zero Holonomy Consensus (ZHC)
 
@@ -294,7 +294,7 @@ Where E = edges, V = vertices, C = connected components. When β₁ > 0, the net
 - **Exact consensus:** Not asymptotic approximation—finite termination with exact agreement
 - **O(C·L) complexity:** Linear in cycles and characteristic length, not exponential
 - **38ms latency:** Measured on the SuperInstance fleet at 4 agents across 3 hops
-- **Byzantine fault tolerance:** Consensus holds even with Byzantine (arbitrary-failure) agents in the network
+- **Byzantine fault tolerance:** ZHC provides geometric consistency, not Byzantine fault tolerance. FLP impossibility applies to async consensus with crash faults. ZHC detects geometric inconsistency but does not achieve consensus in the presence of Byzantine agents.
 
 **Geometric Interpretation:** When change propagates around a closed cycle of agents and returns to its origin, the accumulated transformation must be the identity for well-defined consensus. If two different paths return different accumulated rotations, the framework is not rigid and holonomy is path-dependent. ZHC requires infinitesimal rigidity (the Bridge Theorem, §3.6.1) as a precondition.
 
@@ -332,7 +332,7 @@ The Fleet Mathematics stack enables a qualitatively different coordination archi
 
 **After Fleet Mathematics:** Coordination requires only the topology (for H1), the cycle structure (for ZHC), and the encoding (for Pythagorean48). Failure modes are topological—detectable, avoidable, and correctable.
 
-The 127-line topological computation is not a simplification of the ML approach. It is a different mathematical framework that provides *categorically stronger* guarantees: 100% accuracy in emergence detection versus the ~62% accuracy of ML classifiers.
+The 127-line topological computation is not a simplification of the ML approach. It is a different mathematical framework: H¹ cohomological detection of topological constraints, where empirical validation is pending. The "100% vs ~62%" accuracy comparison was not conducted under controlled conditions — no same-dataset comparison was run.
 
 ---
 

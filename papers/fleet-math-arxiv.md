@@ -292,7 +292,7 @@ Agents communicate via two mechanisms:
 
 **Formal verification of ML models:** Tools like Marabou (neural network verification), Reluplex (deep learning verification), and CBMC (bounded model checking) provide formal guarantees but scale poorly to production-size models. Manual Coq proof engineering is the state of the art for small models but requires weeks of specialist effort per module.
 
-**Byzantine fault tolerance:** PBFT (Castro and Liskov, 1999) established the practical framework. Subsequent work (Zyzzyva, SBFT, HotStuff) improved throughput and latency but maintained the message-passing paradigm and threshold assumptions.
+Byzantine fault tolerance (BFT) research: PBFT (Castro and Liskov, 1999) established the practical framework. Subsequent work (Zyzzyva, SBFT, HotStuff) improved throughput and latency but maintained the message-passing paradigm and threshold assumptions. ZHC provides geometric consistency — a different property — and does not circumvent FLP impossibility.
 
 **Vector symbolic computing / HDC:** This paper's approach builds on the HDC (Hyperdimensional Computing) framework pioneered by Kanerva and colleagues. Our contribution is the connection to cohomology and the zero-holonomy consensus property.
 
@@ -304,8 +304,8 @@ Agents communicate via two mechanisms:
 
 We have presented three exact mathematical results that replace three core ML functions in safety-critical systems:
 
-1. **H1 Cohomology**: topological emergence detection in 127 lines, 100% accuracy vs 62% ML
-2. **Zero Holonomy Consensus**: O(C·L) geometric consistency check, 38ms latency (not a BFT consensus protocol)
+1. **H1 Cohomology**: topological emergence detection in 127 lines — H¹ cohomological detection of topological constraints (empirical validation pending)
+2. **Zero Holonomy Consensus**: O(N²) geometric consistency check, 38ms latency (not a BFT consensus protocol — FLP impossibility applies)
 3. **Pythagorean48**: exact integer state encoding, zero drift after unlimited updates, 98% compression
 
 These are not better ML models. They are **different mathematics** — topological and algebraic rather than statistical. The distinction matters: a statistical approach can always fail on the next example; a topological or algebraic approach is correct or incorrect, and this is decidable.
