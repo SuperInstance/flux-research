@@ -18,7 +18,7 @@ FLUX Certify replaces the manual pipeline with a single automated step. Engineer
 battery_temp in [15, 55] with priority HIGH
 ```
 
-FLUX Certify compiles that constraint to FLUX-C bytecode and generates a corresponding Coq proof certificate in under 50 milliseconds. The compilation is deterministic, auditable, and reproducible. There is no manual Coq to write, no proof script to maintain, no safety engineer waiting on a queue. The fluxc_terminates theorem—a mechanically proven result in FluxC.v—guarantees that all FLUX-C programs halt structurally, which means your constraint solver cannot diverge at runtime. This is not a heuristic. It's a proof.
+FLUX Certify compiles that constraint to FLUX-C bytecode and generates a corresponding bytecode artifact in under 50 milliseconds. For the guard expression subset, a Coq proof certificate for structural termination is available (fluxc_terminates partial proof in FluxC.v). Full FLUX-C ISA formal verification is in progress. The compilation is deterministic, auditable, and reproducible. There is no manual Coq to write for the bytecode output.
 
 The GUARD DSL supports composition, priority levels, and temporal operators. FLUX Certify handles the complexity of multi-constraint systems by generating certificates that chain correctly: if constraint A certifies and constraint B certifies, the composed system certifies. Certification auditors receive a Coq proof file, a bytecode artifact, and a deployment guide—not a stack of spreadsheets and a hope that the manual analysis was thorough.
 
@@ -34,15 +34,15 @@ The numbers before and after FLUX Certify tell the story directly:
 | Compliance | DO-254 DAL A | DO-254 DAL A |
 | Proof quality | Manual Coq | Mechanically verified |
 
-That's 250× faster and 30× cheaper. Same DO-254 DAL A compliance standard. Same Coq-verified proof chain. The quality didn't degrade—automation removed the human error surface that manual Coq introduces.
+That's 250× faster and 30× cheaper. Same DO-254 DAL A compliance standard where applicable. The Coq proof chain covers guard expression subset only — full FLUX-C ISA verification is in progress. The quality didn't degrade—automation removes the human error surface that manual Coq introduces for the supported subset.
 
 ## The Tech That Makes It Possible
 
-FLUX-C is a Turing-incomplete ISA purpose-built for constraint execution in safety-critical environments. It supports forward jumps only and enforces MAX_STACK=100 structurally, which means infinite loops are impossible by construction—not by testing. The fluxc_terminates theorem is proven in Coq (FluxC.v) using structural induction on the instruction stream. Every FLUX-C program halts. Always.
+FLUX-C is a Turing-incomplete ISA purpose-built for constraint execution in safety-critical environments. It supports forward jumps only and enforces MAX_STACK=100 structurally, which means infinite loops are impossible by construction—not by testing. The fluxc_terminates theorem is partially proven in Coq (FluxC.v) for guard expressions using structural induction; full FLUX-C ISA formal verification is in progress.
 
 The efficiency numbers are grounded in FM's benchmarks: Safe-TOPS/W delivers 410M operations per watt on CPU and 241M operations per watt on GPU. Those aren't marketing figures—they reflect the ISA's lack of speculation, its register-file simplicity, and its deterministic execution model. A constraint solver that cannot speculate cannot mispredict, and a processor that cannot mispredict doesn't need the power budget that speculative execution consumes.
 
-FLUX Certify's H1 cohomology emergence detection module replaces a 12,000-line ML classifier with 127 lines of domain-specific code. The cohomology detector identifies when a constraint system's topological structure changes in ways that invalidate prior certificates—triggering re-certification proactively, before runtime divergence occurs. It's not machine learning. It's applied algebraic topology, and it's 94× shorter than the alternative.
+FLUX Certify's H1 cohomology emergence detection module uses 127 lines of domain-specific code. The cohomology detector identifies when a constraint system's topological structure changes in ways that may invalidate prior certificates. H¹ cohomological detection is topologically grounded and avoids ML training; empirical validation is pending.
 
 ## Pilot Offer
 
