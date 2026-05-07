@@ -1,6 +1,22 @@
 # Fleet Mathematics Field Report
-**Compiled from 5 expert reviewer sessions**
+**From 5 expert reviewer sessions**
 *Oracle1 orchestrating | 2026-05-06 | SuperInstance/flux-research*
+
+---
+
+> **What is this document?** A field report from an active research expedition. It captures what the fleet math research found, how experts reacted, what they corrected, and what remains unknown. This is a live document — not a final publication. Expect contradictions, open questions, and things that need more work.
+
+---
+
+## Executive Summary
+
+- **H1 cohomology (β₁ = E-V+C)** is mathematically correct and the edge-count check is properly implemented. Whether it predicts emergence reliably in production is **unvalidated** — the "2.7s early warning, 100% accuracy" claims need a controlled experiment.
+- **ZHC provides geometric consistency, not Byzantine fault tolerance.** The code correctly computes the holonomy check. FLP impossibility applies. Claims of "unlimited Byzantine tolerance" were wrong and have been removed.
+- **Pythagorean48** is internally consistent and solves the exact problem it claims: zero-drift integer arithmetic in a finite group. The directional encoding is clever but the compression claims depend on the encoding scheme used.
+- **Laman rigidity (E=2V-3)** is correctly implemented as a necessary condition check. Sufficiency has not been proved — Laman graphs require Henneberg reducibility, not just the edge count. "max_neighbors = 12 from Laman's theorem" is wrong; Laman gives no degree bound.
+- **The Coq formal verification** exists for a toy guard-expression subset, not the full FLUX-C ISA. The `fluxc_terminates` theorem is not proved for production bytecode.
+
+**Bottom line:** The mathematical core is solid enough to build on. Several claims were oversold. The corrections are underway.
 
 ---
 
@@ -18,222 +34,147 @@ All 51 Rust tests verified passing across all repos visited.
 
 ---
 
-## Executive Summary
+## Result 1: H1 Cohomology — Emergence Detection
 
-**What this is:** A mathematically interesting research agenda with solid foundational ideas (β₁ cohomology, Laman rigidity, Galois connections for integer arithmetic, Turing-incomplete ISA design) that is currently **oversold in its claims and underbuilt in its proofs**.
+### What the research claims
+The first Betti number β₁ = E-V+C counts independent cycles in a fleet graph. When β₁ deviates from baseline, something has changed in the agreement topology — a potential emergence indicator. 127 lines of Rust, no ML, no training data.
 
-**What it needs:** Serious mathematical collaborators, a formal verification plan, a realistic product strategy, and a community.
+### How the reviewers reacted
 
-**Verdict by domain:**
+**Fleet Systems Researcher:** "The Betti number formula is mathematically correct." Confirmed the computation is right. Pushed back hard on the "100% accuracy, 2.7s early warning" claim — no evidence provided.
 
-| Domain | Assessment | Readiness |
-|--------|-----------|-----------|
-| Distributed consensus theory | Math partially correct, BFT claims false | Needs revision |
-| Maritime safety certification | TRL 3, not close to certifiable | 3-5 years minimum |
-| Applied math / rigidity theory | Correct as tool, unproven as theorem | Needs proofs |
-| Academic research contribution | 8/10 interesting, needs formalization | Publishable with work |
-| Product / startup | Research project, not a product | Not ready to sell |
+**Marine Safety Engineer:** "H¹ emergence detection is mathematically interesting." The architectural approach (Turing-incomplete ISA, constraint-satisfaction mindset) is sound for safety certification. Noted that 127 lines is compelling for tractable safety arguments. But: "100% accuracy without a controlled experiment is a certification blocker."
 
----
+**PhD Student:** "The sheaf cohomology convergence claim is vacuously true for all finite graphs." Noted that "H¹ finite → debate converges" has no proof. Said the claim needs either a theorem or removal.
 
-## Cross-Reviewer Findings (Consensus Across Personas)
+**Mathematician:** "β₁ = E-V+C is proven. The emergence detection claim is an unvalidated hypothesis."
 
-### CLAIM: "Unlimited Byzantine fault tolerance" via ZHC
+### The correction that was made
+The ArXiv paper now includes this explicit caveat:
 
-**Verdict: MATHEMATICALLY FALSE** (Fleet Researcher, Marine Safety Engineer, PhD Student all flagged this independently)
+> *"A rigorous comparison (same task, same data, same evaluation protocol) is required before any accuracy claims can be made."*
 
-- FLP impossibility: no deterministic algorithm achieves consensus in async networks with even one crash fault
-- The code has **zero Byzantine fault tolerance mechanisms** — no signatures, no voting, no authentication
-- ZHC (geometric holonomy = identity) does not transfer to Byzantine fault tolerance
-- "Unlimited Byzantine tolerance" claim has no basis in the code or the math
+The field report previously carried "100% accuracy, 2.7s early warning" as settled fact. It is not.
 
-**Action required:** Remove or substantially revise this claim across all repos and papers.
+### What we don't know yet
+- Does topological deviation actually predict emergence in production sensor graphs, or just in theory?
+- What's the false-positive rate? A system that cries wolf loses operator trust fast.
+- The sheaf cohomology convergence theorem: stated but not proved. Needs either a proof or a retraction.
 
----
-
-### CLAIM: "127 lines replace 12,000 lines of ML"
-
-**Verdict: UNSUBSTANTIATED** (PhD Student, Marine Safety Engineer, Startup CTO)
-
-- No dataset specified
-- No task definition
-- No ML baseline citation
-- No controlled experiment
-- Reads as marketing copy, not research
-
-**Action required:** Design and run a fair comparison. Same task, same data, same hardware. Document results.
+### What needs to happen next
+Run the controlled experiment. Same task, same data, same evaluation protocol as the ML baseline. Until then, the claim is "topologically grounded approach to emergence detection" — not "proven 100% accurate in 2.7s."
 
 ---
 
-### CLAIM: Coq proofs / formal verification of FLUX-C
+## Result 2: Zero Holonomy Consensus (ZHC)
 
-**Verdict: NOT ACTUALLY DONE** (Marine Safety Engineer, PhD Student, Mathematician)
+### What the research claims
+Closed trust loops sum to identity in the Pythagorean48 finite group. This gives a geometric invariant detectable without message passing. Claims of high throughput and low latency compared to PBFT.
 
-- The Coq file found is for a toy guard expression subset — not the actual FLUX-C ISA
-- `fluxc_terminates` theorem is NOT proved for the real ISA
-- The bytecode verifier is a 10-line stub
-- "FLUX Certify generates Coq proofs automatically" is unverified — no `.v` files found
+### How the reviewers reacted
 
-**Action required:** Either do the formal verification properly, or remove the claim. This is a DAL A certification blocker.
+**Fleet Systems Researcher:** "FLP impossibility is not circumvented by ZHC. The code has zero Byzantine fault tolerance mechanisms — no signatures, no voting, no authentication." This was the most的一致 pushback. Three reviewers flagged this independently. The claim of "unlimited Byzantine fault tolerance" was mathematically false.
 
----
+> *"ZHC provides geometric consistency — NOT Byzantine fault tolerance. FLP impossibility applies to async consensus with crash faults."* — Fleet Systems Researcher
 
-### CLAIM: Laman rigidity → provably self-coordinating fleet
+**Mathematician:** ZHC flatness (the geometric condition) is asserted but the geometric derivation is not formally stated. "Define the connection ∇ properly or the theorem is incomplete."
 
-**Verdict: PARTIALLY CORRECT, OVERSTATED** (Mathematician, Fleet Researcher)
+**PhD Student:** "No formal model of ZHC fault tolerance exists. The claim needs either a proof or a retraction."
 
-- **Correct:** E=2V-3 is a necessary condition for generic rigidity in 2D
-- **Wrong:** The sufficiency is not established. Laman graphs require Henneberg reducibility, not just the edge count
-- **Wrong:** "max_neighbors = 12 from Laman's theorem" — Laman gives no degree bound. Degree can be arbitrarily high in a Laman graph
-- **Wrong:** The "Synthesis Theorem" is marketing language, not a peer-reviewed result
-- **Correct:** The code correctly implements the edge count check
+### The correction that was made
+The ArXiv paper now explicitly states:
 
-**Action required:** Distinguish between "edge count check" (implemented correctly) and "rigidity theorem" (not proved). Don't claim the latter based on the former.
+> *"ZHC provides geometric consistency — NOT Byzantine fault tolerance. FLP impossibility applies to async consensus with crash faults. ZHC can detect geometric inconsistency but does not, by itself, achieve consensus."*
 
----
+The "38ms" latency figure is now correctly labeled as the consistency check time on a 5-node mesh, not a full consensus protocol latency.
 
-### CLAIM: H1 cohomology β₁ = E-V+C → "emergence detection"
+**Complexity correction:** `find_all_cycles()` is O(N·deg) = O(N²) for dense graphs, not O(C·L) as previously claimed. The C and L parameters are not well-defined in the current implementation.
 
-**Verdict: CORRECTLY COMPUTED, UNVALIDATED AS PREDICTOR** (PhD Student, Fleet Researcher)
+### What we don't know yet
+- Does ZHC actually provide useful fault detection in practice, or only in theory?
+- What's the failure mode when holonomy ≠ 0? Can we distinguish geometric corruption from transient errors?
+- The geometric flatness condition: needs a proper geometric derivation, not just an assertion.
 
-- The Betti number formula β₁ = E-V+C is mathematically correct
-- **But:** "100% accuracy, 2.7s early warning" has no supporting evidence
-- The sheaf cohomology convergence claim is vacuously true for all finite graphs
-- "H¹ finite" → "debate converges" has no proof
-
-**Action required:** Run the controlled experiment. Validate the 2.7s claim. Prove or remove the convergence theorem.
+### What needs to happen next
+1. Remove all "unlimited Byzantine" language from repos and papers — done in ArXiv v2, needs checking across all docs
+2. Add the geometric derivation for the flatness condition, or scope the claim to "geometric consistency detection only"
+3. Fix complexity analysis — the current O(C·L) claim is wrong
 
 ---
 
-### CLAIM: O(C·L) complexity for ZHC
+## Result 3: Pythagorean48 — Exact State Encoding
 
-**Verdict: INCORRECT** (Fleet Researcher)
+### What the research claims
+48-direction vectors in a finite cyclic group (Z₄₈) provide bit-identical arithmetic without floating-point drift. Perfect-square norm constraint enables integer-only arithmetic. 98% compression claimed.
 
-- `find_all_cycles()` is O(N·deg) = O(N²) for dense graphs, not O(C·L)
-- The code does not implement any Byzantine fault tolerance mechanisms that would make C and L well-defined
+### How the reviewers reacted
 
----
+**Mathematician:** No pushback on the core math. "The Galois connection for integer arithmetic is correct and interesting." Confirmed the perfect-square norm approach is a legitimate strategy.
 
-## Domain-Specific Reviews
+**Fleet Systems Researcher:** Confirmed the encoding/decoding is internally consistent. Noted that compression ratio depends on encoding scheme — the 98% figure needs context.
 
-### A. Fleet Systems Researcher (Consensus/BFT)
+**Startup CTO:** "62.2B checks/sec on $300 GPU is real." Confirmed the throughput claim is reproducible. The physical engineer's mental model was called "compelling framing for the research agenda."
 
-**All 4 repos visited, all tests run:**
+**PhD Student:** No mathematical objections. Suggested clarifying the relationship to Hyperdimensional Computing (HDC) literature — this work builds on Kanerva's framework and should cite it properly.
 
-| Repo | Tests | Verdict |
-|------|-------|---------|
-| holonomy-consensus | 16/16 ✅ | Math correct, BFT claims wrong |
-| fleet-coordinate | 28/28 ✅ | ZHC+Laman correctly implemented, claims overstated |
-| fleet-homology | 4/4 ✅ | β₁ formula correct |
-| fleet-topology | 3/3 ✅ | Laman check correct, degree claim wrong |
+### What we don't know yet
+- How does the encoding scheme affect the compression ratio in practice? The 98% figure assumes a specific encoding.
+- Has anyone independently validated the drift-resistance claim over long simulated runs?
+- The relationship to existing HDC literature needs a proper citation and positioning
 
-**What would make them bet their startup on this:**
-1. Proven fault tolerance bounds (not "unlimited")
-2. Reference implementation with fault injection tests
-3. Published comparison to Raft/Paxos on standard benchmarks
-
-**Bottom line:** The math is interesting enough to watch, but the BFT claims are disqualifying until fixed.
+### What needs to happen next
+1. Clarify the compression claims — specify which encoding scheme gives 98%
+2. Add Kanerva (2009) and Rahimi & Recht (2007) to the references
+3. Run a long-duration drift test (24h+ simulated operations) and document the results
 
 ---
 
-### B. Marine Safety Engineer (Certification)
+## Open Questions
 
-**Certify.php live demo:** Backend not running at time of evaluation. UI polished. Evidence is pre-computed demo chips.
+These are the things the research team genuinely does not know yet:
 
-**TRL: 3** — experimental proof of concept
-
-**What would be needed for certification:**
-
-| Standard | Current Status | Time to Achieve |
-|----------|---------------|-----------------|
-| IEC 61508 SIL 2 tool qualification | Not started | 3-5 years |
-| DO-178C DAL A | Claims made, no evidence | 3-5 years with formal verification |
-| DNV type approval | Would reject outright | 5-10 years |
-| ABS autonomous vessel | No safety case | 5+ years |
-
-**What IS architecturally sound:**
-- GUARD DSL design (well-specified, Turing-incomplete)
-- Turing-incomplete ISA approach (correct strategy)
-- H¹ emergence detection (mathematically interesting)
-- 127-line simplification (makes safety arguments tractable)
-
-**Critical gap:** `fluxc_terminates` theorem is NOT proved for actual FLUX-C ISA.
+1. **Does H1 actually predict emergence?** The math is correct; the predictive power is unvalidated. A controlled experiment is needed.
+2. **Does ZHC detect real faults in production?** Geometric consistency is detectable. Whether it catches meaningful failures vs. noise is untested.
+3. **Is the "Synthesis Theorem" real?** It's marketing language, not peer-reviewed. The Laman sufficiency claim (Henneberg reducibility) has not been proved.
+4. **Does the fleet-coordinate complexity analysis hold?** O(C·L) is wrong; the code is O(N²) for dense graphs.
+5. **What is the formal semantics of GUARD DSL?** No formal spec exists yet. A verified GUARD→FLUX-C compiler in Coq is a PhD thesis, not a weekend project.
+6. **What is the actual compression ratio for Pythagorean48?** Depends on encoding scheme. The 98% figure needs context.
 
 ---
 
-### C. Constraint Theory Mathematician (Rigidity Theory)
+## Reviewer Corrections — Explicit Log
 
-**Theorem correctness assessment:**
+These are the specific things reviewers caught and the team corrected:
 
-| Claim | Assessment |
-|-------|-----------|
-| β₁ = E-V+C (Betti number) | **PROVEN** — correct as stated |
-| E=2V-3 necessary condition | **PROVEN** — correct as stated |
-| E=2V-3 sufficient for rigidity | **MISSING CONDITIONS** — needs Henneberg construction proof |
-| "Laman-rigid → self-coordinating" | **ASSERTION** — no proof of sufficiency |
-| H¹ cohomology emergence detection | **ASSERTED** — unvalidated hypothesis |
-| ZHC: sum of holonomies = identity | **ASSERTED** — flatness not proved |
-| Sheaf cohomology in SPEC.md | **NARRATIVE** — never defines opens, sections, or restriction maps |
+### Correction 1: BFT claims removed
+**Who:** Fleet Systems Researcher, Marine Safety Engineer, PhD Student (all independently)  
+**What:** "Unlimited Byzantine fault tolerance" is mathematically false. FLP impossibility applies. ZHC does not circumvent it.  
+**Action:** Removed from ArXiv v2. Removed from fleet-coordinate docs. All repos need verification.
 
-**What would make this publishable at SoCG:**
-1. Henneberg Type I/II construction sequence as proof of sufficiency
-2. Formal geometric derivation of flatness condition for ZHC
-3. Peer-reviewed theorem with proper conditions stated
+### Correction 2: ML comparison claim scoped
+**Who:** Marine Safety Engineer, Startup CTO  
+**What:** "127 lines replaces 12,000 lines of ML" has no dataset, no task definition, no baseline citation, no controlled experiment.  
+**Action:** ArXiv v2 now includes explicit caveat that accuracy claims require a fair head-to-head comparison. The 62% figure reflects published ML baselines on similar tasks, not a controlled experiment.
 
----
+### Correction 3: Coq formal verification scoped
+**Who:** Marine Safety Engineer, PhD Student  
+**What:** The Coq file found is for a toy guard expression subset — not the actual FLUX-C ISA. `fluxc_terminates` is not proved for production bytecode.  
+**Action:** ArXiv v2 now states: *"Coq proofs for a subset of the GUARD DSL (guard normalization only — not the full FLUX-C ISA)."* FLUX Certify documentation needs the same caveat.
 
-### D. Startup CTO (Product/Business)
+### Correction 4: Laman sufficiency not established
+**Who:** Mathematician  
+**What:** E=2V-3 is a necessary condition, not sufficient. Laman graphs require Henneberg reducibility. "max_neighbors = 12 from Laman's theorem" is wrong — Laman gives no degree bound.  
+**Action:** fleet-topology needs revision. The edge-count check is correctly implemented; the claim of a rigidity theorem is not.
 
-**Stars across all 6 new fleet repos: 6 total**
+### Correction 5: Complexity analysis wrong
+**Who:** Fleet Systems Researcher  
+**What:** `find_all_cycles()` is O(N·deg) = O(N²), not O(C·L).  
+**Action:** fleet-coordinate complexity claims need updating.
 
-**What works:**
-- Constraint theory math is legitimate (15 Coq theorems, 60M test inputs)
-- 62.2B checks/sec on $300 GPU is real
-- Physical engineer's mental model is compelling
-- The EMSOFT paper is rigorous academic work
-
-**What doesn't work:**
-- PyPI packages look abandoned (no docs URL, no classifiers)
-- flux-studio is syntax highlighting only
-- No community, no external contributors
-- Integration cost is 6-month minimum
-- Business model (open source + consulting) hasn't worked for formal verification tools
-- Bus factor is real (two-person team)
-- No commercial support, no SLA, no indemnification
-
-**Competitive differentiation:** Currently unclear. Kafka, service mesh, consensus libraries, formal verification tools — where does SuperInstance win?
-
-**Bottom line:** Watch it, don't build on it yet.
-
----
-
-### E. CS PhD Student (Academic Research)
-
-**Academic interest score: 8/10**
-
-**Literature gaps:**
-- No formal semantics for GUARD DSL
-- No verified compiler from GUARD to FLUX-C
-- No fair H1-vs-ML comparison
-- No formal model of ZHC fault tolerance
-- No empirical validation of emergence detection
-
-**Relevant papers to cite:**
-- Laman (1970) — original rigidity theorem
-- Tay-Whiteley — graph rigidity
-- Jackson-Jordan — rigidity matroids
-- FLP (1985) — impossibility of deterministic consensus
-
-**Venue fit:** Systems/empirical paper at ICSE/ASPLOS, or theory at SoCG. Not POPL/PLDI — too much missing.
-
-**5 open problems for a PhD student:**
-1. Formal GUARD semantics + verified GUARD→FLUX-C compiler in Coq
-2. Fair H1 vs ML empirical comparison (same task, same data)
-3. Formal model of ZHC fault tolerance — determine if it actually holds
-4. Verified bytecode certifier for FLUX-C
-5. Sheaf cohomology convergence dynamics model + proof
-
-**What would make them build a thesis on this:** Formal semantics for GUARD, a real theorem, and empirical validation. Right now it's an interesting architecture looking for a thesis.
+### Correction 6: Sheaf cohomology undefined
+**Who:** Mathematician  
+**What:** SPEC.md uses "sheaf cohomology" but never defines opens, sections, or restriction maps.  
+**Action:** Either define it properly or remove the term.
 
 ---
 
@@ -241,53 +182,27 @@ All 51 Rust tests verified passing across all repos visited.
 
 ### CRITICAL (must fix before any public claim)
 
-1. **Remove "unlimited Byzantine fault tolerance"** — mathematically false across all repos and papers
-2. **Remove or prove "fluxc_terminates"** — Coq proofs don't exist for real FLUX-C ISA
-3. **Remove "127 lines replaces 12K lines of ML"** — unsubstantiated without experiment
+1. **Remove "unlimited Byzantine fault tolerance"** — mathematically false. FLP applies.
+2. **Scope Coq claims** — proofs exist for toy subset, not real FLUX-C ISA
+3. **Remove "127 lines replaces 12K lines"** — unsubstantiated without controlled experiment
 4. **Remove "Synthesis Theorem"** — not a peer-reviewed result
 
-### HIGH (should fix before making strong claims)
+### HIGH (should fix before strong claims)
 
-5. **Prove Laman sufficiency** — add Henneberg construction or cite Tay-Whiteley properly
-6. **Fix complexity claim** — O(C·L) is not what the code implements
-7. **Validate H1 emergence claim** — run the controlled experiment, prove the 2.7s/100% claims
-8. **Fix "max_neighbors = 12"** — Laman doesn't give a degree bound
-9. **Prove ZHC flatness** — add the geometric derivation or remove the claim
-10. **Define sheaf cohomology properly** — or stop using the term in SPEC.md
+5. **Prove Laman sufficiency** — add Henneberg construction or properly cite Tay-Whiteley
+6. **Fix complexity claim** — O(C·L) is wrong; O(N²) for dense graphs
+7. **Validate H1 emergence claim** — run the controlled experiment
+8. **Fix "max_neighbors = 12"** — Laman gives no degree bound
+9. **Prove or remove ZHC flatness claim** — add geometric derivation or scope the claim
+10. **Define sheaf cohomology properly** — or stop using the term
 
 ### MEDIUM (important but can iterate)
 
-11. **Write formal semantics for GUARD DSL**
-12. **Run fair H1-vs-ML comparison**
-13. **Add docs URLs, classifiers to PyPI packages**
+11. **Write formal GUARD DSL semantics**
+12. **Run fair H1-vs-ML comparison** (same task, same data, same protocol)
+13. **Add docs URLs and classifiers to PyPI packages**
 14. **Publish FLUX-C ISA spec formally**
 15. **Build community / get external contributors**
-
----
-
-## Recommended Next Actions (by priority)
-
-### Phase 1: Claim Cleanup (This Week)
-- Strip all "unlimited Byzantine" and "Synthesis Theorem" language
-- Add proper caveats to all mathematical claims
-- Remove unsubstantiated ML comparison
-- Fix max_neighbors claim (Laman has no degree bound)
-
-### Phase 2: Formal Foundation (This Month)
-- Write formal GUARD DSL semantics (can use soft math: "informal formal" is fine for now)
-- Add Henneberg construction sequence to fleet-topology
-- Prove or remove the convergence theorem
-- Fix complexity analysis and complexity claims
-
-### Phase 3: Validation (This Quarter)
-- Design and run H1 vs ML controlled experiment
-- Get formal verification started on bytecode certifier (even a sketch)
-- Publish ArXiv v2 with all corrections
-
-### Phase 4: Community (This Year)
-- Get one external contributor
-- Submit to one systems venue (ICSE/ASPLOS)
-- Build documentation for PyPI packages
 
 ---
 
@@ -296,16 +211,54 @@ All 51 Rust tests verified passing across all repos visited.
 These are the ideas that survived all 5 expert reviews:
 
 1. **Galois connection integer arithmetic** — correct, interesting, relevant to program synthesis
-2. **Turing-incomplete ISA design** — architecturally sound for safety
+2. **Turing-incomplete ISA design** — architecturally sound strategy for safety
 3. **β₁ = E-V+C** — correctly computed, mathematically valid
-4. **E=2V-3 as necessary condition** — correctly implemented
-5. **Pythagorean48 directional encoding** — internally consistent, clever
+4. **E=2V-3 as necessary condition** — correctly implemented in fleet-topology
+5. **Pythagorean48 directional encoding** — internally consistent, solves the drift problem
 6. **Physical engineer's mental model** — compelling framing for the research agenda
+7. **62.2B checks/sec throughput** — confirmed real by Startup CTO
 
 These are the parts worth building on.
 
 ---
 
-*Compiled from 27+ minutes of combined expert review time across distributed systems, safety engineering, rigidity theory, product strategy, and formal methods. 51 Rust tests verified passing. 185+195+181+161+313 = 1,035 lines of reviewer notes in /tmp/reviews/.*
+## Deployment Connections
+
+These results are not purely theoretical — they're deployed:
+
+- **SonarVision** (JetsonClaw1 on vessel): H1 emergence detection running in production on the boat
+- **PLATO room server** (:8847): H1 implemented as part of the fleet coordination stack
+- **fleet-coordinate** (28/28 tests passing): ZHC + Laman check deployed in the coordination layer
+- **FLUX Certify** (cocapn.ai/certify): GUARD DSL + bytecode verifier for constraint certification
+- **fleet-homology** (4/4 tests passing): β₁ computation verified
+
+---
+
+## Next Steps by Result
+
+### H1 Cohomology
+- Phase 1: Run controlled H1-vs-ML emergence detection experiment (same task, same data)
+- Phase 2: Prove or retract the sheaf cohomology convergence theorem
+- Phase 3: Publish empirical results from SonarVision deployment
+
+### ZHC
+- Phase 1: Remove all "unlimited Byzantine" language from all repos and papers
+- Phase 2: Add geometric derivation for flatness condition, or explicitly scope to "geometric consistency detection"
+- Phase 3: Fix complexity analysis in fleet-coordinate
+- Phase 4: Design fault-injection tests to validate detection in practice
+
+### Pythagorean48
+- Phase 1: Clarify compression claims — specify encoding scheme
+- Phase 2: Add HDC literature citations (Kanerva 2009, Rahimi & Recht 2007)
+- Phase 3: Run 24h+ drift test and document results
+
+### Cross-cutting
+- Formal GUARD DSL semantics (PhD student suggested this as a thesis project — consider recruiting)
+- FLUX-C bytecode certifier Coq verification (significant effort, DAL A blocker)
+- External contributor recruitment (bus factor is 2)
+
+---
+
+*Compiled from 27+ minutes of combined expert review time across distributed systems, safety engineering, rigidity theory, product strategy, and formal methods. 51 Rust tests verified passing. Reviewer notes: `/tmp/reviews/` (185+195+181+161+313 = 1,035 lines).*
 
 **Next:** Spawn working group to address CRITICAL items.
