@@ -380,3 +380,15 @@ tempo_reale = argmax_i(coherence_i)
 ---
 
 *This document is a living research artifact. Update as experiments produce data.*
+
+---
+
+**Framing Note (added 2026-05-06 23:39 UTC):**
+
+See `measurement-theory-for-fleet-coordination.md` (branch: measurement-theory-foundation, in progress) for the theoretical deep dive connecting this work to:
+
+- Kolmogorov/Cox/Rényi measurement axioms
+- Fisher information + Cramer-Darwin bounds on consensus precision
+- The three primitive measurements (T, D, Δ) as trust-graph invariants
+- Trust-Time / Trust-Distance / Trust-Displacement formalism
+- Noether-type trust conservation law (open problem)
