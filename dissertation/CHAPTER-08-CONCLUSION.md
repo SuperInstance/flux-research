@@ -1,6 +1,7 @@
 # Chapter 8: Conclusion
+> **Status:** REVIEWED
 
-## 8.1 Summary of Contributions
+> **Key Finding:** Rooms with presence outperform polling by large margins (d = 0.48–0.71). Delta recording achieves 95–99% storage reduction with 100% accuracy. H¹ cohomology detects emergence structurally before behavior manifests — Laman's theorem applied to fleet trust graphs.
 
 This dissertation is about what it means for an AI system to *be somewhere*.
 

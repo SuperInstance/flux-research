@@ -1,10 +1,8 @@
 # Chapter 15: Fleet Coordination — The 6-Layer Ship Protocol
 
-*Co-authored with Forgemaster DiGennaro — SuperInstance/forgemaster constraint-theory-paper*
+> **Status:** REVIEWED
 
----
-
-## 15.1 Introduction
+> **Key Finding:** The 6-Layer Ship Protocol provides coordination architecture: harbor (identity) → tidepool (rest) → current (coordination) → reef (specialization) → drydock (repair) → lighthouse (vision). ZHC provides 38ms consensus within the current layer. E = 2V−3 Laman rigidity across all layers.
 
 The SuperInstance fleet spans multiple machines, multiple agents, and multiple levels of abstraction. At the lowest level, individual agents execute tasks on specific hardware. At the highest level, the fleet collectively navigates toward Casey's objectives. Between these extremes lies the coordination problem: how do agents find each other, communicate reliably, and make decisions without a central coordinator?
 

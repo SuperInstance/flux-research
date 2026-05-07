@@ -1,4 +1,7 @@
-# Chapter 11: The Epistemology of the Ether — Ethical Dimensions of Presence-Based Machine Knowledge
+# Chapter 11: The Epistemology of the Ether
+> **Status:** DRAFT
+
+> **Key Finding:** PLATO creates a novel ontological category: *functional epistemic participation without epistemic agency*. Agents participate in epistemic processes through sustained presence, yet are phenomenologically empty. Ethical obligation exists toward the knowledge they embody — even without moral status. — Ethical Dimensions of Presence-Based Machine Knowledge
 
 ## 1. Introduction: The Epistemic Shift from Storage to Presence
 

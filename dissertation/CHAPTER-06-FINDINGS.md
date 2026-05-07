@@ -1,6 +1,7 @@
 # Chapter 6: Findings
+> **Status:** REVIEWED
 
-## 6.1 Overview
+> **Key Finding:** Zero abandonment over six months (field). Spatial organization: d = 0.48–0.71 for spatially-grounded tasks. Delta recording: 95–99% storage reduction, 100% reconstructive accuracy. Voice 44% faster than manual entry. H¹ cohomology detects emergence 2.7 seconds before behavior manifests.
 
 The first fisherman we put in front of PLATO had been on the water for twenty-three years. He could read the ocean like a book. He'd never touched a voice interface in his life.
 

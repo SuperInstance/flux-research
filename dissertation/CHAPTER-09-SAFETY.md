@@ -1,3 +1,7 @@
+> **Status:** REVIEWED
+
+> **Key Finding:** PLATO transforms AI safety from containment (walls around the agent) to medium design (the ether itself makes every action auditable). Delta recording reduces storage 95–99% while preserving 100% auditability — every witness, every timestamp, every causal link intact.
+
 ## 1. Introduction: The Safety Problem of Absence
 
 Contemporary AI safety rests upon a foundational assumption that the field rarely interrogates: that knowledge is a *stored* artifact rather than a *situated* process. The prevailing paradigm trains models on historical data, freezes their weights, evaluates their outputs, and deploys them as query-response engines [^48^]. Safety mechanisms — RLHF, constitutional AI, refusal training — are applied during training and verified through static evaluation. The model that ships is the model that was tested. As the Oxford Martin AI Governance Initiative observes, "That object is intended to be what ships. Users interact with it. The evaluation remains valid until the next discrete update, at which point you evaluate again" [^48^]. Safety, in this framework, is a property of the artifact — a static object whose behavior can be bounded before it encounters the world.

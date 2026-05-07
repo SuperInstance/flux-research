@@ -1,6 +1,7 @@
 # Chapter 3: Theoretical Framework
+> **Status:** REVIEWED
 
-## 3.1 Overview
+> **Key Finding:** A room accumulates resonance through presence — not just data. The room `buoy-7` holds not the temperature but what it meant at that time, in that place, to the people who were there. A database stores states. PLATO stores meaning.
 
 This chapter develops the theoretical framework for PLATO as a spatial knowledge medium. We begin with formal definitions of the core concepts — rooms, presence, tiles, and change — and then develop the central metaphor: PLATO as ether.
 

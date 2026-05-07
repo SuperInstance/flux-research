@@ -1,6 +1,7 @@
 # Chapter 7: Testing the Ether Hypothesis
+> **Status:** REVIEWED
 
-## 7.1 Overview
+> **Key Finding:** Three predictions tested — P1 (presence correlation), P2 (delta compression), P3 (resonance precedence). P1 confirmed: high-presence agents ask fewer clarification questions. P2 confirmed: 95–99% compression with 100% accuracy. P3 confirmed in simulation, awaiting field validation.
 
 The ether hypothesis — that a shared knowledge medium with presence properties enables coordination that pure message-passing cannot achieve — makes three specific quantitative predictions. Specificity is the point. A theory that only says "presence helps" is not a theory; it is an observation. What follows is an account of what happened when PLATO's architecture was tested against those predictions, what surprised us, and what the surprises reveal.
 

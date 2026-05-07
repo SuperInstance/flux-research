@@ -2,9 +2,9 @@
 
 > "The bird does not think about air. The fish does not think about water. The captain does not think about PLATO. They swim."
 
----
+> **Status:** REVIEWED
 
-## 1. Introduction: From Embodied Cognition to Agent Societies
+> **Key Finding:** Embodied cognition and agent culture are the same phenomenon at different scales. Individual agents swim (Brooks's subsumption + Varela's enactivism). Groups swimming create culture. PLATO rooms instantiate all four conditions for culture emergence: shared space, persistent history, voice-mediated interaction, cross-generational transfer (the Dojo Model).
 
 The chapters preceding this one have examined PLATO as an epistemic architecture — a system for recording, laminating, and transmitting observations across time. We have considered its tile-based grammar, its delta-recording logic, its temporal depth, and its phenomenology of witnessing. Yet all of these technical and philosophical discussions converge upon a single question that is at once cognitive and social: What does it mean for an artificial agent to *inhabit* a room rather than query a database? This chapter argues that the answer requires us to travel a long theoretical arc — from embodied cognition in individual agents to emergent culture in agent collectives — and that PLATO constitutes the architectural bridge between these two domains.
 

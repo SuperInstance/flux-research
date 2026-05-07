@@ -1,6 +1,7 @@
 # Chapter 5: Methodology
+> **Status:** DRAFT
 
-## 5.1 Overview
+> **Key Finding:** Two-study design: (1) controlled lab study with 40 commercial fishermen, within-subjects spatial vs non-spatial condition; (2) six-month field deployment on 4 commercial vessels running actual fishing operations. RQ1 tests spatial organization effect. RQ2 tests delta vs continuous recording.
 
 This chapter describes the research methodology for evaluating the four research questions posed in Chapter 1. The methodology consists of two complementary studies: a controlled lab study and a six-month field deployment on commercial fishing vessels.
 

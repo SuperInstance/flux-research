@@ -1,4 +1,7 @@
-# Chapter 13: The Universal Ether — PLATO's Framework Applied to Every Domain Where Presence Matters
+# Chapter 13: The Universal Ether
+> **Status:** REVIEWED
+
+> **Key Finding:** Six structural characteristics define ether-compatible domains: spatial grounding, embodied expertise, change as signal, voice as native modality, negative knowledge value, cross-generational transfer urgency. PLATO is not maritime software — it is universal knowledge infrastructure applicable wherever these six conditions exist. — PLATO's Framework Applied to Every Domain Where Presence Matters
 
 ## 1. Introduction: From Maritime Proof to Universal Framework
 

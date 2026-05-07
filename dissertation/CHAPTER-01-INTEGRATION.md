@@ -1,6 +1,7 @@
 # Chapter 1: Introduction
+> **Status:** REVIEWED
 
-## 1.1 The Problem
+> **Key Finding:** Information lives at the *boundary* between two things — not inside either. The captain at buoy-7 doesn't just store temperatures; they know what 3°F drop in an hour *means*. PLATO stores meaning, not just states. Rooms accumulate resonance. The tap reveals.
 
 A luthier building a guitar doesn't just know physics. They know how the wood *sings*.
 

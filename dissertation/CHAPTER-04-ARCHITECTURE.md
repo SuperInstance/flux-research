@@ -1,6 +1,7 @@
 # Chapter 4: PLATO Architecture
+> **Status:** DRAFT
 
-## 4.1 Overview
+> **Key Finding:** PLATO has four components: room server (HTTP), tile protocol (append-only 6-tuple), presence system (real-time, not polling), and voice interface. The architecture is designed for reproducibility — any system satisfying the room/tile/presence definitions can serve as PLATO ether.
 
 This chapter describes the PLATO architecture in sufficient detail for reproducibility. PLATO consists of four primary components: the room server, the tile protocol, the presence system, and the voice interface.
 

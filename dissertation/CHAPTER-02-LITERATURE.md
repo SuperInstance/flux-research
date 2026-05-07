@@ -1,6 +1,7 @@
 # Chapter 2: Literature Review
+> **Status:** REVIEWED
 
-## 2.1 Overview
+> **Key Finding:** Four fatal traps plague prior approaches: (1) storage without presence, (2) distribution without embodiment, (3) proof without spec completeness, (4) consistency without coherence. PLATO avoids all four. No prior system survives the four-trap test.
 
 The question at the heart of this dissertation is not "how do agents share information?" It is "how do agents know what is happening?" The first has been answered. The second has not.
 
